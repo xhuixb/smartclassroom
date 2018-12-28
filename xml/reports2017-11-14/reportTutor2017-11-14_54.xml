@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <falta>
+    <codialumne>273</codialumne>
+    <alumne>Cano Vico, Antonio</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-11-14</dia>
+    <hora>11:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>No té els deures d'avui fets. Act 8 i 10 de la pàg 55 i el esquema de la sessió 4 del tema 3 copiat.</motiu>
+  </falta>
+  <falta>
+    <codialumne>275</codialumne>
+    <alumne>De la Cruz Girón, Adam</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <professor>Martínez Martínez, Rebeca</professor>
+    <dia>2017-11-14</dia>
+    <hora>13:55:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>L'Adam ha estat tota l'estona tirant papers durant la classe. No és la primera vegada que ho fa, el que passa és que no sabia 100% que era ell. A més li he dit i a sobre em diu que què està fent fent i de males maneres. No li penso passar ni una més, a la prò xima tindrà falta d'ordre.</motiu>
+  </falta>
+  <falta>
+    <codialumne>279</codialumne>
+    <alumne>Fernández Martín, Alba</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <professor>Cortina Sagreda, Daniel</professor>
+    <dia>2017-11-14</dia>
+    <hora>12:55:00</hora>
+    <tipusfalta>Falta lleu</tipusfalta>
+    <motiu>He hagut d'avisar l'Alba tres cops perquè no es comportava correctament a l'aula, cridava i movia els braços com ballant. Quan n'he tingut prou, encara m'ha respost malament i l'he hagut de fer fora.</motiu>
+  </falta>
+  <falta>
+    <codialumne>281</codialumne>
+    <alumne>Jiménez Martín, Laila</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-11-14</dia>
+    <hora>11:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>No té els deures d'avui fets. Act 8 i 10 de la pàg 55 i el esquema de la sessió 4 del tema 3 copiat. Sovint no fa els deures</motiu>
+  </falta>
+  <falta>
+    <codialumne>283</codialumne>
+    <alumne>Kryachko Benítez, Jeanette</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <professor>Valencia Deulofeu, Albert</professor>
+    <dia>2017-11-14</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>No porta el material.</motiu>
+  </falta>
+  <falta>
+    <codialumne>285</codialumne>
+    <alumne>Molina Silva, Zaira</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-11-14</dia>
+    <hora>11:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>No té els deures d'avui fets. Act 8 i 10 de la pàg 55 i el esquema de la sessió 4 del tema 3 copiat. Falta molt a classe. És molt bona en ciències i és una llàstima.</motiu>
+  </falta>
+  <absencia>
+    <codialumne>274</codialumne>
+    <alumne>Correia , Mohamed</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>634</codialumne>
+    <alumne>Datsenko , Ilia</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>30</codialumne>
+    <alumne>Kaur Malhi, Harleen</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>31</codialumne>
+    <alumne>Lorente Liebrancon, Adriana</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>285</codialumne>
+    <alumne>Molina Silva, Zaira</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>36</codialumne>
+    <alumne>Navarro Suero, Pedro</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>290</codialumne>
+    <alumne>Progonov , Artiom</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>297</codialumne>
+    <alumne>Vancea García, Desiree</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>298</codialumne>
+    <alumne>Yudice García, Sílvia</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

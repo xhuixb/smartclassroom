@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <absencia>
+    <codialumne>470</codialumne>
+    <alumne>Álvarez Castellanos, Raúl</alumne>
+    <nivell>1r AAFE</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>471</codialumne>
+    <alumne>Caballero Roca, Joel</alumne>
+    <nivell>1r AAFE</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

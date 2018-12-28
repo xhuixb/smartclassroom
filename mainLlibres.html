@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="ca">
+    <head>
+        <title>Cerca de llibres</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/funcions.js"></script>
+        <script src="js/variablesGlobals.js"></script>
+        <script src="jquery/funcionsjquery.js"></script>
+
+
+
+    </head>
+    <body onload="carregaCombosLlibres()">
+
+        <div class="container-fluid">
+            <div class="page-header">
+                <h1>Cerca de llibres</h1>
+                <p>Pots filtrar els llibres segons els criteris que vulguis</p>
+            </div>   
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2" >
+
+                    <label for="titol">Titol</label>
+                    <input type="text" class="form-control" id="titol" placeholder="" name="titol">
+                    <label for="Autor">Autor</label>
+                    <input type="text" class="form-control" id="autor" placeholder="" name="autor">
+                    <label for="xxx"></label>
+
+                    <button type="button" class="btn btn-info form-control" id="enviar">
+                        <span class="glyphicon glyphicon-search"></span>Cerca
+                        <br/>
+                    </button>
+
+                </div>
+                <div class="col-sm-2" >
+
+                    <label for="editorial">Editorial</label>
+                    <input type="text" class="form-control" id="editorial" placeholder="" name="editorial">
+                    <label for="idioma">Idioma</label>
+                    <div id="divIdioma">
+
+                    </div>
+
+                    <p id="pIdioma"></p>
+
+                </div>
+
+                <div class="col-sm-1" >
+                    <!-- si es posa en un button-group es pot esbrinar quina està seleccionat-->
+                    <div class="btn-group" id="disponibilitat" data-toggle="buttons">
+                        <label for="radioIdioma">Disponibilitat</label>
+                        <div class="radio">
+                            <!-- valor 0 tots els llibres -->
+                            <label><input checked type="radio" name="radioIdioma" value="0">Tots</label>
+                        </div>
+                        <div class="radio">
+                            <!-- valor 1 només els disponibles -->
+                            <label><input type="radio" name="radioIdioma" value="1">Disponibles</label>
+                        </div>
+                        <div class="radio">
+                            <!-- valor 2 només els reservats -->
+                            <label><input type="radio" name="radioIdioma" value="2">Prestats</label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-1" >
+                    <div class="btn-group" id="ordenacio" data-toggle="buttons">
+                        <label for="radioOrdre">Ordenació</label>
+                        <div class="radio">
+                            <!-- ordenació per títol -->
+                            <label><input checked type="radio" name="radioOrdre" value="0">Títol</label>
+                        </div>
+                        <div class="radio">
+                            <!-- ordenació per autor -->
+                            <label><input type="radio" name="radioOrdre" value="1">Autor</label>
+                        </div>
+                        <div class="radio">
+                            <!-- ordenacio per editorial -->
+                            <label><input type="radio" name="radioOrdre" value="2">Editorial</label>
+                        </div>
+
+                    </div>         
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div id="taulaLlibres" class="container-fluid">
+                    <h2>Els llibres de color vermell estan prestats</h2>
+                    <p id="par1"></p>
+                    <table id="taula1" class="table">
+                        <thead>
+                            <tr>
+                                <th id="cap1" >Codi</th>
+                                <th>Títol</th>
+                                <th>Autor</th>
+                                <th>Editorial</th>
+                                <th>Idioma</th>
+                                <th>Data préstec</th>
+                                <th>Data venciment</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cosTaula1">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>      
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
+

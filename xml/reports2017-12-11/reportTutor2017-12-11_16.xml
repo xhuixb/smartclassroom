@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>11/12/2017</data>
+  <tutor>Pascual Sánchez,David</tutor>
+  <absencia>
+    <codialumne>79</codialumne>
+    <alumne>Abaida Mellah, Adam </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>93</codialumne>
+    <alumne>Miroslavov Angelov, Martín </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>95</codialumne>
+    <alumne>Nimaga Dukuray, Fatoumata</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>102</codialumne>
+    <alumne>Serrano Tulsà, Anna</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>109</codialumne>
+    <alumne>Wojcie Chowki, Tomasz</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+</dades>

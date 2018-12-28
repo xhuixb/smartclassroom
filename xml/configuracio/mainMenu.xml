@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<root>
+    <menuOption caption="sessions" referencia="">
+        <menuItem caption="Gestió de sessions" permis="1-2-4" referencia="mainSessions.html"/>
+        <menuItem caption="Els meus grups" permis="1-2" referencia="mainMeusGrups.html"/>
+        <menuItem caption="Justificar absències" permis="1-2-3-4" referencia="mainJustificaAbsencies.html"/>
+        <menuItem caption="Accions massives" permis="1-2-3-4" referencia="sessionsMassives.html"/>        
+    </menuOption>
+    <menuOption caption="Disciplina" referencia="">
+        <menuItem caption="Consulta CCC" permis="1-2-3-4" referencia="mainDisciplina.html"/>
+        <menuItem caption="Faltes puntuals" permis="1-2-3-4" referencia="mainDisciplinaPuntual.html"/>
+        <menuItem caption="Alarmes" permis="1-2-3-4" referencia="mainAlarmaFaltes.html"/>
+    </menuOption>
+    <menuOption caption="Absències i retards" referencia="">
+        <menuItem caption="Consultes" permis="1-2-3-4" referencia="mainAbsenciesData.html"/>
+        <menuItem caption="Modificar registres d'assistència" permis="1-2-3-4" referencia="mainCanviEstatAbsencies.html"/>
+    </menuOption>
+    <menuOption caption="Manteniments" referencia="">
+        <menuItem caption="Gestió Alumnes" permis="1-2-3-4" referencia="mainAlumnes.html"/>
+        <menuItem caption="Horaris" permis="1-2-3-4" referencia="mainCreacioHoraris.html"/>
+        <menuItem caption="Préstec equipament" permis="1-2-3-4" referencia="mainEquipament.php"/>
+    </menuOption>
+    <menuOption caption="Consultes" referencia="">
+        <menuItem caption="Consulta d'alumnes" permis="1-2-3-4" referencia="mainConsultesAlumnes.html"/>
+        <menuItem caption="Consulta de docents" permis="1-2" referencia="mainMostraDocents.html"/>
+        <menuItem caption="Consulta d'horaris" referencia="">
+            <subMenuItem caption="Professors" permis="1-2" referencia="consultaHorarisProfe.html"/>
+            <subMenuItem caption="Classes/Alumnes" permis="1-2-3-4" referencia="consultaHorarisAlumne.html"/>
+            <subMenuItem caption="Aules" permis="1-2-3-4" referencia="consultaHorarisAula.html"/>
+            <subMenuItem caption="Guàrdies" permis="1-3-4" referencia="consultaHorarisGuardies.html"/>
+        </menuItem>
+        <menuItem caption="Consulta faltes ordre" permis="1-2-3-4" referencia="consultaFaltesOrdre.html"/>
+        <menuItem caption="Consulta sessions" permis="1-2-3-4" referencia="consultaSessions.html"/>       
+    </menuOption>
+    <menuOption caption="Comunicacions" permis="1-2" referencia="mainMailing.html"/>
+    <menuOption caption="Avaluació" permis="1" referencia="mainAvaluacio.html"/>
+    <menuOption caption="Administracio" referencia="">
+        <menuItem caption="Tauler de control" permis="1-2-3-4" referencia="panellControl.html"/>
+        <menuItem caption="Traspàs de curs" permis="1-2" referencia="">         
+            <subMenuItem caption="Alumnes" permis="1-3-4" referencia="traspasAlumnes.html"/>            
+        </menuItem>
+    </menuOption>
+</root>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>11/12/2017</data>
+  <tutor>Santos Vidal, Mireia</tutor>
+  <falta>
+    <codialumne>41</codialumne>
+    <alumne>Cisse Diaby, Fatou</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>C</grup>
+    <professor>Dolz Abulí, Francesc</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Falta lleu</tipusfalta>
+    <motiu>Riu del professor després que l'hagi hagut d'avisar diverses vegades perquè prestés atenció.</motiu>
+  </falta>
+  <falta>
+    <codialumne>53</codialumne>
+    <alumne>Prieto López, Axel</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pastor , Joan</professor>
+    <dia>2017-12-11</dia>
+    <hora>13:55:00</hora>
+    <tipusfalta>Falta lleu</tipusfalta>
+    <motiu>Ha posat els peus sobre la cadira del costat i l'esquena recolzada sobre la paret. Tres minuts despres d'haver-los retirat a instància meva els ha tornat a posar. Expulsat i falta lleu.</motiu>
+  </falta>
+  <absencia>
+    <codialumne>44</codialumne>
+    <alumne>Duric , Jessica </alumne>
+    <nivell>1r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>45</codialumne>
+    <alumne>García Santamaría, Kevin</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>32</codialumne>
+    <alumne>Matute Rodríguez, Sergi</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+</dades>

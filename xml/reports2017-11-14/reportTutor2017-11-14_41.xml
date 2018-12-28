@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <absencia>
+    <codialumne>380</codialumne>
+    <alumne>Arcentales Cabal, Jairo </alumne>
+    <nivell>1r BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>614</codialumne>
+    <alumne>Córdoba Serra, Marc</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>615</codialumne>
+    <alumne>Méndez López, Beatriz</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>416</codialumne>
+    <alumne>Mesquita Sguilano, Leticia</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>399</codialumne>
+    <alumne>Rus , Christiana Ramona</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Consulta d'alumnes</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>       
+        <script src="jquery/cercaAlumnes.js"></script>
+        <script src="jquery/funcionsjquery.js"></script>
+        <link rel="stylesheet" href="css/consultaAlumnes.css">
+
+    </head>
+    <body onload="controlaCredencials('divCercaAlumnesCap');">
+
+        <div class="container-fluid">
+            <div class="page-header" id="divCercaAlumnesCap">
+
+            </div>   
+        </div>
+
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-sm-2" >
+                    <label>Cognom1</label>
+                    <input type='text' id='cognom1CercaAlumne' class="form-control"/>
+                    <label>Cognom2</label>
+                    <input type='text' id='cognom2CercaAlumne' class="form-control"/>
+
+                </div>
+                <div class="col-sm-2" >
+                    <label>Nom</label>
+                    <input type='text' id='nomCercaAlumne' class="form-control"/>
+
+                    <label>Mail</label>
+                    <input type='text' id='mailCercaAlumne' class="form-control"/>
+                </div>
+                <div class="col-sm-1" >
+                    <br>
+                    <button type="button" class="btn btn-info form-control" id="cercaAlumnes" onclick="cercaAlumnesIndepCurs();">
+                        <span class="glyphicon glyphicon-search"></span>Cerca
+                    </button> 
+                </div>
+                
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12" >
+                    <div id="divTaulaCercaAlumnes" class="container-fluid">
+                        <!-- aquí es construirà dinàmicament la taula per veure els alumnes --> 
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

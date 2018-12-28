@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>11/12/2017</data>
+  <tutor>Martínez Martínez, Rebeca</tutor>
+  <falta>
+    <codialumne>231</codialumne>
+    <alumne>Jordà Bergrath, David </alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <professor>Pascual Sánchez, David</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Expulsió de la classe per no deixar desenvilupar-la. Es pren el recollir amb molta calma i mirant a la resta de la classe a veure si li feia gràcia. Al sortir, dir molts disbarats.</motiu>
+  </falta>
+  <falta>
+    <codialumne>235</codialumne>
+    <alumne>Moldovan Vasile, Raul </alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <professor>Pascual Sánchez, David</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>No parar de xerrar, no fer absolutament res a classe i a la que pot, interrompre. Li ha costat marxar, després de negar-se. Molestar fins l'últim moment.</motiu>
+  </falta>
+  <absencia>
+    <codialumne>220</codialumne>
+    <alumne>Addari , Yassmina</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>231</codialumne>
+    <alumne>Jordà Bergrath, David </alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>232</codialumne>
+    <alumne>Kaur , Jaspreet</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+</dades>

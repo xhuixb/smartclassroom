@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>11/12/2017</data>
+  <tutor>Casado Serra,Jaume</tutor>
+  <absencia>
+    <codialumne>407</codialumne>
+    <alumne>Costa Quintero, Lucas Ricardo</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>414</codialumne>
+    <alumne>Martínez Bravo, Ángel</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>428</codialumne>
+    <alumne>Venteo Pons, Arnau</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>429</codialumne>
+    <alumne>Vivo Cano, Adrián</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+</dades>

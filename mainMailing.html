@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Mailing pares</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <!-- include summernote css/js-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+        <script src="jquery/mainmailingjquery.js"></script>
+        <script src="jquery/sessionsjquery.js"></script>
+        <script src="jquery/funcionsjquery.js"></script>
+        <link rel="stylesheet" href="css/mainling.css">
+
+    </head>
+
+    <body onload="controlaCredencials('dadesMailingProfes');carregaDadesMailing();">
+
+        <div class="container-fluid">
+            <div class="page-header" id="dadesMailingProfes">
+
+            </div>   
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <!-- posem editor-->
+
+                <div class="col-sm-5">
+                    <div id="summernote" class="summernote"><p>Edita el missatge ximplet!!</p></div>
+                    <h4>Els meus mailings</h4>
+                    <div id="mailingsProfeDiv" class="container-fluid">
+                        <!-- aquí mostraren els mailings del professor-->
+
+
+                    </div>
+                </div>
+
+                <!-- posem elements de tria-->
+                <div class="col-sm-7">
+
+                    <div class="row col-sm-12">
+                        <div class="col-sm-5">
+                            <div class="row">
+
+
+                                <div class="dropdown col-sm-4" id="nivellDropdownMailing">
+                                    <!-- aquí posarem el dropdown de nivell -->
+                                </div>
+
+                                <div class="dropdown col-sm-4" id="grupDropdownMailing">
+                                    <!-- aquí posarem el dropdown de grup -->
+                                     <button data-val="" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="butDropgrupDropdownMailing" disabled>Tria Grup<span class="caret"></span></button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-info form-control" id="afegeixAlumnesId" onclick="afegeixAlumnes();">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button> 
+
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-info form-control" data-toggle="modal" data-target="#attachFilesModal" id="afegeixAlumnesId" onclick="adjuntaFitxers();">
+                                        <span class="glyphicon glyphicon-paperclip"></span>
+                                    </button> 
+
+                                </div>
+                            </div>
+
+                            <div id="divTaulaAlumnesMailing" class="container-fluid">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-1">
+                            <br>
+                            <br>
+                            <br>
+                            <button type="button" class="btn btn-success form-control" id="passaAlumnes" onclick="passaAlumnesMail()">
+                                <span class="glyphicon glyphicon-arrow-right"></span>
+                            </button>
+
+                        </div>
+                        <div class="col-sm-6">
+
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-success form-control" id="enviaAlumnesId" onclick="enviaMail();">
+                                        <span class="glyphicon glyphicon-send"></span>
+                                    </button> 
+                                </div>
+                            </div>
+
+
+                            <div id="divTaulaAlumnesMailingEnvia" class="container-fluid">
+
+                                <table id="taulaAlumnesMailingEnvia" class="table table-fixed">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-sm-3">Alumne</th>
+                                            <th class="col-sm-1">Nivell</th>
+                                            <th class="col-sm-1">Grup</th>
+                                            <th class="col-sm-1"><form class="form-inline"><input type="checkbox" value="" id="checkMarcaDesmarca" onclick="seleccionaTotsAlumnes();"><button type="button" class="btn btn-danger form-control" onclick="treuAlumnes()"><span class="glyphicon glyphicon-trash"></span></button></form></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="taulaAlumnesMailingBody">
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div id="attachFilesModal" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <h4>Fitxers adjunts</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+
+                                    <table id="taulaAttached" class="table table-fixed">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-sm-8">Fitxer</th>
+                                                <th class="col-sm-4"><button type="button" class="btn btn-danger form-control" id="esborraAdjunt" onclick="esborraAdjunt()">
+                                                        <span class="glyphicon glyphicon-trash"></span>
+                                                    </button></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="taulaAttachedBody" data-contador="1">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ressultUpload"></div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <input type="file" id="file" onchange="selectFileClick()"  accept="application/pdf"/>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        <div id="detallMailingModal" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <h4>Detall mailing</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+
+                                <div class="col-sm-6">
+                                    <div id="summernote1"></div>
+                                    <div id="fitxersAdjunts"></div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+
+                                    <div id="alumnesMailingDetallDiv" class="container-fluid">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+
+    </body>
+</html>

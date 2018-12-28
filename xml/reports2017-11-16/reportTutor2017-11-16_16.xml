@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>16/11/2017</data>
+  <absencia>
+    <codialumne>81</codialumne>
+    <alumne>Calzado Romera, Alba</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>84</codialumne>
+    <alumne>Cholakov , Dimitar Vasilev</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>88</codialumne>
+    <alumne>Illescas Bedmar, Blanca</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>93</codialumne>
+    <alumne>Miroslavov Angelov, Martín </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>94</codialumne>
+    <alumne>Monagas Pérez, Mònica</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>96</codialumne>
+    <alumne>Paniagua Lubczynski, Mark </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>101</codialumne>
+    <alumne>Saho Saho, Mahamadou </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>102</codialumne>
+    <alumne>Serrano Tulsà, Anna</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>104</codialumne>
+    <alumne>Suero Contreras, Sayra </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

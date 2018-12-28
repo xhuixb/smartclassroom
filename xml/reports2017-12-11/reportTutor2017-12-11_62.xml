@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>11/12/2017</data>
+  <tutor>Hurtós Vilarnau,Teresa</tutor>
+  <absencia>
+    <codialumne>367</codialumne>
+    <alumne>Jiménez Montijano, Brian</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>374</codialumne>
+    <alumne>Nomane Dergane, Mohamed</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>344</codialumne>
+    <alumne>Reyes Sanhueza, Martín</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>377</codialumne>
+    <alumne>Singh , Suki</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+</dades>

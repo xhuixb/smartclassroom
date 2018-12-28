@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <falta>
+    <codialumne>263</codialumne>
+    <alumne> , Nisha</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-11-14</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>La presentació del informe de la pràctica 2 la té endarrerida. Ha d'estar acabat el proper dia 21. </motiu>
+  </falta>
+  <falta>
+    <codialumne>247</codialumne>
+    <alumne>Beric , Filip</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-11-14</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>La presentació del informe de la pràctica 2 la té endarrerida. Ha d'estar acabat el proper dia 21. No ha portat ordinador.</motiu>
+  </falta>
+  <falta>
+    <codialumne>251</codialumne>
+    <alumne>Correa Díaz, Joel</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-11-14</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>La presentació del informe de la pràctica 2 la té endarrerida. Ha d'estar acabat el proper dia 21. Encara que no ha vingut ha classe avui, ho tindrà pendent.</motiu>
+  </falta>
+  <falta>
+    <codialumne>252</codialumne>
+    <alumne>Dejer Levy, Íker</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-11-14</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>La presentació del informe de la pràctica 2 la té endarrerida. Ha d'estar acabat el proper dia 21.</motiu>
+  </falta>
+  <falta>
+    <codialumne>255</codialumne>
+    <alumne>El Halimi , Abdellah</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-11-14</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>La presentació del informe de la pràctica 2 la té endarrerida. Ha d'estar acabat el proper dia 21. No ha portat ordinador.</motiu>
+  </falta>
+  <falta>
+    <codialumne>261</codialumne>
+    <alumne>Miguez Aguilar, Facundo</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-11-14</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>La presentació del informe de la pràctica 2 la té endarrerida. Ha d'estar acabat el proper dia 21. No ha portat ordinador.</motiu>
+  </falta>
+  <falta>
+    <codialumne>264</codialumne>
+    <alumne>Orri Novoa, Joel</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-11-14</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>La presentació del informe de la pràctica 2 la té endarrerida. Ha d'estar acabat el proper dia 21. </motiu>
+  </falta>
+  <falta>
+    <codialumne>270</codialumne>
+    <alumne>Singh , Enspreet</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Granados Montilla, Pietat</professor>
+    <dia>2017-11-14</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Ajuda molt als companys però molts poc dies fa els deures.</motiu>
+  </falta>
+  <absencia>
+    <codialumne>263</codialumne>
+    <alumne> , Nisha</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>251</codialumne>
+    <alumne>Correa Díaz, Joel</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>253</codialumne>
+    <alumne>Dumitru Florin, Daniel</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>259</codialumne>
+    <alumne>Lei , Junhao</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>262</codialumne>
+    <alumne>Mucci , Michael</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>265</codialumne>
+    <alumne>Picallo Abrouk, Nora</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>271</codialumne>
+    <alumne>Suliman , Elena</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+</dades>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Creació horaris</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="jquery/sessionsjquery.js"></script>
+        <script src="jquery/funcionsjquery.js"></script>
+        <script src="jquery/creacioHorarisjquery.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/mainCreacioHorarisCss.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+    <body onload="controlaCredencials('horarisProfesForm');carregaDadesCreacio();">
+        <div class="container-fluid">
+            <div class="page-header" id="horarisProfesForm">
+
+            </div>   
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="row" >
+
+                <div class="col-sm-2" >
+                    <label>Professor</label>
+                    <div class="dropdown" id="profeCreacioHorari">
+                        <!-- aquí posarem el dropdown de nivel -->
+                    </div>
+                </div>
+                <div class="col-sm-1" >
+                    <label></label>
+                    <button type="button" class="btn btn-info form-control" id="cercaHorarisProfeButton" onclick="cercaHorarisProfe();" disabled>
+                        <span class="glyphicon glyphicon-search"></span>Cerca
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12" id="taulaHorarisCreacio">
+                <div id="divtaulaHorarisCreacio" class="container-fluid">
+
+
+                </div>
+            </div>
+        </div>
+
+        <div id="edicioHorariModalForm" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title" id="profeEditHorari"></h3>
+                        <h4 class="modal-title" id="diaSetmanaEditHorari"></h4>
+                        <h4 class="modal-title" id="horaEditHorari"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row" id="esTipusHora">
+                                <div class="checkbox col-sm-4">
+                                    <label><input id="esLectiva" type="checkbox" value="1" data-toggle="collapse" data-target="#dadesHoraLectiva" onchange="esborraDadesLectiva()">Hora lectiva</label>
+                                </div>
+                                <div class="btn-group col-sm-4" id="esGuardiaCarrec" data-toggle="buttons">
+                                    <div class="radio">
+                                        <!-- ordenació per títol -->
+                                        <label class="nolectiu"><input type="radio" id="guardiaOption" name="radioGuardiaCarrec" value="0" onchange="amagaTipusHora()">Guàrdia</label>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="radio">
+                                        <!-- ordenació per autor -->
+                                        <label class="nolectiu"><input checked type="radio" id="carrecOption" name="radioGuardiaCarrec" value="1" onchange="amagaTipusHora()">Càrrec/Reunió</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 nolectiu" id="divdivGuardiaHorari">
+                                    
+                                    <label>Tipus guàrdia</label>
+                                    <div class="dropdown" id="divGuardiaHorari">
+                                        <!posarem el drop de carrec-->
+
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-4 nolectiu" id="divdivCarrecHorari">
+                                    
+                                    <label>Tipus càrrec</label>
+                                    <div class="dropdown" id="divCarrecHorari">
+                                        <!posarem el drop de carrec-->
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <hr>
+                            <div class="collapse" id="dadesHoraLectiva">
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+                                        <label>Nivell</label>
+                                        <div class="dropdown" id="divNivellHorari">
+                                            <!posarem el drop de nivell-->
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Assignatura</label>
+                                        <div class="dropdown" id="divAssignaturaHorari">
+                                            <!posarem el drop d'assignatura-->
+                                            <button data-val="" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="butDropdivAssignaturaHorari" disabled>Tria Assignatura<span class="caret"></span></button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label>Grup</label>
+                                        <div class="dropdown" id="divGrupHorari">
+                                            <!posarem el drop de grup->
+                                            <button data-tipusgrup="" data-val="" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="butDropdivGrupHorari" disabled>Tria Grup<span class="caret"></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Aula</label>
+                                        <div class="dropdown" id="divAulaHorari">
+                                            <!posarem el drop d'aula-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">                               
+                        <button id="desaHorariButton" type="button" class="btn btn-success" data-dismiss="modal" onclick="desaHorari();" disabled>Desa</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="netejaCampsModal()">Tanca</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </body>
+</html>

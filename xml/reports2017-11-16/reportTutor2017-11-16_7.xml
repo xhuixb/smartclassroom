@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>16/11/2017</data>
+  <absencia>
+    <codialumne>324</codialumne>
+    <alumne>Corts Baltrons, Laia</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>325</codialumne>
+    <alumne>Echevarría Zawada, Alicia</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>328</codialumne>
+    <alumne>Fernández Martín, Alícia</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>313</codialumne>
+    <alumne>Petreus , Claudiu</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>346</codialumne>
+    <alumne>Sherban Chepelev, Alexey</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>350</codialumne>
+    <alumne>Yanev , Víctor</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

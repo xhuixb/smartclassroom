@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>11/12/2017</data>
+  <tutor>Lopez Rodríguez, Antoni</tutor>
+  <falta>
+    <codialumne>168</codialumne>
+    <alumne>Aissaoui El Hasmi, Adil </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <professor>Giribet Olmos, Irene</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Xerra molt a classe, no para quiet. Constantment se li ha de cridar l'atenció  i tot i així no calla.</motiu>
+  </falta>
+  <falta>
+    <codialumne>177</codialumne>
+    <alumne>García Cámara, Hugo</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <professor>Giribet Olmos, Irene</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Xerra molt a classe, no para quiet. Constantment se li ha de cridar l'atenció  i tot i així no calla.</motiu>
+  </falta>
+  <falta>
+    <codialumne>194</codialumne>
+    <alumne>Senin Mayolin, Aaron </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <professor>Giribet Olmos, Irene</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Al principi de la classe, li he cridat l'atenció per a que deixés d'escoltar música amb el telèfon i el guardés, ha fet cas i l'ha guardat. Després ha insultat un company i l'he expulsat al passadís, en cap moment de la classe ha fet l'esforç d'escriure res.</motiu>
+  </falta>
+  <absencia>
+    <codialumne>83</codialumne>
+    <alumne>Cheba Ajouaou, Ileas</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>173</codialumne>
+    <alumne>Comas Benavides, Rosa </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>179</codialumne>
+    <alumne>García Gamero, Jesús </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>182</codialumne>
+    <alumne>Kamyshova , Elizaveta</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>184</codialumne>
+    <alumne>Lucero Franc, Benjamin </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>185</codialumne>
+    <alumne>Morales Weaver, Clara </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>190</codialumne>
+    <alumne>Rosado Cano, Antonio</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+</dades>

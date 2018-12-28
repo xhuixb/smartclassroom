@@ -1,0 +1,1952 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataDireccio.xsl"?>
+<dades>
+  <data>11/12/2017</data>
+  <falta>
+    <codialumne>3</codialumne>
+    <alumne>Duarte Do Nascimento, Joâo Lucas</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <professor>Valls Calm, Anna</professor>
+    <dia>2017-12-11</dia>
+    <hora>12:55:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Ha arribat amb menjar a classe i no s'ha volgut asseure al seu lloc. </motiu>
+  </falta>
+  <falta>
+    <codialumne>5</codialumne>
+    <alumne>González González, Luis</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <professor>Valls Calm, Anna</professor>
+    <dia>2017-12-11</dia>
+    <hora>12:55:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>No ha volgut canviar-se de lloc i seure al lloc que li pertoca. Fa crits constantment durant la classe. L'aviso i no veig cap canvi d'actitud. </motiu>
+  </falta>
+  <falta>
+    <codialumne>17</codialumne>
+    <alumne>Salazar Silva, Víctor</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <professor>Valls Calm, Anna</professor>
+    <dia>2017-12-11</dia>
+    <hora>12:55:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Comença l'activitat, diu que l'avorreix i es planta. No vol fer res. Diu que vol sortir a fora perquè li toqui l'aire. </motiu>
+  </falta>
+  <falta>
+    <codialumne>20</codialumne>
+    <alumne>Valverde Andrade, Luís Ángel</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <professor>Valls Calm, Anna</professor>
+    <dia>2017-12-11</dia>
+    <hora>12:55:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>No ha fet res durant tota l'hora. No porta el material. </motiu>
+  </falta>
+  <falta>
+    <codialumne>53</codialumne>
+    <alumne>Prieto López, Axel</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pastor , Joan</professor>
+    <dia>2017-12-11</dia>
+    <hora>13:55:00</hora>
+    <tipusfalta>Falta lleu</tipusfalta>
+    <motiu>Ha posat els peus sobre la cadira del costat i l'esquena recolzada sobre la paret. Tres minuts despres d'haver-los retirat a instància meva els ha tornat a posar. Expulsat i falta lleu.</motiu>
+  </falta>
+  <falta>
+    <codialumne>41</codialumne>
+    <alumne>Cisse Diaby, Fatou</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>C</grup>
+    <professor>Dolz Abulí, Francesc</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Falta lleu</tipusfalta>
+    <motiu>Riu del professor després que l'hagi hagut d'avisar diverses vegades perquè prestés atenció.</motiu>
+  </falta>
+  <falta>
+    <codialumne>141</codialumne>
+    <alumne>Correia Boujaada, Nader</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <professor>Giribet Olmos, Irene</professor>
+    <dia>2017-12-11</dia>
+    <hora>08:15:00</hora>
+    <tipusfalta>Falta lleu</tipusfalta>
+    <motiu>Constantment està molestant a classe, li ha dit a un company "Cómeme la polla", li he dit que surtís al passadís per a que es calmés, però ha dit que no volia, i finalment s'ha anat expulsat i amb falta d'ordre. No fa cas de les indicacions, no porta llibreta, no vol fer res.</motiu>
+  </falta>
+  <falta>
+    <codialumne>168</codialumne>
+    <alumne>Aissaoui El Hasmi, Adil </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <professor>Giribet Olmos, Irene</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Xerra molt a classe, no para quiet. Constantment se li ha de cridar l'atenció  i tot i així no calla.</motiu>
+  </falta>
+  <falta>
+    <codialumne>177</codialumne>
+    <alumne>García Cámara, Hugo</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <professor>Giribet Olmos, Irene</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Xerra molt a classe, no para quiet. Constantment se li ha de cridar l'atenció  i tot i així no calla.</motiu>
+  </falta>
+  <falta>
+    <codialumne>194</codialumne>
+    <alumne>Senin Mayolin, Aaron </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <professor>Giribet Olmos, Irene</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Al principi de la classe, li he cridat l'atenció per a que deixés d'escoltar música amb el telèfon i el guardés, ha fet cas i l'ha guardat. Després ha insultat un company i l'he expulsat al passadís, en cap moment de la classe ha fet l'esforç d'escriure res.</motiu>
+  </falta>
+  <falta>
+    <codialumne>231</codialumne>
+    <alumne>Jordà Bergrath, David </alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <professor>Pascual Sánchez, David</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Expulsió de la classe per no deixar desenvilupar-la. Es pren el recollir amb molta calma i mirant a la resta de la classe a veure si li feia gràcia. Al sortir, dir molts disbarats.</motiu>
+  </falta>
+  <falta>
+    <codialumne>235</codialumne>
+    <alumne>Moldovan Vasile, Raul </alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <professor>Pascual Sánchez, David</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>No parar de xerrar, no fer absolutament res a classe i a la que pot, interrompre. Li ha costat marxar, després de negar-se. Molestar fins l'últim moment.</motiu>
+  </falta>
+  <falta>
+    <codialumne>266</codialumne>
+    <alumne>Pleguezuelos Llirinós, Eliot</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pascual Sánchez, David</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>No fer matemàtiques a classe. Fer ús de la cola per enganxar qualsevol cosa a la llibreta i donar cops, molestant el funcionament de la classe. Al posar-lo dempeus al fons de la classe, discutir l'autoritat del professor.</motiu>
+  </falta>
+  <falta>
+    <codialumne>246</codialumne>
+    <alumne>Bao Majid, Míriam</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Sessió 2 del tema 5 pendent de fer</motiu>
+  </falta>
+  <falta>
+    <codialumne>247</codialumne>
+    <alumne>Beric , Filip</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>El passat dia 5 de desembre sí que ha portat tot el material. Demano disculpes per la confusió. 
+Li ha quedat la sessió 2 del tema 5 pendent de fer.</motiu>
+  </falta>
+  <falta>
+    <codialumne>250</codialumne>
+    <alumne>Coll García, Dídac</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Es important que hi hagi dibuixos i esquemes(que estan penjats al moodle) dels apunts a la seva llibreta.</motiu>
+  </falta>
+  <falta>
+    <codialumne>254</codialumne>
+    <alumne>Domínguez Fernández, Ivan</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Va molt endarrerit a la feina, no havia començat el tema 5, porta dues sessions endarrerides.</motiu>
+  </falta>
+  <falta>
+    <codialumne>255</codialumne>
+    <alumne>El Halimi , Abdellah</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Es important que hi hagi dibuixos i esquemes(que estan penjats al moodle) dels apunts a la seva llibreta.</motiu>
+  </falta>
+  <falta>
+    <codialumne>256</codialumne>
+    <alumne>Fabrasille Susaniche, Florencia</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Va endarrerida a la feina. Sessió 2 del tema 5 pendent de fer.</motiu>
+  </falta>
+  <falta>
+    <codialumne>261</codialumne>
+    <alumne>Miguez Aguilar, Facundo</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Endarrerit a la feina. No havia començat el tema 5</motiu>
+  </falta>
+  <falta>
+    <codialumne>264</codialumne>
+    <alumne>Orri Novoa, Joel</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Endarrerit a la feina, falten les activitats de les sessions 1 i 2 a la llibreta</motiu>
+  </falta>
+  <falta>
+    <codialumne>266</codialumne>
+    <alumne>Pleguezuelos Llirinós, Eliot</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Va endarrerit a la feina, no havia començat el tema 5. S'ha de posar al dia i acabar fins a la sessió 3.</motiu>
+  </falta>
+  <falta>
+    <codialumne>268</codialumne>
+    <alumne>Ruiz Navarrete, Jesús</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Feina excel·lent. Treballa molt bé en el dia a dia.</motiu>
+  </falta>
+  <falta>
+    <codialumne>269</codialumne>
+    <alumne>Singh , Balkaran</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Ha oblidat la llibreta de ciències. Té les dues sessions del tema 5 pendents de presentar.</motiu>
+  </falta>
+  <falta>
+    <codialumne>270</codialumne>
+    <alumne>Singh , Enspreet</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Feina endarrerida, no havia començat el tema 5. Porta dues sessions de retard.
+Cal que es posi al dia.</motiu>
+  </falta>
+  <falta>
+    <codialumne>277</codialumne>
+    <alumne>Driver Montes, Oliver</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>12:55:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>El passat dia 4 de desembre Oliver va portar tot el material, revisant la llista he vist que he saltat una línia. Disculpeu les molèsties.</motiu>
+  </falta>
+  <absencia>
+    <codialumne>470</codialumne>
+    <alumne>Álvarez Castellanos, Raúl</alumne>
+    <nivell>1r AAFE</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>471</codialumne>
+    <alumne>Caballero Roca, Joel</alumne>
+    <nivell>1r AAFE</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>475</codialumne>
+    <alumne>Chulilla Fernández, Lluís</alumne>
+    <nivell>1r AAFE</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>482</codialumne>
+    <alumne>Gallego Vélez, Aitor</alumne>
+    <nivell>1r AAFE</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>624</codialumne>
+    <alumne>Gonçalves Moreno, Dani</alumne>
+    <nivell>1r AAFE</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>623</codialumne>
+    <alumne>Rutllan Dalmau, Joan</alumne>
+    <nivell>1r AAFE</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>380</codialumne>
+    <alumne>Arcentales Cabal, Jairo </alumne>
+    <nivell>1r BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>384</codialumne>
+    <alumne>Carrillo Ojeda, Francisco</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>615</codialumne>
+    <alumne>Méndez López, Beatriz</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>402</codialumne>
+    <alumne>Singh , Ravinder</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>630</codialumne>
+    <alumne>Ucha Altamirano, Martina</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>407</codialumne>
+    <alumne>Costa Quintero, Lucas Ricardo</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>414</codialumne>
+    <alumne>Martínez Bravo, Ángel</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>428</codialumne>
+    <alumne>Venteo Pons, Arnau</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>429</codialumne>
+    <alumne>Vivo Cano, Adrián</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>16</codialumne>
+    <alumne>Rivera López, Daniel Alejandro</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>49</codialumne>
+    <alumne>Lakhlifi El Khalifi, Omar</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>31</codialumne>
+    <alumne>Lorente Liebrancon, Adriana</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>66</codialumne>
+    <alumne>Montoya Aguilera, Manuel</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>39</codialumne>
+    <alumne>Stefan , Enrico-Eusebiu</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>44</codialumne>
+    <alumne>Duric , Jessica </alumne>
+    <nivell>1r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>45</codialumne>
+    <alumne>García Santamaría, Kevin</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>32</codialumne>
+    <alumne>Matute Rodríguez, Sergi</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>76</codialumne>
+    <alumne>Singh Singh, Sunal</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>78</codialumne>
+    <alumne>Zelaya , Ángel Fabián</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>500</codialumne>
+    <alumne>Expósito Castillo, Joel</alumne>
+    <nivell>2n AAFE</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>504</codialumne>
+    <alumne>Macarró Calvo, Carlos</alumne>
+    <nivell>2n AAFE</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>507</codialumne>
+    <alumne>Navarro Gómez, Mari Carmen</alumne>
+    <nivell>2n AAFE</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>514</codialumne>
+    <alumne>Vergés Ballesteros, Clara</alumne>
+    <nivell>2n AAFE</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>430</codialumne>
+    <alumne>Babio Orellana, Albert</alumne>
+    <nivell>2n BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>446</codialumne>
+    <alumne>Ortega Borquez, Alba </alumne>
+    <nivell>2n BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>460</codialumne>
+    <alumne>Moreno Concepción, Joaquim</alumne>
+    <nivell>2n BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>462</codialumne>
+    <alumne>Pérez Pérez, Carla</alumne>
+    <nivell>2n BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>464</codialumne>
+    <alumne>Rivas Bartí, Sara</alumne>
+    <nivell>2n BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>466</codialumne>
+    <alumne>Singh , Harmanpreet</alumne>
+    <nivell>2n BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>79</codialumne>
+    <alumne>Abaida Mellah, Adam </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>93</codialumne>
+    <alumne>Miroslavov Angelov, Martín </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>95</codialumne>
+    <alumne>Nimaga Dukuray, Fatoumata</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>102</codialumne>
+    <alumne>Serrano Tulsà, Anna</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>109</codialumne>
+    <alumne>Wojcie Chowki, Tomasz</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>110</codialumne>
+    <alumne>Anev Stoyan, Toni</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>126</codialumne>
+    <alumne>Morales Ortiz, Alejandro </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>129</codialumne>
+    <alumne>Pérez López, Laia </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>638</codialumne>
+    <alumne>Rezmuves , Leo Christoher</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>629</codialumne>
+    <alumne>Salvador Calzado, Erica</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>134</codialumne>
+    <alumne>Singh Singh, Pavitar Kaur</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>136</codialumne>
+    <alumne>Tomaszek , Marie</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>149</codialumne>
+    <alumne>Hadaoui Alegre, Norden </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>154</codialumne>
+    <alumne>Pariente Val, Natalia </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>158</codialumne>
+    <alumne>Riva , Juan Manuel </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>159</codialumne>
+    <alumne>Rodríguez Collado, Dalia</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>161</codialumne>
+    <alumne>Rovira Ruiz, Eric</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>164</codialumne>
+    <alumne>Smolin , Sasha </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>166</codialumne>
+    <alumne>Trawally Jallow, Asetu </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>83</codialumne>
+    <alumne>Cheba Ajouaou, Ileas</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>173</codialumne>
+    <alumne>Comas Benavides, Rosa </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>179</codialumne>
+    <alumne>García Gamero, Jesús </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>182</codialumne>
+    <alumne>Kamyshova , Elizaveta</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>184</codialumne>
+    <alumne>Lucero Franc, Benjamin </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>185</codialumne>
+    <alumne>Morales Weaver, Clara </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>190</codialumne>
+    <alumne>Rosado Cano, Antonio</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>620</codialumne>
+    <alumne>Dipak , Dipak</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>199</codialumne>
+    <alumne>Giles Carricondo, Selena</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>202</codialumne>
+    <alumne>Ivot Tsankov, Cesco</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>204</codialumne>
+    <alumne>Kaur , Loveleen</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>220</codialumne>
+    <alumne>Addari , Yassmina</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>231</codialumne>
+    <alumne>Jordà Bergrath, David </alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>232</codialumne>
+    <alumne>Kaur , Jaspreet</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>249</codialumne>
+    <alumne>Caballero Prieto, Virginia</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>260</codialumne>
+    <alumne>Marc , Antonia</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>263</codialumne>
+    <alumne>Nisha , Nisha</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>280</codialumne>
+    <alumne>García Santamaría, Alejandro</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>282</codialumne>
+    <alumne>Kaur , Jasleen</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>285</codialumne>
+    <alumne>Molina Silva, Zaira</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>286</codialumne>
+    <alumne>Moruno Flinch, Alex</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>294</codialumne>
+    <alumne>Sala Barti, Carla</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>296</codialumne>
+    <alumne>Stojanovic , Kristina</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>297</codialumne>
+    <alumne>Vancea García, Desiree</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>299</codialumne>
+    <alumne>Battoo , Ritik</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>637</codialumne>
+    <alumne>Chahal , Anmol</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>307</codialumne>
+    <alumne>Kaur , Mampreet</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>640</codialumne>
+    <alumne>Rodríguez Villar, Ivan</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>320</codialumne>
+    <alumne>Valls Vázquez, Erik </alumne>
+    <nivell>4t ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>321</codialumne>
+    <alumne>Borrego González, Sergio</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>322</codialumne>
+    <alumne>Casado Valverde, Olga</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>340</codialumne>
+    <alumne>Ocaña Ocaña, Nerea</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>341</codialumne>
+    <alumne>Olivera Magliano, Sofia</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>346</codialumne>
+    <alumne>Sherban Chepelev, Alexey</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>348</codialumne>
+    <alumne>Urresti Manzaneda, Isabel</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>367</codialumne>
+    <alumne>Jiménez Montijano, Brian</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>374</codialumne>
+    <alumne>Nomane Dergane, Mohamed</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>344</codialumne>
+    <alumne>Reyes Sanhueza, Martín</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>377</codialumne>
+    <alumne>Singh , Suki</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>568</codialumne>
+    <alumne>Ferrer Paz, Joan</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>574</codialumne>
+    <alumne>Heredia Ramirez, Luis</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>592</codialumne>
+    <alumne>Juarez Vitoria, Carlos</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>586</codialumne>
+    <alumne>Barberà Torelló, Àlex</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>588</codialumne>
+    <alumne>Carrillo Mañach, Arnau</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>601</codialumne>
+    <alumne>Remón Lara, Mar</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>580</codialumne>
+    <alumne>Santana Roman, Laura</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>604</codialumne>
+    <alumne>Smit Calvé, Alexander</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

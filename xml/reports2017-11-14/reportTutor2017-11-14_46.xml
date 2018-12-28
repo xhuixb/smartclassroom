@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <falta>
+    <codialumne>609</codialumne>
+    <alumne>Dukuray , Mohamed</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>C</grup>
+    <professor>Valls Calm, Anna</professor>
+    <dia>2017-11-14</dia>
+    <hora>12:55:00</hora>
+    <tipusfalta>Falta lleu</tipusfalta>
+    <motiu>Faltar el respecte i burlar-se del professor. </motiu>
+  </falta>
+  <absencia>
+    <codialumne>44</codialumne>
+    <alumne>Duric , Jessica </alumne>
+    <nivell>1r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+</dades>

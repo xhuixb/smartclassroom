@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="ca">
+    <head>
+        <title>Autenticacio</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/indexcss.css">
+        <script src="js/funcions.js"></script>
+        <script src="js/variablesGlobals.js"></script>
+        <script src="jquery/funcionsjquery.js"></script>
+        <script src="jquery/indexjquery.js"></script>
+        <style>
+            #peuPagina {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+            }
+        </style>
+
+
+    </head>
+    <body onload="carregaCursos()">
+
+        <div id="peuPagina"><h4>&copy; smart classroom s.c.</h4></div>
+
+        <!--<div class="container">-->
+            <div class="card card-container">
+                <image src="imatges/logo_bo_buit.png" width="250"/>
+                <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+                <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+                <p id="profile-name" class="profile-name-card"></p>
+                <form class="form-signin" action="php/login.php" method="post">
+                    <!--      <span id="reauth-email" class="reauth-email"></span> -->
+                    <input type="text" id="inputUsuari" class="form-control" placeholder="Usuari" required autofocus>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Contrasenya" required>
+                    <div id="remember" class="checkbox">
+                        <label>
+                            <input type="checkbox" value="remember-me">Recorda'm
+                        </label>
+                    </div>
+                    <div id="cursIndex">
+                        
+                    </div>
+                    <br>
+                    <button class="btn btn-lg btn-success btn-block btn-signin" id="buttonLogin" type="submit" >Iniciar Sesión</button>
+                </form><!-- /form -->
+                <a href="#" class="forgot-password">
+                    Oblidares la contrasenya?
+                </a>
+            </div><!-- /card-container -->
+            <div id="noUsuari">
+
+                <p id="provaLogin"></p>
+            </div>
+        <!--</div><!-- /container -->
+
+
+    </body>
+</html>

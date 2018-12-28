@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24-mar-2018, 15:50:00
+    Author     : xhuix
+*/
+
+#taulaHorarisAlumne{
+    display: block;
+    overflow: auto;
+    height: 800px;
+}
+
+/*taulaAlumnesGrup{
+    display: block;
+    overflow: auto;
+    height: 250px;
+}*/
+
+
+a { cursor: pointer;}
+
+
+td[data-estil="1"] {
+    background-color:#cccccc;
+}
+
+td[data-estil="2"] {
+    background-color: orange;
+}
+td[data-estil="3"] {
+    background-color: pink;
+}
+
+td[data-esdescans="1"]{
+    background-color: green;
+
+}
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <absencia>
+    <codialumne>596</codialumne>
+    <alumne>Muñoz Soria, Eric</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>597</codialumne>
+    <alumne>Perez Sala, Kènia</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>606</codialumne>
+    <alumne>Toribio Alias, Mario</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

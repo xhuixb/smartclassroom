@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>16/11/2017</data>
+  <absencia>
+    <codialumne>263</codialumne>
+    <alumne> , Nisha</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>247</codialumne>
+    <alumne>Beric , Filip</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>260</codialumne>
+    <alumne>Marc , Antonia</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>262</codialumne>
+    <alumne>Mucci , Michael</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>264</codialumne>
+    <alumne>Orri Novoa, Joel</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>266</codialumne>
+    <alumne>Pleguezuelos Llirinós, Eliot</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>269</codialumne>
+    <alumne>Singh , Balkaran</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

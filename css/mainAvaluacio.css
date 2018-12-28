@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-ago-2017, 6:06:43
+    Author     : xhuix
+*/
+
+/*table {
+    display: block;
+    overflow: auto;
+    height: 500px;
+}*/
+#divisioNotes{
+    height: 500px;
+    
+}
+
+
+#commentTable td:nth-child(1) {
+    width: 150px;
+
+}
+
+#commentTable td:nth-child(2) {
+    width: 400px;
+
+}
+
+#commentTable{
+    width: 550px;
+
+}
+
+
+#exportExcel{
+    background-image:url(../imatges/excel-xls-icon.png);
+    background-size: 100% 100%;
+    width: 78px;
+    height: 78px;
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <falta>
+    <codialumne>168</codialumne>
+    <alumne>Aissaoui El Hasmi, Adil </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <professor>Martínez Martínez, Rebeca</professor>
+    <dia>2017-11-14</dia>
+    <hora>08:15:00</hora>
+    <tipusfalta>Falta lleu</tipusfalta>
+    <motiu>L'Adil no para de tirar papers amb el bolígraf buit. I no és el primer dia que ho fa. A més no fa res a classe, en tota l'hora només a fet un exercici de a) i b) on s'ha de fer dues operacions bàsiques. A més em contesta malament i amenaça als companys.</motiu>
+  </falta>
+  <falta>
+    <codialumne>179</codialumne>
+    <alumne>García Gamero, Jesús </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <professor>Domènech Jiménez, Ivan</professor>
+    <dia>2017-11-14</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Només arribar a classe, s'ha posat a parlar. Li he posat sol perquè no feia res més que parlar. S'ha queixat i ha dit que s'estimava més marxar que estar a la meva classe, i ha marxat.</motiu>
+  </falta>
+  <absencia>
+    <codialumne>83</codialumne>
+    <alumne>Cheba Ajouaou, Ileas</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>180</codialumne>
+    <alumne>Gassama Budzikowski, Saimon </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>182</codialumne>
+    <alumne>Kamyshova , Elizaveta</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>183</codialumne>
+    <alumne>Kostov , Zarco </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+</dades>

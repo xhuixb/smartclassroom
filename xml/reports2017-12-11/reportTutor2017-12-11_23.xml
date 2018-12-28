@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>11/12/2017</data>
+  <tutor>Giribet Olmos, Irene</tutor>
+  <falta>
+    <codialumne>141</codialumne>
+    <alumne>Correia Boujaada, Nader</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <professor>Giribet Olmos, Irene</professor>
+    <dia>2017-12-11</dia>
+    <hora>08:15:00</hora>
+    <tipusfalta>Falta lleu</tipusfalta>
+    <motiu>Constantment està molestant a classe, li ha dit a un company "Cómeme la polla", li he dit que surtís al passadís per a que es calmés, però ha dit que no volia, i finalment s'ha anat expulsat i amb falta d'ordre. No fa cas de les indicacions, no porta llibreta, no vol fer res.</motiu>
+  </falta>
+  <absencia>
+    <codialumne>149</codialumne>
+    <alumne>Hadaoui Alegre, Norden </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>154</codialumne>
+    <alumne>Pariente Val, Natalia </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>158</codialumne>
+    <alumne>Riva , Juan Manuel </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>159</codialumne>
+    <alumne>Rodríguez Collado, Dalia</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>161</codialumne>
+    <alumne>Rovira Ruiz, Eric</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>164</codialumne>
+    <alumne>Smolin , Sasha </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>166</codialumne>
+    <alumne>Trawally Jallow, Asetu </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+</dades>

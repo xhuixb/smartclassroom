@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>16/11/2017</data>
+  <absencia>
+    <codialumne>354</codialumne>
+    <alumne>Benito Company, Arnau</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>357</codialumne>
+    <alumne>Bouras Soultana, Mohamed</alumne>
+    <nivell>4t ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Els meus grups</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/meusgrups.css">
+        <script src="js/sessions.js"></script>
+        <script src="js/variablesGlobals.js"></script>
+        <script src="jquery/sessionsjquery.js"></script>
+        <script src="jquery/funcionsjquery.js"></script>
+        <script src="jquery/meusgrupsjquery.js"></script>
+
+        <script src="TableHeadFixer/tableHeadFixer.js"></script>
+
+        <script src="https://cdn.rawgit.com/atatanasov/gijgo/master/dist/combined/js/gijgo.min.js" type="text/javascript"></script>
+        <link href="https://cdn.rawgit.com/atatanasov/gijgo/master/dist/combined/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body onload="controlaCredencials('dadesProfCursMeusGrups');carregaDadesInicialsGrups();">
+        <div class="container-fluid">
+            <div class="page-header" id="dadesProfCursMeusGrups">
+
+            </div>   
+           
+        </div>
+        <div class="container-fluid">
+
+            <div class="col-sm-6" >
+               
+                <div class="row">
+                    <div class="col-sm-3" >
+
+                        <button type="button" class="btn btn-success form-control" id="nouGrupProfe" data-toggle="collapse" data-target="#altaGrupProfe">
+                            <span class="glyphicon glyphicon-plus"> Nou</span>
+                        </button>
+                    </div>
+
+                    <div class="col-sm-3" >
+                        <button type="button" class="btn btn-danger form-control" id="esborraGrupProfe">
+                            <span class="glyphicon glyphicon-trash"> Esborra</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- aquí es mostraran els grups d'un profe concret pel curs vigent -->
+                <div id="divTaulaMeusGrups" class="container-fluid">
+
+                </div>
+
+
+
+                <!-- collapse per fer l'alta de nous grups -->
+                <div id="altaGrupProfe" class="collapse container-fluid">
+
+                    <br>
+                    <label>Nivell</label>
+                    <div class="dropdown" id="nivellGrupProfe">
+                        <!-- aquí posarem el dropdown de grup -->
+                    </div> 
+                    <div class="row">
+                        <div class="col-sm-6" >
+                            <label>Nom </label>
+                            <input type="text" class="form-control" id="nomGrupProfe"/>    
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-sm-2" >
+                            <button id="desaNouGrupProfe" type="button" class="btn btn-success" onclick="desaAltaGrup()">Desa</button>
+                        </div>
+
+                        <div class="col-sm-2" >
+                            <button type="button" class="btn btn-default" onclick="tancaCollapseAltaGrup()">Tanca</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-sm-6" >
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <input id="criteriFiltre" type="text" class="form-control" placeholder="Filtra per alumne" onkeyup="filtraTaula()">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>   
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label><input id="nomesMembres" type="checkbox" onchange="filtraMembres()"> Només membres</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-3" >
+                        <button type="button" class="btn btn-success form-control" id="desaAlumnesGrupProfe" style="visibility: hidden;" onclick="desaAlumnesGrupProfe();">
+                            <span class="glyphicon glyphicon-ok">Desa</span>
+                        </button>
+                    </div>
+                </div>
+                <br>
+                <!-- aquí es mostraran els alumnes del meu grup -->
+                <div class="row">
+                    <div id="divAlumnesMeuGrup" class="container-fluid">
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </body>
+</html>

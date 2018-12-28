@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <absencia>
+    <codialumne>68</codialumne>
+    <alumne>Navlani , Varun</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>626</codialumne>
+    <alumne>Sztrela , David</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>D</grup>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+</dades>

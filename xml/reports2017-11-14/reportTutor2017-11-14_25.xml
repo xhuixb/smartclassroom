@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <absencia>
+    <codialumne>424</codialumne>
+    <alumne>Sáez González, Francisco</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>426</codialumne>
+    <alumne>Solarte Vallejo, Bryan</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>429</codialumne>
+    <alumne>Vivo Cano, Adrián</alumne>
+    <nivell>1r BTX</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+</dades>

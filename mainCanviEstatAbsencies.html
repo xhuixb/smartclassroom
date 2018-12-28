@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Canvi d'estat dels registres de presència</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="js/variablesGlobals.js"></script>
+        <script src="jquery/canviEstatAbsencies.js"></script>
+        <script src="jquery/sessionsjquery.js"></script>
+        <script src="jquery/funcionsjquery.js"></script>
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="css/absenciesData.css">
+    </head>
+    <body onload="controlaCredencials('dadesCanviEstat');carregaDadesInicialsCanviEstat();">
+
+        <div class="container-fluid">
+            <div class="page-header" id="dadesCanviEstat">
+
+            </div>   
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-sm-1" >
+                    <label>Nivell</label>
+                    <div class="dropdown" id="nivellDropdownCanviEstat">
+                        <!-- aquí posarem el dropdown de grup -->
+                    </div>
+                    <label>Grup</label>
+                    <div class="dropdown" id="grupDropdownCanviEstat">
+                         <button data-val="" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="butDropgrupDropdownCanviEstat" disabled>Tria Grup<span class="caret"></span></button>
+                        <!-- aquí posarem el dropdown de grup -->
+                    </div>
+                </div>
+                <div class="col-sm-2" >
+                    <label>Dia</label>
+                    <input type='text' id='dataCanviEstat' class="form-control" onchange="habilitaCercaAlumnes();"/>
+
+                    <label>Hora</label>
+                    <div class="dropdown" id="horaDropdownCanviEstat">
+                        <!-- aquí posarem el dropdown dels trams horaris -->
+
+                    </div>
+                </div>
+                <div class="col-sm-1" >
+                    <br>
+                    <button type="button" class="btn btn-info form-control" id="cercaAssisCanviEstat" onclick="cercaAsCanviEstat();" disabled>
+                        <span class="glyphicon glyphicon-search"></span>Cerca
+                    </button>
+
+                    <div class="checkbox">
+                        <label><input id="checkResum" type="checkbox" value="1">Resum</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-9" >
+                <div id="divTaulaAlumnesCanviEstat" class="container-fluid">
+                    <!-- aquí es construirà dinàmicament la taula per veure les incidències --> 
+                </div>
+
+            </div>
+        </div>
+
+
+    </body>
+</html>

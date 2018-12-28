@@ -1,0 +1,40 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+require '../classes/Databases.php';
+//fem la connexió
+
+session_start();
+
+$nivell = $_POST['nivell'];
+$grup = $_POST['grup'];
+$tutor=$_POST['tutor'];
+
+//establim la connexió
+$conn = new mysqli(Databases2::$host, Databases2::$user, Databases2::$password, Databases2::$dbase);
+if ($conn->connect_error)
+    die($conn->connect_error);
+
+//triem el charset de la cerca
+mysqli_set_charset($conn, "utf8");
+
+//esborrem el tutor que hhi pogués haver
+$query="delete from ga29_tutors_curs where ga29_curs=".$_SESSION['curs_actual']." and ga29_nivell=".$nivell." and ga29_grup=".$grup;
+$conn->query($query);
+
+
+
+if($tutor!==''){
+  //creem el nou tutor si n'hi ha
+    $query="insert into ga29_tutors_curs values(".$_SESSION['curs_actual'].",".$nivell.",".$grup.",".$tutor.")";
+    $conn->query($query);
+    
+}
+
+//tanquem connexió
+$conn->close();

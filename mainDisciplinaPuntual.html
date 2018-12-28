@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Gestió de disciplina al marge de les sessions</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="clockpicker-gh-pages/dist/bootstrap-clockpicker.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="clockpicker-gh-pages/dist/bootstrap-clockpicker.min.js"></script>
+        <!--<link rel="stylesheet" href="css/sessions.css">-->
+
+        <script src="TableHeadFixer/tableHeadFixer.js"></script>
+
+        <script src="jquery/sessionsjquery.js"></script>
+        <script src="jquery/funcionsjquery.js"></script>
+        <script src="jquery/faltesjquerypuntual.js"></script>
+        <link rel="stylesheet" href="css/faltespuntuals.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+        <!-- afegim el clockpicker -->
+        <link rel="stylesheet" type="text/css" href="clockpicker-gh-pages/dist/bootstrap-clockpicker.min.css">
+        <script type="text/javascript" src="clockpicker-gh-pages/dist/bootstrap-clockpicker.min.js"></script>
+
+
+    </head>
+    <body onload="controlaCredencials('gestioFaltesPuntuals');carregaDadesIncialsCCCpuntuals();">
+
+        <div class="container-fluid">
+            <div class="page-header" id="gestioFaltesPuntuals">
+
+            </div>   
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2" >
+                    <label>Data incial</label>
+                    <input id="dataInicialFaltes" class="form-control"/>
+                </div>
+                <div class="col-sm-2" >
+                    <label>Data Final</label>
+                    <input id="dataFinalFaltes" class="form-control"/>
+                </div>
+                <div class="col-sm-1">
+                    <br>
+                    <div id="tipusFaltaDiv">
+                        <!--es mostraran els tipus de faltes-->
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-1">
+                    <br>
+                    <button type="button" class="btn btn-info form-control" id="cercaFaltes" onclick="cercaFaltes();">
+                        <span class="glyphicon glyphicon-search"></span>Cerca
+                    </button> 
+
+                </div>
+
+                <div class="col-sm-1" >
+                    <br>
+                    <button type="button" class="btn btn-success form-control" id="plusFaltesPuntuals" data-toggle="modal" data-target="#altaFaltaModal">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-sm-11" >
+                    <div id="divTaulaFaltes">
+                        <!-- es construiran dinàmicament la taula per a veure les incidències--> 
+                    </div>
+                    <h3 id="totalFaltes"></h3>
+
+                </div>
+            </div>
+            <!-- diàleg modal per visualitzar el motiu de la falta -->
+            <div id="faltesMotiuModalForm" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content" >
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title" id="alumneMotiuFalta">Alta de conducta contrària a la convivència</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p><strong>Motiu</strong></p>
+                                        <textarea class="form-control" rows="3" id="motiuFaltaVisualitza"></textarea>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <br>
+                                        <div class="checkbox">
+                                            <label><input id="enviaCheckParesEdit" type="checkbox">Envia a pares</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input id="enviaCheckTutorEdit" type="checkbox">Envia a tutor</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">                               
+                            <button id="desaEditFaltaPuntual" type="button" class="btn btn-success" data-dismiss="modal" onclick="desaEditFaltaPuntual();">Desa</button>
+                            <button type="button" class="btn btn-danger" id="esborraFaltaPuntual" data-dismiss="modal"  onclick="esborraFaltaPuntual();">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- diàleg modal per realitzar l'alta de la falta -->
+            <div id="altaFaltaModal" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content" >
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h1>Alta de faltes puntuals</h1>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm-3" id="nivellAlumneFalta">
+                                        <!--nivell-->
+                                    </div>
+                                    <div class="col-sm-3" id="grupAlumneFalta">
+                                         <button data-val="" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="butDropgrupAlumneFalta" disabled>Tria Grup<span class="caret"></span></button>
+                                    </div>
+                                    <div class="col-sm-6" id="alumnesFalta">
+                                        <!--alumne-->
+                                        <button id="alumnesFaltaButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" disabled>Tria alumne
+                                            <span class="caret"></span></button>
+
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label>Data falta</label>
+                                        <input id="dataFaltaSingular" class="form-control" readonly onchange="habilitaDesaFalta();"/>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>Hora Falta</label>
+                                        <div class="input-group clockpicker" data-placement="right" data-align="top" data-autoclose="true">
+                                            <input type="text" class="form-control" id="rellotge" readonly onchange="habilitaDesaFalta();">
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-time"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <br>
+                                        <div id="tipusFaltaSingular">
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-9">
+                                        <label>Motiu</label>
+                                        <textarea class="form-control" rows="9" id="motiuFaltaPuntual"></textarea>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <br>
+                                        <div class="checkbox">
+                                            <label><input id="enviaCheckPares" type="checkbox" value="1" checked>Envia a pares</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input id="enviaCheckTutor" type="checkbox" value="2" checked>Envia a tutor</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">                               
+                            <button id="desaFaltaPuntual" type="button" class="btn btn-success" data-dismiss="modal" onclick="desaFaltaPuntual();" disabled>Desa</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="netejaModalAlta();">Tanca</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

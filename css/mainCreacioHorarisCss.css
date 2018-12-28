@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20-feb-2018, 17:06:45
+    Author     : xhuix
+*/
+
+
+
+
+.borderless td, .borderless th {
+    border: none;
+}
+
+.contorn{
+
+    border: 1px solid black;
+}
+
+.sota{
+
+    border-bottom: double;
+}
+textarea.form-control {
+   
+}
+
+td[data-estil="1"] {
+    background-color: grey;
+}
+
+td[data-estil="2"] {
+    background-color: #02f5ee;
+}
+td[data-estil="3"] {
+    background-color: orange;
+}
+
+td[data-esdescans="1"]{
+    background-color: greenyellow;
+    
+}
+
+.nav{
+    max-height: 100px;
+    overflow-y:scroll; 
+}

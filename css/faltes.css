@@ -1,0 +1,106 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25-ago-2017, 11:33:03
+    Author     : xhuix
+*/
+
+#taulaFaltes {
+    display: block;
+    overflow: auto;
+    height: 500px;
+}
+
+/*#divTaulaFaltes{
+    height: 500px;
+    
+}*/
+
+/*.borderless td, .borderless th {
+    border: none;
+}*/
+
+#taulaFaltes td:nth-child(1) {
+    width: 40px;
+}
+
+#taulaFaltes td:nth-child(2) {
+    width: 300px;
+}
+
+
+#taulaFaltes td:nth-child(3) {
+    width: 120px;
+    
+}
+
+#taulaFaltes td:nth-child(4) {
+    width: 40px;
+  
+}
+
+#taulaFaltes td:nth-child(5) {
+    width: 300px;
+}
+
+#taulaFaltes td:nth-child(6) {
+    width: 100px;
+}
+
+#taulaFaltes td:nth-child(7) {
+    width: 80px;
+}
+
+#taulaFaltes td:nth-child(8) {
+    width: 150px;
+}
+
+#taulaFaltes td:nth-child(9) {
+    width: 120px;
+}
+#taulaFaltes td:nth-child(10) {
+    width: 50px;
+}
+
+#taulaFaltes td:nth-child(11) {
+    width: 50px;
+}
+#taulaFaltes td:nth-child(12) {
+    width: 30px;
+}
+
+
+
+
+/*.table-fixed thead {
+  width: 97%;
+}
+.table-fixed tbody {
+  height: 500px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
+}
+.table-fixed tbody td, .table-fixed thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}*/
+
+td[data-estat="1"] { 
+    background-color: yellow;
+}
+td[data-estat="2"] { 
+    background-color: orange;
+}
+td[data-estat="3"] { 
+    background-color: red;
+}
+
+td[data-estat="4"] { 
+    background-color: green;
+}

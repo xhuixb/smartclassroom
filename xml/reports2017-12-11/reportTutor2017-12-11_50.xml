@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>11/12/2017</data>
+  <tutor>Espelt Matador , Nahum</tutor>
+  <falta>
+    <codialumne>246</codialumne>
+    <alumne>Bao Majid, Míriam</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Sessió 2 del tema 5 pendent de fer</motiu>
+  </falta>
+  <falta>
+    <codialumne>247</codialumne>
+    <alumne>Beric , Filip</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>El passat dia 5 de desembre sí que ha portat tot el material. Demano disculpes per la confusió. 
+Li ha quedat la sessió 2 del tema 5 pendent de fer.</motiu>
+  </falta>
+  <falta>
+    <codialumne>250</codialumne>
+    <alumne>Coll García, Dídac</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Es important que hi hagi dibuixos i esquemes(que estan penjats al moodle) dels apunts a la seva llibreta.</motiu>
+  </falta>
+  <falta>
+    <codialumne>254</codialumne>
+    <alumne>Domínguez Fernández, Ivan</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Va molt endarrerit a la feina, no havia començat el tema 5, porta dues sessions endarrerides.</motiu>
+  </falta>
+  <falta>
+    <codialumne>255</codialumne>
+    <alumne>El Halimi , Abdellah</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Es important que hi hagi dibuixos i esquemes(que estan penjats al moodle) dels apunts a la seva llibreta.</motiu>
+  </falta>
+  <falta>
+    <codialumne>256</codialumne>
+    <alumne>Fabrasille Susaniche, Florencia</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Va endarrerida a la feina. Sessió 2 del tema 5 pendent de fer.</motiu>
+  </falta>
+  <falta>
+    <codialumne>261</codialumne>
+    <alumne>Miguez Aguilar, Facundo</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Endarrerit a la feina. No havia començat el tema 5</motiu>
+  </falta>
+  <falta>
+    <codialumne>264</codialumne>
+    <alumne>Orri Novoa, Joel</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Endarrerit a la feina, falten les activitats de les sessions 1 i 2 a la llibreta</motiu>
+  </falta>
+  <falta>
+    <codialumne>266</codialumne>
+    <alumne>Pleguezuelos Llirinós, Eliot</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pascual Sánchez, David</professor>
+    <dia>2017-12-11</dia>
+    <hora>10:35:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>No fer matemàtiques a classe. Fer ús de la cola per enganxar qualsevol cosa a la llibreta i donar cops, molestant el funcionament de la classe. Al posar-lo dempeus al fons de la classe, discutir l'autoritat del professor.</motiu>
+  </falta>
+  <falta>
+    <codialumne>266</codialumne>
+    <alumne>Pleguezuelos Llirinós, Eliot</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Va endarrerit a la feina, no havia començat el tema 5. S'ha de posar al dia i acabar fins a la sessió 3.</motiu>
+  </falta>
+  <falta>
+    <codialumne>268</codialumne>
+    <alumne>Ruiz Navarrete, Jesús</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Feina excel·lent. Treballa molt bé en el dia a dia.</motiu>
+  </falta>
+  <falta>
+    <codialumne>269</codialumne>
+    <alumne>Singh , Balkaran</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Ha oblidat la llibreta de ciències. Té les dues sessions del tema 5 pendents de presentar.</motiu>
+  </falta>
+  <falta>
+    <codialumne>270</codialumne>
+    <alumne>Singh , Enspreet</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <professor>Pla Torremocha, Loli</professor>
+    <dia>2017-12-11</dia>
+    <hora>09:15:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Feina endarrerida, no havia començat el tema 5. Porta dues sessions de retard.
+Cal que es posi al dia.</motiu>
+  </falta>
+  <absencia>
+    <codialumne>249</codialumne>
+    <alumne>Caballero Prieto, Virginia</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>260</codialumne>
+    <alumne>Marc , Antonia</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>263</codialumne>
+    <alumne>Nisha , Nisha</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+</dades>

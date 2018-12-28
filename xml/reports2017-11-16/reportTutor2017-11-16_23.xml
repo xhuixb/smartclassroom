@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>16/11/2017</data>
+  <absencia>
+    <codialumne>141</codialumne>
+    <alumne>Correia Boujaada, Nader</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>154</codialumne>
+    <alumne>Pariente Val, Natalia </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>163</codialumne>
+    <alumne>Singh , Jaskaran </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>164</codialumne>
+    <alumne>Smolin , Sasha </alumne>
+    <nivell>2n ESO</nivell>
+    <grup>C</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

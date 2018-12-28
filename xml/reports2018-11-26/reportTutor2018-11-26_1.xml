@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>26/11/2018</data>
+  <tutor>pujol roca,josep</tutor>
+  <absencia>
+    <codialumne>32</codialumne>
+    <alumne>garcia font, angel</alumne>
+    <nivell>2n ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>09:15</hora>
+    </hores>
+    <hores>
+      <hora>10:35</hora>
+    </hores>
+  </absencia>
+</dades>

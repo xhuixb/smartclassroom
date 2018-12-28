@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <absencia>
+    <codialumne>2</codialumne>
+    <alumne>Delgado Gallardo, Elena</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>7</codialumne>
+    <alumne>Hana Ruíz, Ikram</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>17</codialumne>
+    <alumne>Salazar Silva, Víctor</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+  </absencia>
+</dades>

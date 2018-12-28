@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Llistat de profes</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/alarmaFaltes.css">
+        <script src="js/variablesGlobals.js"></script>
+        <script src="jquery/alarmaFaltes.js"></script>
+        <script src="jquery/funcionsjquery.js"></script>
+        <script src="jquery/sessionsjquery.js"></script>
+        <script src="jquery/reportProfes.js"></script>
+
+    </head>
+    <body onload="controlaCredencials('llistatProfes')">
+        <div class="container-fluid">
+            <div class="page-header" id="llistatProfes">
+
+            </div>   
+        </div>
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-sm-1" >
+                    <input type='text' id='profInicial' class="form-control"/>
+                </div>
+                <div class="col-sm-1" >
+                    <input type='text' id='profFinal' class="form-control"/>
+                </div>
+                <div class="col-sm-1" >
+                    <button type="button" class="btn btn-info form-control" id="cercaProfes" onclick="cercaProfes();">
+                        <span class="glyphicon glyphicon-search"></span>Cerca
+                    </button> 
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>

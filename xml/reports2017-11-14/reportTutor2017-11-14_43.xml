@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <absencia>
+    <codialumne>641</codialumne>
+    <alumne>Martínez Sánchez, Natalia</alumne>
+    <nivell>2n BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>639</codialumne>
+    <alumne>Naceri , Bakhta</alumne>
+    <nivell>2n BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>444</codialumne>
+    <alumne>Nikolic , Ana</alumne>
+    <nivell>2n BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>446</codialumne>
+    <alumne>Ortega Borquez, Alba </alumne>
+    <nivell>2n BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>450</codialumne>
+    <alumne>Rus , Silviu</alumne>
+    <nivell>2n BTX</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

@@ -1,0 +1,21 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29-nov-2018, 17:12:35
+    Author     : xhuix
+*/
+
+table {
+    display: block;
+    overflow: auto;
+    height: 500px;
+}
+a { cursor: pointer; }
+
+.popover{
+    max-width: 100%; /* Max Width of the popover (depending on the container!) */
+}
+

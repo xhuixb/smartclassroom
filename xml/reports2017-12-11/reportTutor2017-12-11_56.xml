@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>11/12/2017</data>
+  <tutor>Sabria Agustí, Pilar</tutor>
+  <falta>
+    <codialumne>3</codialumne>
+    <alumne>Duarte Do Nascimento, Joâo Lucas</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <professor>Valls Calm, Anna</professor>
+    <dia>2017-12-11</dia>
+    <hora>12:55:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Ha arribat amb menjar a classe i no s'ha volgut asseure al seu lloc. </motiu>
+  </falta>
+  <falta>
+    <codialumne>5</codialumne>
+    <alumne>González González, Luis</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <professor>Valls Calm, Anna</professor>
+    <dia>2017-12-11</dia>
+    <hora>12:55:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>No ha volgut canviar-se de lloc i seure al lloc que li pertoca. Fa crits constantment durant la classe. L'aviso i no veig cap canvi d'actitud. </motiu>
+  </falta>
+  <falta>
+    <codialumne>17</codialumne>
+    <alumne>Salazar Silva, Víctor</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <professor>Valls Calm, Anna</professor>
+    <dia>2017-12-11</dia>
+    <hora>12:55:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>Comença l'activitat, diu que l'avorreix i es planta. No vol fer res. Diu que vol sortir a fora perquè li toqui l'aire. </motiu>
+  </falta>
+  <falta>
+    <codialumne>20</codialumne>
+    <alumne>Valverde Andrade, Luís Ángel</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <professor>Valls Calm, Anna</professor>
+    <dia>2017-12-11</dia>
+    <hora>12:55:00</hora>
+    <tipusfalta>Observacions</tipusfalta>
+    <motiu>No ha fet res durant tota l'hora. No porta el material. </motiu>
+  </falta>
+  <absencia>
+    <codialumne>16</codialumne>
+    <alumne>Rivera López, Daniel Alejandro</alumne>
+    <nivell>1r ESO</nivell>
+    <grup>A</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+</dades>

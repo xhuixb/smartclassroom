@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <data>11/12/2017</data>
+  <tutor>Perez Lacasa,Javier</tutor>
+  <absencia>
+    <codialumne>586</codialumne>
+    <alumne>Barberà Torelló, Àlex</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>588</codialumne>
+    <alumne>Carrillo Mañach, Arnau</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>601</codialumne>
+    <alumne>Remón Lara, Mar</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>580</codialumne>
+    <alumne>Santana Roman, Laura</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>11:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+    <hores>
+      <hora>13:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>604</codialumne>
+    <alumne>Smit Calvé, Alexander</alumne>
+    <nivell>CAFEMN</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

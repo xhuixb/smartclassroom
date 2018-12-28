@@ -1,0 +1,9 @@
+{
+
+    "require": {
+        "verot/class.upload.php": "dev-master",
+        "spipu/html2pdf": "5.*",
+        "tecnickcom/tcpdf": "6.2.13",
+        "phpoffice/phpspreadsheet": "^1.4"
+    }
+}

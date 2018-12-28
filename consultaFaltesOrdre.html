@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Consulta faltes d'ordre</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="jquery/sessionsjquery.js"></script>
+        <script src="jquery/funcionsjquery.js"></script>
+        <script src="jquery/consultaFaltesOrdrejquery.js"></script>
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+    <body onload="controlaCredencials('divConsultaFaltesOrdre')">
+        <div class="container-fluid">
+            <div class="page-header" id="divConsultaFaltesOrdre">
+
+            </div>   
+        </div>
+
+        <div class="container-fluid">
+            <div>
+                <h3>Consulta faltes ordre</h3>
+            </div>
+            <div class="row" >
+
+                <div class="col-sm-1">
+                    <button type="button" class="btn btn-info form-control" id="cercaFaltesOrdre" onclick="cercaFaltesOrdre();">
+                        <span class="glyphicon glyphicon-search">Cerca</span>
+                    </button>
+                </div>
+                <div class="col-sm-2" >
+                    <input type='text' id='dataIniciCerca' class="form-control"/>                                        
+                </div>
+                <div class="col-sm-2" >
+                    <input type='text' id='dataFiCerca' class="form-control"/>                                        
+                </div>
+            </div>
+            <br>
+            <div class="row" >
+                <div class="col-sm-12">
+                    <div id="divTaulaFaltesOrdre" class="container-fluid">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

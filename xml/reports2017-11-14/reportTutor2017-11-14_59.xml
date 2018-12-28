@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/formataTutors.xsl"?>
+<dades>
+  <absencia>
+    <codialumne>229</codialumne>
+    <alumne>Fernández Gómez, Etna </alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>232</codialumne>
+    <alumne>Kaur , Jaspreet</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+    <hores>
+      <hora>10:35:00</hora>
+    </hores>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>234</codialumne>
+    <alumne>Mejías Gabalda, Paula</alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>12:55:00</hora>
+    </hores>
+  </absencia>
+  <absencia>
+    <codialumne>235</codialumne>
+    <alumne>Moldovan Vasile, Raul </alumne>
+    <nivell>3r ESO</nivell>
+    <grup>B</grup>
+    <hores>
+      <hora>08:15:00</hora>
+    </hores>
+    <hores>
+      <hora>09:15:00</hora>
+    </hores>
+  </absencia>
+</dades>

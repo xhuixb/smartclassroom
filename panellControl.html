@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Panell de control</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="jquery/sessionsjquery.js"></script>
+        <script src="jquery/funcionsjquery.js"></script>
+        <script src="jquery/panellControljquery.js"></script>
+        <script src="jquery/taulesAuxiliars.js"></script>
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <link rel="stylesheet" href="css/taulerControl.css">
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    </head>
+    <body onload="controlaCredencials('divPanellControl');
+            cercaFestius();
+            mostraPermisos();
+            activaDatePicker();">
+        <div class="container-fluid">
+            <div class="page-header" id="divPanellControl">
+
+            </div>   
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12" >
+                    <ul class="nav nav-tabs">
+                        <li><a data-toggle="tab" href="#cursostab" onclick="carregaTaulaAuxiliar('ga03_curs', ['ga03_codi_curs', 'ga03_descripcio', 'ga03_actual'], ['1', '1', '1'], ['Codi', 'Descripcio', 'Actual'], 'divMantCursos', 'ga03_codi_curs', 'Cursos', ['0', '0', '1'], [''], ['1', '1'], [''], [''], ['0', '0'])">Cursos</a></li>
+                        <li><a data-toggle="tab" href="#nivellstab" onclick="carregaTaulaAuxiliar('ga06_nivell', ['ga06_codi_nivell', 'ga06_descripcio_nivell'], ['1', '2'], ['Codi', 'Descripcio'], 'divMantNivells', 'ga06_codi_nivell', 'Nivells', ['0', '0'], [''], ['1'], [''], [''], ['0', '0'])">Nivells</a></li>
+                        <li><a data-toggle="tab" href="#grupstab" onclick="carregaTaulaAuxiliar('ga07_grup', ['ga07_codi_grup', 'ga07_descripcio_grup'], ['1', '2'], ['Codi', 'Descripcio'], 'divMantGrups', 'ga07_codi_grup', 'Grups', ['0', '0'], [''], ['1'], [''], [''], ['0', '0'])">Grups</a></li>
+                        <li><a data-toggle="tab" href="#horarisaulestab" onclick="carregaTaulaAuxiliar('ga10_horaris_aula', ['ga10_codi_hora', 'ga10_codi_curs', 'ga10_hora_inici', 'ga10_hora_fi', 'ga10_es_descans', 'ga10_tipus_horari'], ['1', '1', '1', '1', '1', '2'], ['Codi', 'Curs', 'Hora inici', 'Hora fi', 'És descans', 'Tram horari'], 'divMantHorarisAules', 'ga10_codi_hora', 'Horaris aula', ['0', '2', '0', '0', '1', '2'], ['ga03_curs<#>ga03_codi_curs<#>ga03_descripcio', 'ga34_trams_descripcio<#>ga34_codi_tram<#>ga34_descripcio_tram'], ['1', '1', '1', '1', '1'], ['ga03_actual'], ['1'], ['0', '0'])">Horaris aules</a></li>
+                        <li><a data-toggle="tab" href="#assignaturestab" onclick="carregaTaulaAuxiliar('ga18_assignatures', ['ga18_codi_assignatura', 'ga18_desc_assignatura', 'ga18_desc_breu'], ['1', '3', '1'], ['Codi', 'Descripcio', 'Desc. breu'], 'divMantAssignatures', 'ga18_codi_assignatura', 'Assignatures', ['0', '0', '0'], [''], ['1', '1'], [''], [''], ['0', '0'])">Assignatures</a></li>
+                        <li><a data-toggle="tab" href="#assignivelltab" onclick="carregaTaulaAuxiliar('ga14_assignatura_nivell', ['ga14_id', 'ga14_curs', 'ga14_nivell', 'ga14_codi_assignatura', 'ga14_ordre_butlleti'], ['1', '1', '1', '2', '1'], ['Codi', 'Curs', 'Nivell', 'Assignatura', 'Ordre butll'], 'divMantAssigNivell', 'ga14_id', 'Assignatures per nivell', ['0', '2', '2', '2', '0'], ['ga03_curs<#>ga03_codi_curs<#>ga03_descripcio', 'ga06_nivell<#>ga06_codi_nivell<#>ga06_descripcio_nivell', 'ga18_assignatures<#>ga18_codi_assignatura<#>ga18_desc_assignatura'], ['1', '1', '1', '1'], ['ga03_actual'], ['1'], ['0', '0'])">Assig. per nivell</a></li>
+                        <li><a data-toggle="tab" href="#classestab" onclick="carregaTaulaAuxiliar('ga35_curs_nivell_grup', ['ga35_id', 'ga35_codi_curs', 'ga35_nivell', 'ga35_grup', 'ga35_inici_curs', 'ga35_fi_curs'],
+                                        ['1', '1', '1', '1', '2', '2'], ['Codi', 'Curs', 'Nivell', 'Grup', 'Data inici', 'Data fi'], 'divMantClasses', 'ga35_id',
+                                        'Classes', ['0', '2', '2', '2', '3', '3'], ['ga03_curs<#>ga03_codi_curs<#>ga03_descripcio',
+                                    'ga06_nivell<#>ga06_codi_nivell<#>ga06_descripcio_nivell', 'ga07_grup<#>ga07_codi_grup<#>ga07_descripcio_grup'],
+                                        ['1', '1', '1', '1', '1'], ['ga03_actual'], ['1'], ['0', '0']);">Grups/Classe</a></li>
+                        <li><a data-toggle="tab" href="#tipusfaltatab" onclick="carregaTaulaAuxiliar('ga22_tipus_falta', ['ga22_codi_falta', 'ga22_nom_falta', 'gs22_quantitat_avis'], ['1', '2', '1'], ['Codi', 'Descripcio', 'Quant avis'], 'divMantTipusFalta', 'ga22_codi_falta', 'Tipus falta', ['0', '0', '0'], [''], ['1', '1'], [''], [''], ['0', '0'])">Tipus falta</a></li>
+                        <li><a data-toggle="tab" href="#tipuscarrectab" onclick="carregaTaulaAuxiliar('ga27_tipus_carrec', ['ga27_codi', 'ga27_descripcio'], ['1', '2'], ['Codi', 'Descripcio'], 'divMantTipusCarrec', 'ga27_codi', 'Tipus càrrec', ['0', '0'], [''], ['1'], [''], [''], ['0', '0'])">Tipus càrrec</a></li>
+                        <li><a data-toggle="tab" href="#tipusguardiatab" onclick="carregaTaulaAuxiliar('ga36_tipus_guardia', ['ga36_codi', 'ga36_descripcio'], ['1', '2'], ['Codi', 'Descripció'], 'divMantTipusGuardia', 'ga36_codi', 'Tipus Guàrdia', ['0', '0'], [''], ['1'], [''], [''], ['0', '0']);">Tipus guàrdia</a></li>
+                        <li><a data-toggle="tab" href="#professorstab" onclick="mostraProfessors();">Professors</a></li>
+
+                        <li><a data-toggle="tab" href="#perfilstab" onclick="carregaTaulaAuxiliar('ga39_perfils_usuaris', ['ga39_codi_perfil', 'ga39_nom_perfil'], ['1', '2'], ['Codi', 'Descripció'], 'divMantPerfils', 'ga39_codi_perfil', 'Perfils', ['0', '0'], [''], ['1'], [''], [''], ['0', '0']);">Perfils</a></li>
+                        <li><a data-toggle="tab" href="#tramshoraristab" onclick="carregaTaulaAuxiliar('ga34_trams_descripcio', ['ga34_codi_tram', 'ga34_descripcio_tram'], ['1', '2'], ['Codi', 'Descripció'], 'divMantTramsHoraris', 'ga34_codi_tram', 'Trams Horaris', ['0', '0'], [''], ['1'], [''], [''], ['0', '0']);">Trams Horaris</a></li>
+                        <li><a data-toggle="tab" href="#perfilusuaritab" onclick="carregaTaulaAuxiliar('ga40_perfils_usuaris_rel', ['ga40_id', 'ga40_codi_perfil', 'ga40_codi_usuari'], ['1', '2', '2'], ['Codi', 'Perfil', 'Professor'], 'divMantPerfilUsuari', 'ga40_id', 'Perfils usuari', ['0', '2', '2'], ['ga39_perfils_usuaris<#>ga39_codi_perfil<#>ga39_nom_perfil', 'ga04_professors<#>ga04_codi_prof<#>concat(ga04_cognom1%2C\' \'%2Cga04_cognom2%2C\'%2C \'%2Cga04_nom)'], ['1', '1'], [''], [''], ['0', '0']);">Perfils d'usuari</a></li>
+                        <li><a data-toggle="tab" href="#aulestab" onclick="carregaTaulaAuxiliar('ga01_aula', ['ga01_codi_aula', 'ga01_descripcio_aula'], ['1', '2'], ['Codi', 'Descripció'], 'divMantAules', 'ga01_codi_aula', 'Aules', ['0', '0'], [''], ['1'], [''], [''], ['0', '0']);">Aules</a></li>
+                        <li><a data-toggle="tab" href="#equipamenttab" onclick="carregaTaulaAuxiliar('ga45_inventari', ['ga45_codi', 'ga45_descripcio'], ['1', '2'], ['Codi', 'Descripció'], 'divMantEquipament', 'ga45_codi', 'Equipament', ['0', '0'], [''], ['1'], [''], [''], ['0', '0']);">Equipament</a></li>
+                        <li><a data-toggle="tab" href="#calendaritab">Calendari</a></li>
+                        <li><a data-toggle="tab" href="#permisostab">Pemisos</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="calendaritab" class="tab-pane fade">
+
+                            <div class="container-fluid">
+                                <div>
+                                    <h3>Gestió de festius</h3>
+                                </div>
+                                <div class="row" >
+
+                                    <div class="col-sm-1">
+                                        <button type="button" class="btn btn-danger form-control" id="esborraFestius" onclick="esborraFestius();">
+                                            <span class="glyphicon glyphicon-trash">Esborra</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-2" >
+                                        <input type='text' id='nouFestiu' class="form-control datePanellControl" onchange="comprovaFestiu()"/>                                        
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button type="button" class="btn btn-success form-control" id="altaFestiu" onclick="altaFestiu()" disabled>
+                                            <span class="glyphicon glyphicon-calendar">Nou</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row" >
+                                    <div class="col-sm-3">
+                                        <div id="divTaulaFestius" class="container-fluid">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="professorstab" class="tab-pane fade">
+                            <br>
+                            <div class="container-fluid">
+                                <div class="row" >
+                                    <div class="col-sm-1">
+                                        <button type="button" class="btn btn-success form-control" id="editaProfessorButton" data-toggle="modal" data-target="#editaProfessor" onclick="gestioProfessor('0', this);">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+                                            <input id="criteriFiltre" type="text" class="form-control" placeholder="Filtra per docent" onkeyup="filtraDocent()">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>   
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row" >
+                                    <div class="col-sm-11" id="divTaulaProfes">
+                                        <!-- en aquesta seccció es mostraran els docents-->
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div id="perfilstab" class="tab-pane fade">
+                            <div id="divMantPerfils" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+
+                        <div id="permisostab" class="tab-pane fade">
+                            <br>
+                            <h3>Arbre de menús</h3>
+                            <div id="divPermisosTree" class="container-fluid">
+
+                            </div>
+                            <p id="event_result"></p>
+                        </div>
+                        <div id="aulestab" class="tab-pane fade">
+                            <div id="divMantAules" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+                        <div id="classestab" class="tab-pane fade">
+                            <div id="divMantClasses" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+
+                        <div id="cursostab" class="tab-pane fade">
+                            <div id="divMantCursos" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+                        <div id="nivellstab" class="tab-pane fade">
+                            <div id="divMantNivells" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+                        <div id="grupstab" class="tab-pane fade">
+                            <div id="divMantGrups" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+                        <div id="horarisaulestab" class="tab-pane fade">
+                            <div id="divMantHorarisAules" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+                         <div id="equipamenttab" class="tab-pane fade">
+                            <div id="divMantEquipament" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+                        
+                        
+                        <div id="assignaturestab" class="tab-pane fade">
+                            <div id="divMantAssignatures" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+                        <div id="assignivelltab" class="tab-pane fade">
+                            <div id="divMantAssigNivell" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+                        <div id="tipusfaltatab" class="tab-pane fade">
+                            <div id="divMantTipusFalta" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+                        <div id="tipuscarrectab" class="tab-pane fade">
+                            <div id="divMantTipusCarrec" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+
+                        <div id="tramshoraristab" class="tab-pane fade">
+                            <div id="divMantTramsHoraris" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+
+                        <div id="tipusguardiatab" class="tab-pane fade">
+                            <div id="divMantTipusGuardia" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+                        <div id="perfilusuaritab" class="tab-pane fade">
+                            <div id="divMantPerfilUsuari" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula d'aules --> 
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="editaProfessor" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 id="titolCapcalera" class="modal-title" data-mode="">Gestió de docents</h3>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-6">
+
+                                    <strong>Nom</strong>
+                                    <input id="nomDocent" type="text" class="form-control alert-danger" onkeyup="usuariBuit();">                                
+                                    <strong>Primer Cognom</strong>
+                                    <input id="cognom1Docent" type="text" class="form-control alert-danger" data-codiprof="" onkeyup="usuariBuit();">                              
+                                    <strong>Segon Cognom</strong>
+                                    <input id="cognom2Docent" type="text" class="form-control">
+                                    <strong>Correu electrònic</strong>
+                                    <input id="mailDocent" type="text" class="form-control">
+                                    <strong>Usuari</strong>
+                                    <input id="usuariDocent" type="text" class="form-control alert-danger" onkeyup="usuariBuit();">
+                                    <strong id="titolPass">Contrasenya</strong>
+                                    <input id="contraDocent" type="text" class="form-control alert-danger" onkeyup="usuariBuit();">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">                               
+                        <button id="desaDocent" type="button" class="btn btn-success" data-dismiss="modal" onclick="desaProfessor()">Desa</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="traspassaProfessor" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 id="capcaleraProfessor" data-codiprof="">Traspassa les dades d'un professor a un altre</h3>
+                        <h4 id="professorOrigen"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>Professor Destí</label>
+                                    <div class="dropdown" id="professorDropdownTraspas">
+                                        <!-- posarem el dropdown de grup -->
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input id="checkGrupsPersonals" type="checkbox" checked disabled>Traspassa grups personals</label>
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <label><input id="checkHoraris" type="checkbox" checked onchange="comprovaProfe();">Traspassa horaris</label>
+                                    </div>
+
+                                    <div id="avisResposta">
+                                        <!-- posarem la reposta de l'acció -->
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">                               
+                        <button id="traspassaDadesDocent" type="button" class="btn btn-success" data-dismiss="modal" onclick="desaTraspasProfessor()">Desa</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="editaPermisos" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3>Permisos d'aquesta opció de menú</h3>
+                        <h4 id="capcaleraPermisos" data-nomhtml=""></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-5 container-fluid">
+                                <div id="perfilsPossibles">
+                                    <!-- posarem ell perfils possibles -->    
+
+                                </div>
+
+                            </div>
+                            <div class="col-sm-2 container-fluid">
+                                <br>
+                                <br>
+                                <br>
+                                <button type="button" class="btn-info form-control" id="afegeixPerfils" onclick="afegeixPerfils();">
+                                    <span class="glyphicon glyphicon-forward"></span>
+                                </button>
+                                <br>
+                                <button type="button" class="btn-info form-control" id="afegeixPerfils" onclick="treuPerfils();">
+                                    <span class="glyphicon glyphicon-backward"></span>
+                                </button>
+                            </div>
+                            <div class="col-sm-5 container-fluid">
+                                <div id="pefilsHabilitats">
+                                    <!-- posarem ell perfils habilitats -->
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="modal-footer">                               
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="taulesAuxiliarsModal" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title" id="titolTaula"></h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-10" id="relacioCamps">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">                               
+                        <button id="desaTaulaAuxiliar" type="button" class="btn btn-success" data-dismiss="modal" onclick="desaTaulaAuxiliar();"><span class="glyphicon glyphicon-ok"></span>Desa</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+
+    </body>
+</html>

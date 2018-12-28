@@ -1,0 +1,34 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22-nov-2017, 18:22:52
+    Author     : xhuix
+*/
+
+#taulaAlumnesMailingEnvia{
+    display: block;
+    overflow: auto;
+    height: 700px;
+}
+
+#taulaAlumnesMailing{
+    display: block;
+    overflow: auto;
+    height: 700px;
+}
+
+#taulaAttached {
+    display: block;
+    overflow: auto;
+
+}
+
+#taulaProfesMailing{
+    display: block;
+    overflow: auto;
+    height: 250px;
+
+}
