@@ -24,8 +24,8 @@ class Databases1 {
 class Databases2 {
     //put your code here
     static $host='localhost';
-    static $dbase='gestio_aules_dev';
+    static $dbase='smartclassroom';
     static $user='root';
-    static $password='xhb110693';
+    static $password='';
     
 }
