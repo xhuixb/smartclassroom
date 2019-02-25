@@ -18,10 +18,59 @@ function activaDatePicker() {
     });
 }
 
+
+$(document).ready(function () {
+    $('#dataCanviEstat').datepicker({
+        uiLibrary: 'bootstrap',
+        dateFormat: 'dd/mm/yy'
+    });
+
+
+});
+
+$(document).ready(function () {
+    $('.dates-clau').datepicker({
+        uiLibrary: 'bootstrap',
+        dateFormat: 'dd/mm/yy'
+    });
+
+
+});
+
+
+$(document).ready(function () {
+    $('#dataIniciActivitat').datepicker({
+        uiLibrary: 'bootstrap',
+        dateFormat: 'dd/mm/yy'
+    });
+
+
+});
+
+
 $(document).ready(function () {
     $("#menuTree").jstree({
     });
 });
+
+
+
+$(document).ready(function () {
+    $('#summernoteDatesClau').summernote({
+
+        height: 400,
+        // height: 300, // set editor height
+
+        //  minHeight: null, // set minimum height of editor
+        //   maxHeight: null, // set maximum height of editor
+        focus: true                  // set focus to editable area after initializing summernote
+    });
+
+
+});
+
+
+
 
 
 function cercaFestius() {
@@ -243,7 +292,9 @@ function gestioProfessor(mode, element) {
         $("#contraDocent").prop('disabled', false);
         $("#titolPass").prop('disabled', false);
         $("#contraDocent").text('');
-
+        //posem la dada d'inici d'activitat per defecta com a data del dia
+        $("#dataIniciActivitat").prop('disabled', false);
+        $("#dataIniciActivitat").datepicker("setDate", new Date());
         //model alta
         //posem el mode com atribut de la capçalera
         $("#titolCapcalera").attr('data-mode', mode);
@@ -253,7 +304,7 @@ function gestioProfessor(mode, element) {
         //model edició
         //habilitem desa per si de cas
         $("#desaDocent").prop('disabled', false);
-
+        $("#dataIniciActivitat").prop('disabled', true);
         //posem el mode com atribut de la capçalera
         $("#titolCapcalera").attr('data-mode', mode);
         $("#titolCapcalera").text('Edició de professor');
@@ -262,6 +313,8 @@ function gestioProfessor(mode, element) {
         $("#contraDocent").prop('disabled', true);
         $("#titolPass").prop('disabled', true);
         $("#contraDocent").val('****');
+
+
 
         //passem les dades al modal
         var nom = $($($($(element).parent()).parent()).children()[0]).attr('data-nom');
@@ -335,13 +388,20 @@ function desaProfessor() {
     var login = $("#usuariDocent").val();
     var password = $("#contraDocent").val();
     var codiProf = $("#cognom1Docent").attr('data-codiprof');
+    var dataIniciActivitat = $("#dataIniciActivitat").val().toString();
 
+    if (mode === '0') {
+        //alta
+        dataIniciActivitat = dataIniciActivitat.substr(6) + '-' + dataIniciActivitat.substr(3, 2) + '-' + dataIniciActivitat.substr(0, 2);
+    }
+
+    debugger;
     //ho enviem al script per fer l'accés a la base de dades
     var url = "php/gestionaProfessor.php";
     $.ajax({
         type: "POST",
         url: url,
-        data: {"nom": nom, "cognom1": cognom1, "codiProf": codiProf, "cognom2": cognom2, "mail": mail, "login": login, "password": password, "mode": mode},
+        data: {"nom": nom, "cognom1": cognom1, "codiProf": codiProf, "cognom2": cognom2, "mail": mail, "login": login, "password": password, "mode": mode, "dataIniciActivitat": dataIniciActivitat},
         success: function (data) {
             //refresquem les dades
             //$("#divTaulaProfes").html(data);
@@ -709,58 +769,311 @@ function situacioProfessor(element) {
 
     var estat = $($($(element).parent()).siblings()[0]).attr('data-suspes');
     var codiProf = $($($(element).parent()).siblings()[0]).attr('data-codiprof');
-
+    var nomProf = $($($(element).parent()).siblings()[0]).text();
 
     if (estat === '0') {
-        //està actiu i es vol suspendre
-        var resposta = confirm("Vols suspendre l'activitat d'aquest professor?");
-
-        if (resposta === true) {
-            var url = "php/canviEstatProfe.php";
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: {"codiProf": codiProf, "nouEstat": "1"},
-                success: function (data) {
-                    //actualitzem l'atribut
-                    $($($(element).parent()).siblings()[0]).attr('data-suspes', '1');
-                    $(element).removeClass('btn-success');
-                    $(element).addClass('btn-danger');
-                    $(element).text('Suspès');
-                }
-
-            });
-
-            return false;
-
-        }
-
+        $("#profCanviEstat").html("Estàs a punt de suspendre el professor:<br><strong>" + nomProf + '</strong>');
+        $("#profCanviEstat").attr('data-estat', estat);
+        $("#profCanviEstat").attr('data-codiprof', codiProf);
+        $("#profCanviEstat").attr('data-filera', $($($(element).parent()).parent()).index());
+        $("#canviEstatLiteral").text("Data suspensió");
+        $("#dataCanviEstat").datepicker('setDate', new Date());
     } else {
-        //està suspès i es vol activar
+        $("#profCanviEstat").attr('data-estat', estat);
+        $("#profCanviEstat").attr('data-codiprof', codiProf);
+        $("#profCanviEstat").attr('data-filera', $($($(element).parent()).parent()).index());
+        $("#profCanviEstat").html("Estàs a punt d'activar el professor:<br><strong>" + nomProf + '</strong>');
+        $("#canviEstatLiteral").text("Data activació");
+        $("#dataCanviEstat").datepicker('setDate', new Date());
+    }
 
-        var resposta = confirm("Vols reactivar d'aquest professor?");
 
-        if (resposta === true) {
-            var url = "php/canviEstatProfe.php";
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: {"codiProf": codiProf, "nouEstat": "0"},
-                success: function (data) {
-                    //actualitzem l'atribut
-                    $($($(element).parent()).siblings()[0]).attr('data-suspes', '0');
-                    $(element).removeClass('btn-danger');
-                    $(element).addClass('btn-success');
-                    $(element).text('Actiu');
+
+}
+
+function desaCanviEstatProf() {
+    //agafem l'estat
+
+    debugger;
+    //agefem l0estat el codi del professor i la data
+    var codiProf = $("#profCanviEstat").attr('data-codiprof');
+    var estat = $("#profCanviEstat").attr('data-estat');
+    var dataCanviEstat = $("#dataCanviEstat").val().toString();
+    var dataCanviEstat1 = dataCanviEstat;
+    dataCanviEstat = dataCanviEstat.substr(6) + '-' + dataCanviEstat.substr(3, 2) + '-' + dataCanviEstat.substr(0, 2);
+
+    debugger;
+    //agefem la filera per canviar l'online després de fer la modificació a la BBDD
+    var indexFilera = $("#profCanviEstat").attr('data-filera');
+
+    if (estat === "0") {
+        var nouEstat = "1";
+    } else {
+        var nouEstat = "0";
+    }
+
+
+    var url = "php/canviEstatProfe.php";
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {"codiProf": codiProf, "nouEstat": nouEstat, "dataCanviEstat": dataCanviEstat},
+        success: function (data) {
+            //actualitzem l'atribut
+            //$("#divTaulaProfes").html(data);
+            if (data != '1' && data != '2') {
+                //s'ha pogut fer le canvi d'estat
+                if (nouEstat === '1') {
+                    var filera = $("#costaulaDocents").children();
+                    //canviarem les dades de l'online
+                    $($(filera[indexFilera]).children()[0]).attr('data-suspes', '1');
+                    $($($(filera[indexFilera]).children()[7]).children()[0]).removeClass('btn-success');
+                    $($($(filera[indexFilera]).children()[7]).children()[0]).addClass('btn-danger');
+                    $($($(filera[indexFilera]).children()[7]).children()[0]).text('Suspès');
+                    $($(filera[indexFilera]).children()[8]).text(dataCanviEstat1);
+
+                } else {
+                    var filera = $("#costaulaDocents").children();
+                    //canviarem les dades de l'online
+                    $($(filera[indexFilera]).children()[0]).attr('data-suspes', '0');
+                    $($($(filera[indexFilera]).children()[7]).children()[0]).removeClass('btn-danger');
+                    $($($(filera[indexFilera]).children()[7]).children()[0]).addClass('btn-success');
+                    $($($(filera[indexFilera]).children()[7]).children()[0]).text('Actiu');
+                    $($(filera[indexFilera]).children()[8]).text(dataCanviEstat1);
                 }
-
-            });
-
-            return false;
-
+            } else {
+                //no s'ha pogut fer el canvi d'estat
+                if (data == '1') {
+                    alert('Data activació incorrecta');
+                } else {
+                    alert('Data suspensió incorrecta');
+                }
+            }
         }
 
+    });
+
+    return false;
+
+
+}
+
+function resumBaseDades() {
+
+
+    var url = "php/resumBaseDades.php";
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {},
+        success: function (data) {
+            //actualitzem l'atribut
+            $("#divBasedadestab").html(data);
+        }
+
+    });
+
+    return false;
+
+
+}
+
+function carregaDatesClau() {
+    var url = "php/carregaDatesClau.php";
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {},
+        success: function (data) {
+            //actualitzem l'atribut
+            $("#divTaulaDatesClau").html(data);
+        }
+
+    });
+
+    return false;
+
+}
+
+function mostraDetallDataClau(element) {
+    //passem les dates
+
+    var dataClau = $($($(element).parent()).siblings()[1]).text();
+    var dataIniciPubli = $($($(element).parent()).siblings()[2]).text();
+    var dataFiPubli = $($($(element).parent()).siblings()[3]).text();
+
+    $('#dataClau').datepicker("setDate", dataClau);
+    $('#dataIniciPubli').datepicker("setDate", dataIniciPubli);
+    $('#dataFiPubli').datepicker("setDate", dataFiPubli);
+
+    //anem a buscar el text de la data clau
+
+    var id = $($($(element).parent()).siblings()[1]).attr('data-id');
+    $('#dataClau').attr('data-id', id);
+    $('#dataClau').attr('data-mode', '1');
+
+    var url = "php/carregaTextDataClau.php";
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {"id": id},
+        success: function (data) {
+            debugger;
+            var missatge = data;
+            //actualitzem l'atribut
+            $("#summernoteDatesClau").summernote("code", missatge);
+        }
+
+    });
+
+    return false;
+
+
+}
+
+function desaDadesClau() {
+    //agafem les dades
+    debugger;
+
+    var datesCorrectes = true;
+
+    var dataClau = $('#dataClau').val().toString();
+
+    var dataInici = $('#dataIniciPubli').val().toString();
+    var dataFi = $('#dataFiPubli').val().toString();
+
+
+
+
+    if (dataClau !== '' && isValidDate(dataClau) === false) {
+        datesCorrectes = false;
+    }
+
+    if (isValidDate(dataInici) === false) {
+        datesCorrectes = false;
+    } else if (isValidDate(dataFi) === false) {
+        datesCorrectes = false;
+    } else {
+        //les dates són correctes anem a veure que inici<fi
+        var dataIniciNor = dataInici.substr(6) + '-' + dataInici.substr(3, 2) + '-' + dataInici.substr(0, 2);
+        var dataFiNor = dataFi.substr(6) + '-' + dataFi.substr(3, 2) + '-' + dataFi.substr(0, 2);
+
+        if (dataIniciNor > dataFiNor) {
+            datesCorrectes = false;
+        }
 
     }
 
+
+
+    if (datesCorrectes === true) {
+
+        if (dataClau !== '') {
+            dataClau = dataClau.substr(6) + '-' + dataClau.substr(3, 2) + "-" + dataClau.substr(0, 2);
+        }
+        if (dataInici !== '') {
+            dataInici = dataInici.substr(6) + '-' + dataInici.substr(3, 2) + "-" + dataInici.substr(0, 2);
+        }
+        if (dataFi !== '') {
+            dataFi = dataFi.substr(6) + '-' + dataFi.substr(3, 2) + "-" + dataFi.substr(0, 2);
+        }
+
+        var mode = $('#dataClau').attr('data-mode');
+
+        var missatge = $("#summernoteDatesClau").summernote("code");
+        var id = $('#dataClau').attr('data-id');
+        var url = "php/desaDadesClau.php";
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {"dataClau": dataClau, "dataInici": dataInici, "dataFi": dataFi, "missatge": missatge, "id": id, "mode": mode},
+            success: function (data) {
+
+                //$("#divTaulaDatesClau").html(data);
+                carregaDatesClau();
+            }
+
+        });
+
+        return false;
+    } else {
+        alert("Dates incorrectes");
+    }
+
 }
+
+function isValidDate(dateString)
+{
+    // First check for the pattern
+    if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
+        return false;
+
+    // Parse the date parts to integers
+    var parts = dateString.split("/");
+    var day = parseInt(parts[0], 10);
+    var month = parseInt(parts[1], 10);
+    var year = parseInt(parts[2], 10);
+
+    // Check the ranges of month and year
+    if (year < 1000 || year > 3000 || month == 0 || month > 12)
+        return false;
+
+    var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    // Adjust for leap years
+    if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+        monthLength[1] = 29;
+
+    // Check the range of the day
+    return day > 0 && day <= monthLength[month - 1];
+}
+
+function creaDataClau() {
+    //esborrem la infommació que pogués haver al modal
+    $('#dataClau').val('');
+    $('#dataIniciPubli').val('');
+    $('#dataFiPubli').val('');
+    $("#summernoteDatesClau").summernote("code", '');
+
+    //posem el mode
+    $('#dataClau').attr('data-mode', '0');
+    $('#dataClau').attr('data-id', '0');
+
+
+
+}
+
+function esborraDatesClau() {
+    //anem a buscar els codis a esborrar
+    var elements = $(".checkEsborrat");
+    var codisDates = [];
+    var cont = 0;
+
+    for (var i = 0; i < elements.length; i++) {
+        if ($(elements[i]).prop('checked') === true) {
+            codisDates[cont] = $($($(elements[i]).parent()).siblings()[0]).attr('data-id');
+            cont++;
+
+        }
+
+    }
+    debugger;
+
+    var url = "php/esborraDatesClau.php";
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {"codisDates": codisDates},
+        success: function (data) {
+
+            //$("#divTaulaDatesClau").html(data);
+            carregaDatesClau();
+        }
+
+    });
+
+    return false;
+
+
+}
+

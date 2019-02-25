@@ -103,38 +103,49 @@ function cercaAbsRet() {
 
     debugger;
 
+    var dataInicialUniversal = '';
+    var dataFinalUniversal = '';
+
     //posem les dates en format internacional
     if (dataInicial != "") {
 
         var dataI = dataInicial.split("/");
         dataInicial = dataI[1] + "/" + dataI[0] + "/" + dataI[2];
+        dataInicialUniversal = dataI[2] + '-' + dataI[1] + '-' + dataI[0];
 
     }
     if (dataFinal != "") {
         var dataF = dataFinal.split("/");
         dataFinal = dataF[1] + "/" + dataF[0] + "/" + dataF[2];
+        dataFinalUniversal = dataF[2] + '-' + dataF[1] + '-' + dataF[0];
     }
 
     //ho enviemt tot per ajax
 
-    var url = "php/cercaAbsRet.php";
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: {"nivell": nivell, "grup": grup, "dataInicial": dataInicial, "dataFinal": dataFinal, "professor": professor, "assignatura": assignatura, "nomesAbsents": nomesAbsents, "nomesRetards": nomesRetards},
-        //data: ("#form2").serialize,
-        success: function (data) {
+    if (dataFinalUniversal !== '' && dataInicialUniversal !== '' && dataFinalUniversal < dataInicialUniversal) {
+        //data final anterior a inicial
+        alert('Dates incorrectes');
 
-            //rebem les dades
-            $("#divTaulaAbsenciesData").html(data);
-            $("#taulaAbsenciesRetards").tableHeadFixer();
+    } else {
+        $("body").css("cursor", "progress");
+        var url = "php/cercaAbsRet_1.php";
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {"nivell": nivell, "grup": grup, "dataInicial": dataInicial, "dataFinal": dataFinal, "professor": professor, "assignatura": assignatura, "nomesAbsents": nomesAbsents, "nomesRetards": nomesRetards},
+            //data: ("#form2").serialize,
+            success: function (data) {
 
+                //rebem les dades
+                $("#divTaulaAbsenciesData").html(data);
+                $("#taulaAbsenciesRetards").tableHeadFixer();
+                $("body").css("cursor", "default");
 
-        }
+            }
 
-    });
-    return false;
-
+        });
+        return false;
+    }
 
 }
 
@@ -180,7 +191,7 @@ function absenciesToPDF() {
     }
     var url = "php/reports/tcpdf2.php";
 
-    window.open(url + "?nivell=" + nivell + "&grup=" + grup + "&dataInicial=" + dataInicial + "&dataFinal=" + dataFinal + "&professor=" + professor + "&nivellText=" + nivellText + "&grupText=" + grupText + "&professorNom=" + professorNom+"&nomesAbsents="+nomesAbsents+"&nomesRetards="+nomesRetards);
+    window.open(url + "?nivell=" + nivell + "&grup=" + grup + "&dataInicial=" + dataInicial + "&dataFinal=" + dataFinal + "&professor=" + professor + "&nivellText=" + nivellText + "&grupText=" + grupText + "&professorNom=" + professorNom + "&nomesAbsents=" + nomesAbsents + "&nomesRetards=" + nomesRetards);
 
 
 }

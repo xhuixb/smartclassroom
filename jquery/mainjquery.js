@@ -5,9 +5,8 @@
  */
 
 $(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-});
-
+ $('[data-toggle="tooltip"]').tooltip();
+ });
 
 
 function desaCanviPassword() {
@@ -82,7 +81,7 @@ function carregaSessions() {
 
     //posem la setmana actual
     //inicialitzem la data amb el primer i el darrer dia de la setmana
-
+   
     var dilluns = trobaDilluns();
 
     dilluns = moment(dilluns, "YYYY-MM-DD");

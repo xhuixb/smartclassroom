@@ -52,7 +52,7 @@ if ($result->num_rows > 0) {
     echo '<table id="taulaAlumnesGrup" class="table table-fixed">';
     echo '<thead>';
     echo '<tr>';
-    echo '<th class="col-sm-1"><form class="form-inline"><input type="checkbox" value="" id="checkMarcaDesmarca" onclick="seleccionaTot();"><button type="button" class="btn btn-warning form-control" onclick="esborraAlumnes()"><span class="glyphicon glyphicon-trash"></span></button></form></th>';
+    echo '<th class="col-sm-1"><form class="form-inline"><input type="checkbox" value="" id="checkMarcaDesmarca" onclick="seleccionaTot();"><button type="button" class="btn btn-warning form-control" onclick="esborraAlumnesTaula()"><span class="glyphicon glyphicon-trash"></span></button></form></th>';
     echo '<th class="col-sm-3">Alumne</th>';
     echo '<th class="col-sm-1">Pres</th>';
     echo '<th class="col-sm-1">Abs</th>';

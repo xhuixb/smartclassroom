@@ -56,7 +56,7 @@ if (!$result)
 
 if ($codiAgrupacio == '1') {
     echo '<table id="taulaResumPrestecs" class="table">';
-  
+
     echo '<thead>';
     echo '<tr>';
     echo '<th class="col-sm-1">Alumne</th>';
@@ -65,13 +65,19 @@ if ($codiAgrupacio == '1') {
     echo '</thead>';
 
     if ($result->num_rows > 0) {
+        $contador = 0;
         echo '<tbody id="cosTaulaDetallPrestecs">';
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             echo '<td class="col-sm-4">' . $row['alumne'] . '</td>';
             echo '<td class="col-sm-2" style="text-align: right;">' . $row['conta'] . '</td>';
             echo '</tr>';
+            $contador += $row['conta'];
         }
+        echo '<tr>';
+        echo '<th class="col-sm-1">Total</th>';
+        echo '<th class="col-sm-3" style="text-align: right;">' . $contador . '</th>';
+        echo '</tr>';
         echo '</tbody>';
     }
 
@@ -80,7 +86,7 @@ if ($codiAgrupacio == '1') {
     echo '</table>';
 } elseif ($codiAgrupacio == '0') {
     echo '<table id="taulaResumPrestecs" class="table">';
-  
+
     echo '<thead>';
     echo '<tr>';
     echo '<th class="col-sm-1">Equip</th>';
@@ -89,13 +95,21 @@ if ($codiAgrupacio == '1') {
     echo '</thead>';
 
     if ($result->num_rows > 0) {
+        $contador=0;
         echo '<tbody id="cosTaulaDetallPrestecs">';
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             echo '<td class="col-sm-4">' . $row['equip'] . '</td>';
             echo '<td class="col-sm-2" style="text-align: right;">' . $row['conta'] . '</td>';
             echo '</tr>';
+            $contador += $row['conta'];
         }
+        echo '<tr>';
+        echo '<th class="col-sm-1">Total</th>';
+        echo '<th class="col-sm-3" style="text-align: right;">' . $contador . '</th>';
+        echo '</tr>';
+        echo '</tbody>';
+
         echo '</tbody>';
     }
 

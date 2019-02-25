@@ -82,7 +82,7 @@ if ($result->num_rows > 0) {
     echo '<tbody id="bodytaulaSessions">';
 
     $cont = 0;
-
+  
 
     while ($row = $result->fetch_assoc()) {
         //anem a veure si, en aquesta data, el pofessor estava suspès
@@ -101,11 +101,11 @@ if ($result->num_rows > 0) {
 
                 $dataIniciDate = date_create_from_format('Y-m-d', $row1['datainici']);
                 $diffDataInici = (int) date_diff($dataSessioDate, $dataIniciDate)->format("%R%a");
-               
+
                 if ($diffDataInici <= 0) {
                     //si la diferència és >=0 la sessió és posteriro a la data d'inici
                     //anem a veure la data de fi no fos cas que ens passessim
-                    
+
                     if ($row1['datafi'] == '') {
                         //no hi ha data de fi per tant estem dins del tram horari
                         $actiu = true;

@@ -306,7 +306,15 @@ function desaSessioHorari() {
         var esguardia = '0';
     }
 
+    if ($("#labelEstat").hasClass('btn-danger')) {
+        //sessió nova
+        var sessioNova = true;
+    } else {
+        var sessioNova = false;
+    }
 
+
+    //debugger;
 
     var tipusSubs = $("#labelprofguardia").attr('data-tipus-subs');
 
@@ -369,6 +377,13 @@ function desaSessioHorari() {
         } else {
             var checkCom = '0';
         }
+        debugger;
+        if (sessioNova === false) {
+            var comentAssistencia = $($(cellaAlumne).children()[1]).attr('data-titol');
+        } else {
+            var comentAssistencia = '';
+        }
+
 
         var fileraDades = [];
         fileraDades[0] = codiAlumne;
@@ -382,16 +397,17 @@ function desaSessioHorari() {
         fileraDades[8] = checkCom;
         fileraDades[9] = comentariAlumne;
         fileraDades[10] = enviaComentari;
+        fileraDades[11] = comentAssistencia;
 
         dadesGeneralsSessio[i] = fileraDades.join('<#>');
 
-        debugger;
+
     }
 
-    debugger;
+
     //enviem les dades al servidor
     var url = "php/desaSessioHorari.php";
-    debugger;
+
     $.ajax({
         type: "POST",
         url: url,
@@ -598,7 +614,7 @@ function carregaSessionsAnteriors(element) {
 
 
     }
-    taula+='</tbody>';
+    taula += '</tbody>';
     taula += '</table>';
 
 

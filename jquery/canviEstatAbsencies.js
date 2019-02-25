@@ -119,12 +119,14 @@ function comprovaCheckEstat(element) {
     var aviCheck = $(pareCheck).parent();
     //index de la filera (amb capçalera inclosa
     var filera = $(aviCheck).index();
-
+    var posCheck2=0;
+    var posCheck3=0;
+    
     //esbrinem posicions a desmarcar
-    if (posCheck1 == 3) {
+    if (posCheck1 === 3) {
         posCheck2 = 4;
         posCheck3 = 5;
-    } else if (posCheck1 == 4) {
+    } else if (posCheck1 === 4) {
         posCheck2 = 3;
         posCheck3 = 5;
 
@@ -134,10 +136,15 @@ function comprovaCheckEstat(element) {
     }
 
     //obtenime els elements a desmarcar
-    var taula = document.getElementById('taulaAlumnesCanviEstat');
+    //var taula = document.getElementById('taulaAlumnesCanviEstat');
+    var taula=$("#taulaAlumnesCanviEstat");
 
-    var ele1 = taula.rows[filera + 1].cells[posCheck2].firstChild;
-    var ele2 = taula.rows[filera + 1].cells[posCheck3].firstChild;
+    var ele1=$($(aviCheck).children()[posCheck2]).children()[0];
+    var ele2=$($(aviCheck).children()[posCheck3]).children()[0];
+    
+    //var ele1 = taula.rows[filera + 1].cells[posCheck2].firstChild;
+    
+    //var ele2 = taula.rows[filera + 1].cells[posCheck3].firstChild;
 
 
     if ($(element).prop('checked')) {

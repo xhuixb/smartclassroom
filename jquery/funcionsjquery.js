@@ -3,6 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*$(document).ready(function () {
+ $('#summernoteNotifi').summernote({
+ 
+ height: 400,
+ 
+ });
+ 
+ 
+ });*/
 
 
 $(document).ready(function () {
@@ -441,9 +450,16 @@ function controlaCredencials(div) {
 
 
             }
+            $('#summernoteNotifi').summernote({
+
+                height: 500,
+
+            });
         }
 
     });
+
+
 
     return false;
 
@@ -470,3 +486,37 @@ function exportToExcel() {
 
 }
 
+function carregaNotificacions(element) {
+    if ($(element).hasClass('btn-info')) {
+        //no hi ha notificacions
+        alert("No hi ha notificacions");
+        jQuery.noConflict();
+
+
+    } else {
+        //hi ha notificacions
+        //les mostrem
+        debugger;
+        $('#notificacionsModal').modal('show');
+
+        //anem a bucarles
+        var url = "php/carregaNotificacions.php";
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {},
+            //data: ("#form2").serialize,
+            success: function (data) {
+                $("#summernoteNotifi").summernote("code", data);
+
+                $('#summernoteNotifi').summernote('disable');
+
+            }
+
+        });
+
+
+
+    }
+}

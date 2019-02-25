@@ -12,8 +12,12 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
 
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 
         <script src="jquery/sessionsjquery.js"></script>
         <script src="jquery/funcionsjquery.js"></script>
@@ -26,8 +30,12 @@ and open the template in the editor.
         <link rel="stylesheet" href="/resources/demos/style.css">
         <link rel="stylesheet" href="css/taulerControl.css">
 
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+
 
     </head>
     <body onload="controlaCredencials('divPanellControl');
@@ -39,7 +47,7 @@ and open the template in the editor.
 
             </div>   
         </div>
-
+       
 
         <div class="container-fluid">
             <div class="row">
@@ -65,9 +73,13 @@ and open the template in the editor.
                         <li><a data-toggle="tab" href="#tramshoraristab" onclick="carregaTaulaAuxiliar('ga34_trams_descripcio', ['ga34_codi_tram', 'ga34_descripcio_tram'], ['1', '2'], ['Codi', 'Descripció'], 'divMantTramsHoraris', 'ga34_codi_tram', 'Trams Horaris', ['0', '0'], [''], ['1'], [''], [''], ['0', '0']);">Trams Horaris</a></li>
                         <li><a data-toggle="tab" href="#perfilusuaritab" onclick="carregaTaulaAuxiliar('ga40_perfils_usuaris_rel', ['ga40_id', 'ga40_codi_perfil', 'ga40_codi_usuari'], ['1', '2', '2'], ['Codi', 'Perfil', 'Professor'], 'divMantPerfilUsuari', 'ga40_id', 'Perfils usuari', ['0', '2', '2'], ['ga39_perfils_usuaris<#>ga39_codi_perfil<#>ga39_nom_perfil', 'ga04_professors<#>ga04_codi_prof<#>concat(ga04_cognom1%2C\' \'%2Cga04_cognom2%2C\'%2C \'%2Cga04_nom)'], ['1', '1'], [''], [''], ['0', '0']);">Perfils d'usuari</a></li>
                         <li><a data-toggle="tab" href="#aulestab" onclick="carregaTaulaAuxiliar('ga01_aula', ['ga01_codi_aula', 'ga01_descripcio_aula'], ['1', '2'], ['Codi', 'Descripció'], 'divMantAules', 'ga01_codi_aula', 'Aules', ['0', '0'], [''], ['1'], [''], [''], ['0', '0']);">Aules</a></li>
-                        <li><a data-toggle="tab" href="#equipamenttab" onclick="carregaTaulaAuxiliar('ga45_inventari', ['ga45_codi', 'ga45_descripcio'], ['1', '2'], ['Codi', 'Descripció'], 'divMantEquipament', 'ga45_codi', 'Equipament', ['0', '0'], [''], ['1'], [''], [''], ['0', '0']);">Equipament</a></li>
+                        <li><a data-toggle="tab" href="#equipamenttab" onclick="carregaTaulaAuxiliar('ga45_inventari', ['ga45_codi', 'ga45_descripcio', 'ga45_es_actiu'], ['1', '2', '1'], ['Codi', 'Descripció', 'Actiu'], 'divMantEquipament', 'ga45_codi', 'Equipament', ['0', '0', '1'], [''], ['1', '1'], [''], [''], ['0', '0']);">Equipament</a></li>
+                        <li><a data-toggle="tab" href="#comunicatab" onclick="carregaTaulaAuxiliar('ga30_comunicacions', ['ga30_id', 'ga30_codi_prof', 'ga30_estat'], ['1', '2', '1'], ['Codi', 'Professor', 'Estat'], 'divComunicatab', 'ga30_id', 'Comunicacions pendents', ['0', '2', '0'], ['ga04_professors<#>ga04_codi_prof<#>concat(ga04_cognom1%2C\' \'%2Cga04_cognom2%2C\'%2C \'%2Cga04_nom)'], ['1', '1', '1'], ['ga30_estat'], ['0'], ['0', '0'])">Comunica pendents</a></li>
                         <li><a data-toggle="tab" href="#calendaritab">Calendari</a></li>
                         <li><a data-toggle="tab" href="#permisostab">Pemisos</a></li>
+                        <li><a data-toggle="tab" href="#basedadestab" onclick="resumBaseDades();">Base de dades</a></li>
+                        <li><a data-toggle="tab" href="#datesclautab" onclick="carregaDatesClau();">Dates clau</a></li>
+
                     </ul>
 
                     <div class="tab-content">
@@ -122,7 +134,7 @@ and open the template in the editor.
 
                                 </div>
                                 <div class="row" >
-                                    <div class="col-sm-11" id="divTaulaProfes">
+                                    <div class="col-sm-12" id="divTaulaProfes">
                                         <!-- en aquesta seccció es mostraran els docents-->
                                     </div>
 
@@ -131,6 +143,13 @@ and open the template in the editor.
                             </div>
 
 
+                        </div>
+
+                        <div id="comunicatab" class="tab-pane fade">
+                            <div id="divComunicatab" class="container-fluid">
+
+                                <!-- aquí es construirà dinàmicament la taula de comunicacions --> 
+                            </div>
                         </div>
                         <div id="perfilstab" class="tab-pane fade">
                             <div id="divMantPerfils" class="container-fluid">
@@ -184,14 +203,14 @@ and open the template in the editor.
                                 <!-- aquí es construirà dinàmicament la taula d'aules --> 
                             </div>
                         </div>
-                         <div id="equipamenttab" class="tab-pane fade">
+                        <div id="equipamenttab" class="tab-pane fade">
                             <div id="divMantEquipament" class="container-fluid">
 
                                 <!-- aquí es construirà dinàmicament la taula d'aules --> 
                             </div>
                         </div>
-                        
-                        
+
+
                         <div id="assignaturestab" class="tab-pane fade">
                             <div id="divMantAssignatures" class="container-fluid">
 
@@ -237,6 +256,51 @@ and open the template in the editor.
                             </div>
                         </div>
 
+                        <div id="basedadestab" class="tab-pane fade">
+                            <div id="divBasedadestab" class="container-fluid col-sm-4">
+
+                                <!-- aquí es construirà dinàmicament la informacio de la base de dades -->
+
+                            </div>
+                        </div>
+                        <div id="datesclautab" class="tab-pane fade">
+
+                            <div class="container-fluid">
+                                <div>
+                                    <h3>Dates clau</h3>
+                                </div>
+                                <div class="row" >
+
+                                    <div class="col-sm-1">
+                                        <button type="button" class="btn btn-danger form-control" data-toggle="modal" data-target="#editaDatesClauModal" onclick="creaDataClau();">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                    </div>
+
+                                    <div class="col-sm-1">
+                                        <button type="button" class="btn btn-success form-control" onclick="esborraDatesClau()">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row" >
+                                    <div class="col-sm-5">
+                                        <div id="divTaulaDatesClau" class="container-fluid">
+                                            <!-- aquí es construirà dinàmicament la informacio de la base de dades -->
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -268,7 +332,8 @@ and open the template in the editor.
                                     <input id="usuariDocent" type="text" class="form-control alert-danger" onkeyup="usuariBuit();">
                                     <strong id="titolPass">Contrasenya</strong>
                                     <input id="contraDocent" type="text" class="form-control alert-danger" onkeyup="usuariBuit();">
-
+                                    <strong id="dataIniciActivitatLit">Data inici activitat</strong>
+                                    <input type='text' id='dataIniciActivitat' class="form-control"/>
                                 </div>
                             </div>
                         </div>
@@ -404,6 +469,80 @@ and open the template in the editor.
 
             </div>
         </div>
+
+        <div id="editaDatesClauModal" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <label>Data clau</label>
+                                <input type='text' id='dataClau' class="form-control dates-clau"/>
+
+
+                            </div>
+                            <div class="row">
+                                <label>Data inici publi</label>
+                                <input type='text' id='dataIniciPubli' class="form-control dates-clau"/>
+
+
+                            </div>
+                            <div class="row">
+                                <label>Data fi publi</label>
+                                <input type='text' id='dataFiPubli' class="form-control dates-clau"/>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-body">
+                        <div id="summernoteDatesClau"><p>Edita el text</p></div>
+                    </div>
+                    <div class="modal-footer">                               
+                        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="desaDadesClau();"><span class="glyphicon glyphicon-ok"></span>Desa</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div id="canviaEstatModal" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title" data-codiprof="" data-estat="" data-filera="" id="profCanviEstat"></h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <label id="canviEstatLiteral"></label>
+                                <input type='text' id='dataCanviEstat' class="form-control"/>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">                               
+                        <button id="desaCanviEstatProf" type="button" class="btn btn-success" data-dismiss="modal" onclick="desaCanviEstatProf();"><span class="glyphicon glyphicon-ok"></span>Desa</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 

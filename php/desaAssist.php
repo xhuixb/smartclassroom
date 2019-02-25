@@ -91,11 +91,11 @@ $conn->query($query);
 if (isset($_POST['alumnes'])) {
 
     if ($profSubstituit == "") {
-        $query = "insert into ga28_cont_presencia_cap (ga28_codi_curs,ga28_professor,ga28_dia,ga28_hora) values "
-                . "(" . $_SESSION['curs_actual'] . "," . $_SESSION['prof_actual'] . ",'" . $diaFormSql . "','" . $hora . "')";
+        $query = "insert into ga28_cont_presencia_cap (ga28_codi_curs,ga28_professor,ga28_dia,ga28_hora,ga28_estat) values "
+                . "(" . $_SESSION['curs_actual'] . "," . $_SESSION['prof_actual'] . ",'" . $diaFormSql . "','" . $hora . "','0')";
     } else {
-        $query = "insert into ga28_cont_presencia_cap (ga28_codi_curs,ga28_professor,ga28_dia,ga28_hora,ga28_is_guardia,ga28_prof_substituit) values "
-                . "(" . $_SESSION['curs_actual'] . "," . $profSubstituit . ",'" . $diaFormSql . "','" . $hora . "','1'," . $_SESSION['prof_actual'] . ")";
+        $query = "insert into ga28_cont_presencia_cap (ga28_codi_curs,ga28_professor,ga28_dia,ga28_hora,ga28_is_guardia,ga28_prof_substituit,ga28_estat) values "
+                . "(" . $_SESSION['curs_actual'] . "," . $profSubstituit . ",'" . $diaFormSql . "','" . $hora . "','1'," . $_SESSION['prof_actual'] . ",'0')";
     }
 
 
@@ -121,7 +121,7 @@ if (isset($_POST['alumnes'])) {
 
             $faltesmotius[$x] = str_replace("'", "''", $faltesmotius[$x]);
             $query = "insert into ga15_cont_presencia values(" . $_SESSION['curs_actual'] . "," . $alumnes[$x] . "," . $profeAssist . ",'" . $diaFormSql . "','" . $hora . "','" . $checkPres[$x] . "','" . $checkAbs[$x] . "','" . $checkRet[$x] . "','0','',now(),"
-                    . "" . $faltes[$x] . ",1,'" . $faltesmotius[$x] . "',null,'" . $avisTutors[$x] . "','" . $avisResponsables[$x] . "','" . $checkComunica[$x] . "')";
+                    . "" . $faltes[$x] . ",1,'" . $faltesmotius[$x] . "',null,'" . $avisTutors[$x] . "','" . $avisResponsables[$x] . "','" . $checkComunica[$x] . "',null)";
 
             //inserim la falta d'ordre a la taula cooresponent
             $query2 = "INSERT INTO ga31_faltes_ordre (ga31_codi_curs,ga31_alumne,ga31_codi_professor,ga31_dia,ga31_hora_inici,ga31_tipus_falta,ga31_estat,ga31_motiu,ga31_es_sessio,ga31_just_tutor,ga31_just_resp,ga31_assignatura)"
@@ -141,8 +141,9 @@ if (isset($_POST['alumnes'])) {
         } else {
 
             //l'alumne no té faltes d'ordre
-            $query = "insert into ga15_cont_presencia values(" . $_SESSION['curs_actual'] . "," . $alumnes[$x] . "," . $profeAssist . ",'" . $diaFormSql . "','" . $hora . "','" . $checkPres[$x] . "','" . $checkAbs[$x] . "','" . $checkRet[$x] . "','0','',now(),null,null,null,null,'0','0','" . $checkComunica[$x] . "')";
+            $query = "insert into ga15_cont_presencia values(" . $_SESSION['curs_actual'] . "," . $alumnes[$x] . "," . $profeAssist . ",'" . $diaFormSql . "','" . $hora . "','" . $checkPres[$x] . "','" . $checkAbs[$x] . "','" . $checkRet[$x] . "','0','',now(),null,null,null,null,'0','0','" . $checkComunica[$x] . "',null)";
             $conn->query($query);
+            
         }
     }
 }

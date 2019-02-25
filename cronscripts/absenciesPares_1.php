@@ -24,7 +24,7 @@ $query = "select concat(ga11_cognom1,' ',ga11_cognom2,', ',ga11_nom) as alumne,g
         . "(select ga01_descripcio_aula from ga01_aula,ga28_cont_presencia_cap where ga28_codi_curs=ga15_codi_curs and ga28_dia=ga15_dia and ga28_hora=ga15_hora_inici and ga28_professor=ga15_codi_professor and ga28_aula=ga01_codi_aula) as aula,"
         . "(select concat(ga04_cognom1,' ',ga04_cognom2,', ',ga04_nom) from ga04_professors where ga04_codi_prof=ga15_codi_professor) as professor"
         . " from ga11_alumnes,ga12_alumnes_curs,ga15_cont_presencia,ga06_nivell,ga07_grup"
-        . " where ga15_codi_curs=ga12_codi_curs and ga15_alumne=ga12_id_alumne and ga12_codi_nivell=ga06_codi_nivell and ga12_codi_grup=ga07_codi_grup and ga12_id_alumne=ga11_id_alumne and ga15_dia=date(now())"
+        . " where ga15_codi_curs=ga12_codi_curs and ga15_alumne=ga12_id_alumne and ga12_codi_nivell=ga06_codi_nivell and ga12_codi_grup=ga07_codi_grup and ga12_id_alumne=ga11_id_alumne and ga15_dia=date(now()) and ga15_hora_inici<TIME_FORMAT(now(),'%H:%i')"
         . " and ga15_codi_curs=(select ga03_codi_curs from ga03_curs where ga03_actual='1') and ga15_check_absent='1' and ga15_check_comunica='1'"
         . " order by alumne,codialumne,ga15_hora_inici";
 

@@ -28,6 +28,9 @@ $result = $conn->query($query);
 
 if ($result === true) {
     //s'ha pogut esborrar
+    //Esborrem els registres d'activitat
+    $query="delete from ga42_registre_activitat where ga42_professor=". $codiProf;
+    $conn->query($query);
     //ara esborrem de la taula 4
     $query = "delete from ga04_professors where ga04_codi_prof=" . $codiProf;
     $conn->query($query);

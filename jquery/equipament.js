@@ -23,9 +23,9 @@ $(document).ready(function () {
 });
 
 
-function carregaEquipament(mode) {
+function carregaEquipament(mode, filtre) {
 
-    if (mode === 0) {
+    if (mode === '0') {
         carregaDropGeneric('divNivellPrestec', 'SELECT distinct(ga35_nivell) as codi, ga06_descripcio_nivell as descripcio FROM ga06_nivell,ga35_curs_nivell_grup where ga35_codi_curs=(select ga03_codi_curs from ga03_curs where ga03_actual=1) and ga35_nivell=ga06_codi_nivell', 'Tria Nivell');
     }
     var url = "php/carregaEquipament.php";
@@ -33,12 +33,12 @@ function carregaEquipament(mode) {
     $.ajax({
         type: "POST",
         url: url,
-        data: {},
+        data: {"filtre": filtre},
         //data: ("#form2").serialize,
         success: function (data) {
             $("#divTaulaEquipament").html(data);
             toolTipFormat();
-           
+
         }
 
     });
@@ -51,6 +51,20 @@ function carregaEquipament(mode) {
 function canviaEstatPrestec(element) {
 
     var estat = $(element).attr('data-estat');
+    debugger;
+
+
+    if ($("#radioTotal").prop('checked') === true) {
+        //tots
+        var filtre='1';
+    } else if ($("#radioDispo").prop('checked') === true) {
+        //només disponibles
+        var filtre='2';
+
+    } else {
+        //nomes prestats
+        var filtre='3';
+    }
 
     if (estat === '0') {
         //obrim el modal
@@ -80,7 +94,8 @@ function canviaEstatPrestec(element) {
                     if (data === '1') {
                         alert("El préstec ja ha estat retornat");
                     }
-                    carregaEquipament(1);
+
+                    carregaEquipament('1', filtre);
 
                 }
 
@@ -139,6 +154,23 @@ function mostradivAlumnePrestec(element) {
 }
 
 function desaPrestec() {
+  
+
+    if ($("#radioTotal").prop('checked') === true) {
+        //tots
+        var filtre='1';
+    } else if ($("#radioDispo").prop('checked') === true) {
+        //només disponibles
+        var filtre='2';
+
+    } else {
+        //nomes prestats
+        var filtre='3';
+    }
+
+
+
+
     var codiEquip = $("#nomEquipament").attr('data-codi');
     var codiAlumne = $("#butDropdivAlumnePrestec").val();
 
@@ -162,7 +194,7 @@ function desaPrestec() {
                 $('#desaPrestec').prop('disabled', true);
                 alert("Equipament ja prestat");
             }
-            carregaEquipament(1);
+            carregaEquipament(1, filtre);
 
         }
 
@@ -238,6 +270,22 @@ function comprovaEsborra() {
 
 function esborraPrestec() {
     var totalCheck = $(".checkEsborrar");
+    
+    if ($("#radioTotal").prop('checked') === true) {
+        //tots
+        var filtre='1';
+    } else if ($("#radioDispo").prop('checked') === true) {
+        //només disponibles
+        var filtre='2';
+
+    } else {
+        //nomes prestats
+        var filtre='3';
+    }
+
+
+
+    debugger;
 
     var prestecs = [];
     var conta = 0;
@@ -265,7 +313,7 @@ function esborraPrestec() {
                     if (data == '1') {
                         alert("Posa't en contacte amb l'administrador per esborrar aquest registre");
                     }
-                    carregaEquipament(0);
+                    carregaEquipament('0', filtre);
                     //$("#divTaulaEquipament").html(data);
 
 
@@ -319,3 +367,24 @@ function toolTipFormat() {
 
 
 }
+
+function filtraPerDispo() {
+    //mirem l'opció triada
+    if ($("#radioTotal").prop('checked') === true) {
+        //tots
+        carregaEquipament('0', '1');
+    } else if ($("#radioDispo").prop('checked') === true) {
+        //només disponibles
+        carregaEquipament('0', '2');
+
+
+    } else {
+        //nomes prestats
+        carregaEquipament('0', '3');
+    }
+
+
+
+
+}
+

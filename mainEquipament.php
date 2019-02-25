@@ -1,12 +1,13 @@
+<?php
+header("Cache-Control: no-cache");
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<?php
-header("Cache-Control: no-cache");
-?>
+
 <html>
     <head>
         <title>Préstec d'equipaments</title>
@@ -22,14 +23,15 @@ header("Cache-Control: no-cache");
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="/resources/demos/style.css">
         <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
-        <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+        <!--<script src="https://code.jquery.com/jquery-2.2.4.js"></script>-->
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="css/equipament.css">
 
-
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
 
     </head>
-    <body onload="controlaCredencials('dadesProfEquipament');carregaEquipament(0);">
+    <body onload="controlaCredencials('dadesProfEquipament');carregaEquipament('0', '1');">
         <div class="container-fluid">
             <div class="page-header" id="dadesProfEquipament">
 
@@ -44,7 +46,24 @@ header("Cache-Control: no-cache");
                 </div>
             </div>
         </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <form>
+                        <label class="radio-inline">
+                            <input type="radio" id="radioTotal" onclick="filtraPerDispo();" name="optradio" checked>Tots
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="radioDispo" onclick="filtraPerDispo();" name="optradio">Disponibles
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="radioPrestats" onclick="filtraPerDispo();" name="optradio">Prestats
+                        </label>
+                    </form>
+                </div>
 
+            </div>
+        </div>
 
         <br>
         <div class="container-fluid">

@@ -28,21 +28,21 @@ if (isset($_SESSION['prof_actual'])) {
 
     if (count($node2) > 0) {
         //anem a buscar el pare
-        $pareNode2=$node2[0]->xpath("..");
-      
-        
-        $node2Caption = $pareNode2[0]->attributes()['caption'].' > '.$node2[0]->attributes()['caption'];
+        $pareNode2 = $node2[0]->xpath("..");
+
+
+        $node2Caption = $pareNode2[0]->attributes()['caption'] . ' > ' . $node2[0]->attributes()['caption'];
     } else {
         $node2Caption = '';
     }
 
     if (count($node3) > 0) {
-        $pareNode3=$node3[0]->xpath("..");
-        $pareNode3Caption=$pareNode3[0]->attributes()['caption'];
-        $aviNode3=$pareNode3[0]->xpath("..");
-        $aviNode3Caption=$aviNode3[0]->attributes()['caption'];
-        
-        $node3Caption = $aviNode3Caption.' > '.$pareNode3Caption.' > '.$node3[0]->attributes()['caption'];
+        $pareNode3 = $node3[0]->xpath("..");
+        $pareNode3Caption = $pareNode3[0]->attributes()['caption'];
+        $aviNode3 = $pareNode3[0]->xpath("..");
+        $aviNode3Caption = $aviNode3[0]->attributes()['caption'];
+
+        $node3Caption = $aviNode3Caption . ' > ' . $pareNode3Caption . ' > ' . $node3[0]->attributes()['caption'];
     } else {
         $node3Caption = '';
     }
@@ -51,10 +51,10 @@ if (isset($_SESSION['prof_actual'])) {
         $caption = $node1Caption;
     } elseif ($node2Caption != '') {
         $caption = $node2Caption;
-    } elseif($node3Caption != '') {
+    } elseif ($node3Caption != '') {
         $caption = $node3Caption;
-    }else{
-        $caption="Principal";
+    } else {
+        $caption = "Principal";
     }
 
     //establim la connexió
@@ -90,22 +90,94 @@ if (isset($_SESSION['prof_actual'])) {
     }
 
 
+    //anem a buscar les notificacions
+    //primer els aniversaris
+    $query = "select count(*) as conta from ga04_professors,ga17_professors_curs"
+            . " where ga17_codi_curs=" . $_SESSION['curs_actual'] . " and ga04_suspes='0' and month(ga04_data_naixement)=month(now()) and day(ga04_data_naixement)=day(now()) and ga04_codi_prof=ga17_codi_professor";
+
+
+    $result = $conn->query($query);
+
+
+    if (!$result)
+        die($conn->error);
+
+    $row = $result->fetch_assoc();
+
+    $conta = (int) $row['conta'];
+
+    //ara les dates clau
+    $query = "select count(*) as conta from ga41_dates_clau where ga41_curs=".$_SESSION['curs_actual']." and ga41_data_inici_publi<=date(now()) and ga41_data_fi_publi>=date(now()) ";
+
+    $result = $conn->query($query);
+
+
+    if (!$result)
+        die($conn->error);
+
+    $row = $result->fetch_assoc();
+
+    $conta += (int) $row['conta'];
+
+
+    if ($conta === 0) {
+        $colorButton = "btn-info";
+        $textButton = "Notificacions(0)";
+    } else {
+        $colorButton = "btn-success";
+        $textButton = "Notificacions(" . $conta . ")";
+    }
+
 
     echo '<div class="container-fluid">';
     echo '<div class="row">';
-    echo '<div class="col-sm-10" >';
+    echo '<div class="col-sm-5" >';
     echo '<h4 id="dadesCredencials" data-codi-prof="' . $_SESSION['prof_actual'] . '" data-admin="' . $_SESSION['admin'] . '"><strong>Curs: </strong>' . $_SESSION['nom_curs_actual'] . '<strong>&emsp;Docent: </strong>' . $_SESSION['nom_prof_actual'] . '</h4>';
     echo '<h4>' . '<strong>Perfil: </strong>' . join('-', $perfil) . '</h4>';
     echo '<h4><strong>Menu: </strong>' . $caption . ' <a href="main.html"><span class="glyphicon glyphicon-log-out"></span></a></h4>';
     echo '</div>';
-
     echo '<div class="col-sm-2">';
+    echo '<button type="button" class="btn ' . $colorButton . ' form-control" data-toggle="modal" onclick="carregaNotificacions(this);">';
+    echo '<span class="glyphicon glyphicon-info-sign">' . $textButton . '</span>';
+    echo '</button>';
+    echo '</div>';
+    echo '<div class="col-sm-2 col-sm-offset-3">';
     echo '<img class="img-responsive" src="imatges/logo_Rocagrossa.jpg" width="150">';
     echo '</div>';
 
     echo '</div>';
     echo '</div>';
+
+    echo '<div id="notificacionsModal" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">';
+    echo '<div class="modal-dialog modal-lg">';
+
+
+    echo '<div class="modal-content" >';
+    echo '<div class="modal-header">';
+    echo '<button type="button" class="close" data-dismiss="modal">&times;</button>';
+    echo '<h3 class="modal-title">Noficacions</h3>';
+    echo '</div>';
+    echo '<div class="modal-body">';
+    echo '<div class="container-fluid">';
+    echo '<div class="row">';
+    echo '<div id="summernoteNotifi"><p>Edita el text</p></div>';
+
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '<div class="modal-footer">';
+
+    echo '<button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>';
+    echo '</div>';
+    echo '</div>';
+
+    echo '</div>';
+    echo '</div>';
+
+    //
 } else {
     echo 'forbidden';
     //echo $_SESSION['prof_actual'];
 }
+
+$conn->close();

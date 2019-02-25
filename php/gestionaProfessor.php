@@ -19,6 +19,8 @@ $login = $_POST['login'];
 $password = $_POST['password'];
 $codiProf = $_POST['codiProf'];
 $mode = $_POST['mode'];
+$dataIniciActivitat=$_POST['dataIniciActivitat'];
+
 //establim la connexió
 $conn = new mysqli(Databases2::$host, Databases2::$user, Databases2::$password, Databases2::$dbase);
 if ($conn->connect_error)
@@ -68,6 +70,9 @@ if ($mode == '0') {
         $query = "insert into ga17_professors_curs values (" . $_SESSION['curs_actual'] . "," . $nouCodiProf . ",0)";
         //executem la sentència
 
+        $conn->query($query);
+        //creem el registre d'activitat
+        $query="insert into ga42_registre_activitat values (".$nouCodiProf.",'".$dataIniciActivitat."',null)";
         $conn->query($query);
 
         echo '0';

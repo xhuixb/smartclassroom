@@ -7,6 +7,7 @@
  */
 
 require '../classes/Databases.php';
+require '../classes/utilitatsProfe.php';
 //fem la connexió
 //rebem les dades
 
@@ -18,6 +19,7 @@ $dataSessio = $_POST['dataSessio'];
 $alumnes = [];
 $estats = [];
 $alumnesEstat = $_POST['alumnes'];
+$mode = $_POST['mode'];
 
 //aconseguim els estats i ela slumnes que venien junts en l'array alumnesEstats
 for ($i = 0; $i < count($alumnesEstat); $i++) {
@@ -51,11 +53,13 @@ $query = "select ga26_codi_professor as codiprof,"
         . "(select ga23_nom_grup from ga23_grups_profes_cap where ga23_codi_grup=codigrup) as nomgrup,"
         . "(select ga18_desc_assignatura from ga18_assignatures where ga18_codi_assignatura=codiassig) as nomassig,"
         . "(select ga01_descripcio_aula from ga01_aula where ga01_codi_aula=codiaula) as nomaula,"
-        . "ga26_tipus_grup,"
+        . "ga26_tipus_grup as tipusgrup,"
         . "(select ga28_professor from ga28_cont_presencia_cap where ga28_codi_curs=(select ga03_codi_curs from ga03_curs where ga03_actual=1) and ga28_professor=codiprof and ga28_dia='" . $dataSessio . "' and ga28_hora=hora) as proftit"
         . " from ga26_horaris_docents,ga23_grups_profes_cap,ga24_grups_profes_det"
         . " where ga26_codi_curs=" . $_SESSION['curs_actual'] . " and ga26_tipus_grup=1 and ga26_grup=ga23_codi_grup and ga26_grup=ga24_codi_grup and ga24_codi_alumne in " . $whereAlumnes . " and ga26_dia_setmana=DAYOFWEEK('" . $dataSessio . "')-1 and ga26_is_lectiva=1 "
         . " group by dia,hora,codiprof order by hora,codiassig";
+
+
 
 //echo $query;
 //executem la consulta
@@ -86,10 +90,10 @@ $query = "select ga26_codi_professor as codiprof,"
         . "(select ga07_descripcio_grup from ga07_grup where ga07_codi_grup=codigrup) as nomgrupgral,"
         . "(select ga18_desc_assignatura from ga18_assignatures where ga18_codi_assignatura=codiassig) as nomassig,"
         . "(select ga01_descripcio_aula from ga01_aula where ga01_codi_aula=codiaula) as nomaula,"
-        . "ga26_tipus_grup,"
+        . "ga26_tipus_grup as tipusgrup,"
         . "(select ga28_professor from ga28_cont_presencia_cap where ga28_codi_curs=(select ga03_codi_curs from ga03_curs where ga03_actual=1) and ga28_professor=codiprof and ga28_dia='" . $dataSessio . "' and ga28_hora=hora) as proftit"
         . " from ga26_horaris_docents,ga12_alumnes_curs"
-        . " where ga26_codi_curs=" . $_SESSION['curs_actual'] . " and ga26_tipus_grup=0 and ga26_grup=ga12_codi_grup and ga26_nivell=ga12_codi_nivell and ga12_id_alumne in " . $whereAlumnes . " and ga26_dia_setmana=DAYOFWEEK('" . $dataSessio . "')-1 and ga26_is_lectiva=1 "
+        . " where ga26_codi_curs=" . $_SESSION['curs_actual'] . " and ga26_tipus_grup=0 and ga26_codi_curs=ga12_codi_curs and ga26_grup=ga12_codi_grup and ga26_nivell=ga12_codi_nivell and ga12_id_alumne in " . $whereAlumnes . " and ga26_dia_setmana=DAYOFWEEK('" . $dataSessio . "')-1 and ga26_is_lectiva=1 "
         . " group by dia,hora,codiprof order by hora,codiassig";
 
 
@@ -123,8 +127,9 @@ echo '<table id="taulaSessionsMassives" class="table table-fixed">';
 echo '<thead>';
 echo '<tr>';
 echo '<th class="col-sm-1"><input type="checkbox" value="" id="checkEsborraSessions" onclick="seleccionaSessions();"></th>';
-echo '<th class="col-sm-2">Hora</th>';
-echo '<th class="col-sm-3">Assignatura</th>';
+echo '<th class="col-sm-1">Hora</th>';
+echo '<th class="col-sm-2">Assignatura</th>';
+echo '<th class="col-sm-2">Nivell</th>';
 echo '<th class="col-sm-2">Grup</th>';
 echo '<th class="col-sm-3">Professor</th>';
 echo '<th class="col-sm-1">Estat</th>';
@@ -140,37 +145,66 @@ if (isset($horarisArray)) {
     foreach ($horarisArray as $tramHorari) {
 
         $contingutHorari = explode('<#>', $tramHorari);
-        if ($contingutHorari[13] != '') {
 
-            $estatColor = 'class="btn-success"';
-            $estatText='Passada';
-            $estatTria="";
-        } else {
+        $actiu = comprovaProfeActiu($dataSessio, $contingutHorari[0], $conn);
 
-            $estatColor = 'class="btn-danger"';
-            $estatText='Pendent';
-            $estatTria="disabled";
-        }
+        if ($actiu === true) {
+            //només mostrem la sessió si és d'un profe actiu
 
-        if ($contingutHorari[13] == '1') {
-            //és un grup personal
-            $nomGrupSessio = $contingutHorari[10];
-        } else {
+
+            if ($contingutHorari[13] != '' && $mode == '1') {
+
+                $estatColor = 'class="col-sm-1 btn-success"';
+                $estatText = 'Passada';
+                $estatTria = "";
+                $estatAssist = 'data-estat="1"';
+            } elseif ($contingutHorari[13] == '' && $mode == '1') {
+
+                $estatColor = 'class="col-sm-1 btn-danger"';
+                $estatText = 'Pendent';
+                $estatTria = "disabled";
+                $estatAssist = 'data-estat="0"';
+            } elseif ($contingutHorari[13] != '' && $mode == '2') {
+                $estatColor = 'class="col-sm-1 btn-success"';
+                $estatText = 'Passada';
+                $estatTria = "";
+                $estatAssist = 'data-estat="1"';
+            } else {
+                $estatColor = 'class="col-sm-1 btn-danger"';
+                $estatText = 'Pendent';
+                $estatTria = "";
+                $estatAssist = 'data-estat="0"';
+            }
+
+            //$estatAssit=0 pendent
+            //$estatAssit=1 passada
+
+
             $nomGrupSessio = $contingutHorari[9];
+
+
+            echo '<tr>';
+            echo '<td class="col-sm-1" data-aula="' . $contingutHorari[6] . '" data-assignatura="' . $contingutHorari[4] . '"><input type="checkbox" value="" class="sessionsSeleccionades" ' . $estatTria . '></td>';
+            echo '<td class="col-sm-1">' . $contingutHorari[2] . '</td>';
+            echo '<td class="col-sm-2">' . $contingutHorari[10] . '</td>';
+            echo '<td class="col-sm-2" data-nivell="' . $contingutHorari[3] . '">' . $contingutHorari[8] . '</td>';
+            echo '<td class="col-sm-2" data-grup="' . $contingutHorari[5] . '" data-tipusgrup="' . $contingutHorari[12] . '">' . $nomGrupSessio . '</td>';
+            echo '<td class="col-sm-3" data-codiprof="' . $contingutHorari[0] . '">' . $contingutHorari[7] . '</td>';
+            echo '<td ' . $estatColor . ' ' . $estatAssist . '>' . $estatText . '</td>';
+            echo '</tr>';
         }
-
-        echo '<tr>';
-        echo '<td class="col-sm-1"><input type="checkbox" value="" class="sessionsSeleccionades" '.$estatTria.'></td>';
-        echo '<td class="col-sm-2">' . $contingutHorari[2] . '</td>';
-        echo '<td class="col-sm-3">' . $contingutHorari[10] . '</td>';
-
-        echo '<td class="col-sm-2">' . $nomGrupSessio . '</td>';
-        echo '<td class="col-sm-3" data-codiprof="'.$contingutHorari[0].'">' . $contingutHorari[7] . '</td>';
-        echo '<td ' . $estatColor . '>'.$estatText.'</td>';
-        echo '</tr>';
     }
     if (count($horarisArray) > 0) {
         echo '</tbody>';
     }
 }
 echo '</table>';
+
+
+if ($mode == '2') {
+    echo '<label>Comentari</label>';
+    //mostrem també el imput de comentaris
+    echo '<textarea class="form-control" rows="3" id="comentSessio"></textarea>';
+}
+
+$conn->close();

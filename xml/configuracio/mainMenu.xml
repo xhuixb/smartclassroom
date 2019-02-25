@@ -9,7 +9,10 @@ and open the template in the editor.
         <menuItem caption="Gestió de sessions" permis="1-2-4" referencia="mainSessions.html"/>
         <menuItem caption="Els meus grups" permis="1-2" referencia="mainMeusGrups.html"/>
         <menuItem caption="Justificar absències" permis="1-2-3-4" referencia="mainJustificaAbsencies.html"/>
-        <menuItem caption="Accions massives" permis="1-2-3-4" referencia="sessionsMassives.html"/>        
+        <menuItem caption="Accions massives" permis="1-2-3-4" referencia="">
+            <subMenuItem caption="Per grup" permis="1-2" referencia="sessionsMassives.php"/>
+            <subMenuItem caption="Per alumne" permis="1-2" referencia="sessionsMassivesAlumne.php"/>
+        </menuItem>        
     </menuOption>
     <menuOption caption="Disciplina" referencia="">
         <menuItem caption="Consulta CCC" permis="1-2-3-4" referencia="mainDisciplina.html"/>

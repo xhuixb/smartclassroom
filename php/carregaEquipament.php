@@ -1,8 +1,9 @@
 
 
-        
-   
+
+
 <?php
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,6 +14,10 @@ require '../classes/Databases.php';
 //fem la connexió
 
 session_start();
+
+$filtre = $_POST['filtre'];
+
+
 //$_SESSION['curs_actual'] = 3;
 //$_SESSION['prof_actual'] = 0;
 //establim la connexió
@@ -29,7 +34,7 @@ $query = "select ga45_codi as codiequipament,ga45_descripcio as descequipament,"
         . "(select ga46_prof_prestec as codialumne from ga46_prestecs where ga46_equip=codiequipament and ga46_data_devolucio is null) as codiprof,"
         . "(select concat(ga04_cognom1,' ',ga04_cognom2,', ' ,ga04_nom) from ga04_professors where ga04_codi_prof=codiprof) as nomprofessor,"
         . "(select count(*) from ga46_prestecs where ga46_equip=codiequipament and ga46_curs=" . $_SESSION['curs_actual'] . ") as totalprestecs"
-        . " from ga45_inventari order by totalprestecs asc,codiequipament asc";
+        . " from ga45_inventari where ga45_es_actiu='1' order by totalprestecs asc,ga45_codi asc";
 
 //executem la consulta
 $result = $conn->query($query);
@@ -73,13 +78,16 @@ if ($result->num_rows > 0) {
             $habilitaDetall = '';
         }
 
-        echo '<tr>';
-        echo '<td class="col-sm-2" data-codi="' . $row['codiequipament'] . '">' . $row['descequipament'] . '</td>';
-        echo '<td class="col-sm-2">' . $row['nomalumne'] . '</td>';
-        echo '<td class="col-sm-2">' . $row['nomprofessor'] . '</td>';
-        echo '<td class="col-sm-1"><button class="btn ' . $colorEstat . ' form-control" data-toggle="tooltip" title="' . $toolTip . '" type="button" onclick="canviaEstatPrestec(this)" data-estat="' . $estat . '">' . $textEstat . '</button></td>';
-        echo '<td class="col-sm-1"><center><button type="button" class="btn btn-info form-control" ' . $habilitaDetall . ' data-toggle="modal" data-target="#detallPrestecs" onclick="mostraDetallPrestecs(this)"><span class="glyphicon glyphicon-option-vertical">(' . $row['totalprestecs'] . ')</span></button></center></td>';
-        echo '</tr>';
+        if ($filtre == "1" || (($filtre == "2") && ($row['codialumne'] == '')) || (($filtre == "3") && ($row['codialumne'] != ''))) {
+
+            echo '<tr>';
+            echo '<td class="col-sm-2" data-codi="' . $row['codiequipament'] . '">' . $row['descequipament'] . '</td>';
+            echo '<td class="col-sm-2">' . $row['nomalumne'] . '</td>';
+            echo '<td class="col-sm-2">' . $row['nomprofessor'] . '</td>';
+            echo '<td class="col-sm-1"><button class="btn ' . $colorEstat . ' form-control" data-toggle="tooltip" title="' . $toolTip . '" type="button" onclick="canviaEstatPrestec(this)" data-estat="' . $estat . '">' . $textEstat . '</button></td>';
+            echo '<td class="col-sm-1"><center><button type="button" class="btn btn-info form-control" ' . $habilitaDetall . ' data-toggle="modal" data-target="#detallPrestecs" onclick="mostraDetallPrestecs(this)"><span class="glyphicon glyphicon-option-vertical">(' . $row['totalprestecs'] . ')</span></button></center></td>';
+            echo '</tr>';
+        }
     }
     echo '</tbody>';
 }

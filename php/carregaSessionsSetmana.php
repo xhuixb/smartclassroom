@@ -185,7 +185,6 @@ if ($diffDesdeFiNum < 0) {
         if (array_search(date_format($dataIniciBucle, 'Y-m-d'), $totalFestiusArray) === false) {
             //busquem la data entre els festius i no la trobem
             $diesDesdeInici++;
-           
         }
     }
 
@@ -211,7 +210,7 @@ if ($diffDesdeFiNum < 0) {
     }
 
 
-    $cursFet = ($diesDesdeInici / ($diesTotalsReals+1)) * 100;
+    $cursFet = ($diesDesdeInici / ($diesTotalsReals + 1)) * 100;
 } else {
     //ja ha acabat el curs
     $cursFet = 100;
@@ -228,7 +227,7 @@ echo '</div>';
 
 //anema a construir les dates clau
 
-$query = "select ga41_data_clau as data,ga41_caption as caption,ga41_descripcio as descripcio from ga41_dates_clau where ga41_curs=(select ga03_codi_curs from ga03_curs where ga03_actual='1')";
+$query = "select ga41_data_clau as data,ga41_descripcio as descripcio from ga41_dates_clau where ga41_curs=(select ga03_codi_curs from ga03_curs where ga03_actual='1')";
 
 //executem la consulta
 $result = $conn->query($query);
@@ -399,7 +398,7 @@ if ($result->num_rows > 0) {
                     }
 
                     //anem a buscar la sessio
-                    $query2 = "select ga28_professor,ga28_dia,ga28_hora,ga28_grup as grup,ga28_prof_substituit as profsubs from ga28_cont_presencia_cap where ga28_codi_curs=" . $_SESSION['curs_actual']
+                    $query2 = "select ga28_professor,ga28_dia,ga28_hora,ga28_grup as grup,ga28_prof_substituit as profsubs,ga28_estat as estat from ga28_cont_presencia_cap where ga28_codi_curs=" . $_SESSION['curs_actual']
                             . " and ga28_professor=" . $profe . " and ga28_dia='" . $diaSessio[$i] . "' and ga28_hora='" . $contingutHorari[1] . "'";
 
 //executem la consulta
@@ -411,13 +410,20 @@ if ($result->num_rows > 0) {
 
                     if ($result2->num_rows > 0) {
 
-//hi ha sessió
-                        $button2[$i] = '<div class="col-sm-6">'
-                                . '<label class="form-control btn-success">Passada</label>'
-                                . '</div>';
+                        //hi ha sessió  
 //anem a veure si es pot gestionar la sessio
 //si hi ha grup vol dir que es pot gestionar en cas contrari no
                         $row2 = $result2->fetch_assoc();
+
+                        if ($row2['estat'] == '0') {
+                            $button2[$i] = '<div class="col-sm-6">'
+                                    . '<label data-toggle="tooltip" title="Sessió passada" class="form-control btn-success">Passada</label>'
+                                    . '</div>';
+                        } else {
+                            $button2[$i] = '<div class="col-sm-6">'
+                                    . '<label data-toggle="tooltip" title="Sessió provisional" class="form-control btn-warning">Provi</label>'
+                                    . '</div>';
+                        }
                         if ($row2['grup'] == '') {
 //no hi ha grup per tant no es pot gestionar
 //no es pot gestionar
@@ -426,7 +432,11 @@ if ($result->num_rows > 0) {
 //si que hi ha grup es pot gestionar si és una guàrdia pròpia o si no és guàrdia
                             if ($esguardia == true && $row2['profsubs'] == $_SESSION['prof_actual']) {
                                 $gestio = true;
-                            } elseif ($esguardia == false) {
+                                
+                            }elseif($esguardia == true && $row2['estat'] == '1') {
+                                $gestio = true;
+                            } 
+                            elseif ($esguardia == false) {
                                 $gestio = true;
                             } else {
                                 $gestio = false;
@@ -434,7 +444,7 @@ if ($result->num_rows > 0) {
                         }
 
                         if ($gestio == true) {
-                            $button1[$i] = '<div class="col-sm-6"><button type="button" class="btn btn-info form-control" id="goToSessio" data-toggle="modal" onclick="obreSessio(this);">'
+                            $button1[$i] = '<div class="col-sm-6"><button type="button" data-toggle="tooltip" title="Ves a la sessió" class="btn btn-info form-control" id="goToSessio" data-toggle="modal" onclick="obreSessio(this);">'
                                     . '<span class="glyphicon glyphicon-pencil"></span>Sessió'
                                     . '</button></div>';
                         } else {
@@ -465,11 +475,11 @@ if ($result->num_rows > 0) {
 //si l'horari té grup el podrem gestiona en cas contrari no
 
                             if ($contingutHorari[12] != '') {
-                                $button1[$i] = '<div class="col-sm-6"><button type="button" class="btn btn-info form-control" id="goToSessio" data-toggle="modal" onclick="obreSessio(this);">'
+                                $button1[$i] = '<div class="col-sm-6"><button type="button" data-toggle="tooltip" title="Ves a la sessió" class="btn btn-info form-control" id="goToSessio" data-toggle="modal" onclick="obreSessio(this);">'
                                         . '<span class="glyphicon glyphicon-pencil"></span>Sessió'
                                         . '</button></div>';
                                 $button2[$i] = '<div class="col-sm-6">'
-                                        . '<label class="form-control btn-danger">Pendent</label>'
+                                        . '<label data-toggle="tooltip" title="Sessió pendent" class="form-control btn-danger" >Pendent</label>'
                                         . '</div>';
                             } else {
                                 $button1[$i] = '<div class="col-sm-6"><button type="button" class="btn btn-info form-control" id="goToSessio" data-toggle="modal" onclick="obreSessio(this);" disabled>'

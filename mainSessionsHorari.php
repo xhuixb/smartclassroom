@@ -13,7 +13,8 @@
       <!--  <script src="jquery/sessionsjquery.js"></script>-->
         <script src="jquery/sessionsHorarijquery.js"></script>
 
-
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
     </head>
     <?php
     require 'classes/Databases.php';
@@ -40,7 +41,7 @@
             . "ga28_tipus_grup as tipusgrup,"
             . "ga28_assignatura as assignatura,"
             . "(select ga18_desc_assignatura from ga18_assignatures where ga18_codi_assignatura=assignatura) as nomAssignatura,"
-            . "ga28_coment_general as comentari"
+            . "ga28_coment_general as comentari,ga28_estat as estat"
             . " from ga28_cont_presencia_cap"
             . " where ga28_codi_curs=" . $_SESSION['curs_actual'] . " and ga28_professor=" . $profeCodi . " and ga28_dia='" . $dia . "' and  ga28_hora='" . $hora . "'";
 
@@ -91,6 +92,13 @@
             $dadesSessio['nomprofsubs'] = $row['nomprofsubs'];
         }
         $dadesSessio['comentari'] = $row['comentari'];
+        $estat = $row['estat'];
+
+        if ($estat == '0') {
+            $provisional = false;
+        } else {
+            $provisional = true;
+        }
 
         $result->close();
 
@@ -126,6 +134,7 @@
         $result->close();
     } else {
         $sessioNova = true;
+        $provisional = false;
         $day_num = date('w', strtotime($dia));
 
         $result->close();
@@ -171,6 +180,7 @@
             $dadesSessio['assignatura'] = $row['assignatura'];
             $dadesSessio['nomAssignatura'] = $row['nomAssignatura'];
             $dadesSessio['comentari'] = '';
+            $dadesSessio['esguardia'] = '';
             $result->close();
 
             //anem a buscar els alumnes del grup
@@ -233,10 +243,12 @@
                 </div>
                 <div class="col-sm-1">
                     <?php
-                    if ($sessioNova == true) {
-                        echo '<center><label class="form-control btn-danger">Pendent</label></center>';
+                    if ($sessioNova === true) {
+                        echo '<center><label id="labelEstat" class="form-control btn-danger">Pendent</label></center>';
+                    } elseif ($sessioNova === false && $provisional === false) {
+                        echo '<center><label id="labelEstat" class="form-control btn-success">Passada</label></center>';
                     } else {
-                        echo '<center><label class="form-control btn-success">Passada</label></center>';
+                        echo '<center><label id="labelEstat" class="form-control btn-warning">Provisional</label></center>';
                     }
                     ?>
                 </div>
@@ -267,8 +279,9 @@
                     <div class="checkbox col-sm-12">
                         <input id="esGuardia" type="checkbox" value="1" 
                         <?php
-                        if (($sessioNova == true && $esguardia == '1') || ($sessioNova == false && $dadesSessio['esguardia'] == '1'))
+                        if ($esguardia == '1' || $dadesSessio['esguardia'] == '1')
                             echo 'checked';
+                        //($sessioNova == true && $esguardia == '1') || ($sessioNova == false && ($dadesSessio['esguardia'] == '1') || ($dadesSessio['esguardia'] == '0' && $esguardia == '1' && $estat = '1'))
                         ?> disabled>
                     </div>
 
@@ -345,66 +358,154 @@
                     //0 no hi ha profe de guàrdia
                     //1 el profe de guàrdia és el substituït
                     //2 el profe de guàrdia és el substitut
-                    if ($esguardia == '1' && $sessioNova == true) {
-                        echo '1';
-                    } elseif ($esguardia != '1' && $sessioNova == true) {
-                        echo '0';
-                    } elseif ($sessioNova == false && $dadesSessio['esguardia'] == '1') {
+                    /* if ($esguardia == '1' && $sessioNova == true) {
+                      //el profe substitut passa llista per primer cop
+                      echo '1';
+                      } elseif ($esguardia != '1' && $sessioNova == true) {
+                      //el profe titular passa llista per primer cop
+                      echo '0';
+                      } elseif ($esguardia == '1' && $sessioNova == false) {
 
-                        if ($profeCodi != $_SESSION['prof_actual']) {
-                            echo '1';
+                      //$sessioNova == false && (($dadesSessio['esguardia'] == '1') || ($dadesSessio['esguardia'] == '0' && $esguardia == '1' && $estat = '1'))
+
+
+                      if ($profeCodi != $_SESSION['prof_actual']) {
+                      echo '1';
+                      } else {
+                      echo '2';
+                      }
+                      } else {
+                      echo '0';
+                      } */
+
+                    if ($esguardia == '0') {
+                        //és el profe titular.
+                        if ($sessioNova == true) {
+                            //crea una sessió nove
+                            echo '0';
+                        } elseif ($sessioNova == false && $dadesSessio['esguardia'] == '0') {
+                            //revisa una sessió pròpia
+                            echo '0';
                         } else {
+                            //revisa una sessió feta per un substitut
                             echo '2';
                         }
                     } else {
-                        echo '0';
+                        //profe no titular  perquè és una guàrdia
+                        echo '1';
                     }
                     ?>"><?php
-                               if ($esguardia == '1' && $sessioNova == true) {
-                                   echo 'prof substituït';
-                               } elseif ($esguardia != '1' && $sessioNova == true) {
-                                   echo 'prof de guàrdia';
-                               } elseif ($sessioNova == false && $dadesSessio['esguardia'] == '1') {
-
-                                   if ($profeCodi != $_SESSION['prof_actual']) {
-                                       echo 'prof substituït';
+                               if ($esguardia == '0') {
+                                   //és el profe titular.
+                                   if ($sessioNova == true) {
+                                       //crea una sessió nove
+                                       echo 'prof de guàrdia';
+                                   } elseif ($sessioNova == false && $dadesSessio['esguardia'] == '0') {
+                                       //revisa una sessió pròpia
+                                       echo 'prof de guàrdia';
                                    } else {
+                                       //revisa una sessió feta per un substitut
                                        echo 'prof substitut';
                                    }
                                } else {
-                                   echo 'prof de guàrdia';
+                                   //profe no titular  perquè és una guàrdia
+                                   echo 'prof substituït';
                                }
+
+
+
+
+
+
+
+                               /* if ($esguardia == '1' && $sessioNova == true) {
+                                 echo 'prof substituït';
+                                 } elseif ($esguardia != '1' && $sessioNova == true) {
+                                 echo 'prof de guàrdia';
+                                 } elseif (($sessioNova == true && $esguardia == '1') || ($sessioNova == false && ($dadesSessio['esguardia'] == '1') || ($dadesSessio['esguardia'] == '0' && $esguardia == '1' && $estat = '1'))) {
+
+                                 if ($profeCodi != $_SESSION['prof_actual']) {
+                                 echo 'prof substituït';
+                                 } else {
+                                 echo 'prof substitut';
+                                 }
+                                 } else {
+                                 echo 'prof de guàrdia';
+                                 } */
                                ?>
                     </label>
                     <input class="form-control" id="profSubsSessio" data-codi="<?php
-                    if ($esguardia == '1' && $sessioNova == true) {
-                        echo $profeCodi;
-                    } elseif ($esguardia != '1' && $sessioNova == true) {
-                        echo '';
-                    } elseif ($sessioNova == false && $dadesSessio['esguardia'] == '1') {
-
-                        if ($profeCodi != $_SESSION['prof_actual']) {
-                            echo $profeCodi;
+                    if ($esguardia == '0') {
+                        //és el profe titular.
+                        if ($sessioNova == true) {
+                            //crea una sessió nove
+                            echo '';
+                        } elseif ($sessioNova == false && $dadesSessio['esguardia'] == '0') {
+                            //revisa una sessió pròpia
+                            echo '';
                         } else {
+                            //revisa una sessió feta per un substitut
                             echo $dadesSessio['codiprofsubs'];
                         }
                     } else {
-                        echo '';
+                        //profe no titular  perquè és una guàrdia
+                        echo $profeCodi;
                     }
+
+
+
+
+
+
+                    /*  if ($esguardia == '1' && $sessioNova == true) {
+                      echo $profeCodi;
+                      } elseif ($esguardia != '1' && $sessioNova == true) {
+                      echo '';
+                      } elseif ($sessioNova == false && ($dadesSessio['esguardia'] == '1') || ($sessioNova == false && ($dadesSessio['esguardia'] == '1') || ($dadesSessio['esguardia'] == '0' && $esguardia == '1' && $estat = '1'))) {
+
+                      if ($profeCodi != $_SESSION['prof_actual']) {
+                      echo $profeCodi;
+                      } else {
+                      echo $dadesSessio['codiprofsubs'];
+                      }
+                      } else {
+                      echo '';
+                      } */
                     ?>" value="<?php
-                           if ($esguardia == '1' && $sessioNova == true) {
-                               echo $profeNom;
-                           } elseif ($esguardia != '1' && $sessioNova == true) {
-                               echo '';
-                           } elseif ($sessioNova == false && $dadesSessio['esguardia'] == '1') {
-                               if ($profeCodi != $_SESSION['prof_actual']) {
-                                   echo $profeNom;
+                           if ($esguardia == '0') {
+                               //és el profe titular.
+                               if ($sessioNova == true) {
+                                   //crea una sessió nove
+                                   echo '';
+                               } elseif ($sessioNova == false && $dadesSessio['esguardia'] == '0') {
+                                   //revisa una sessió pròpia
+                                   echo '';
                                } else {
+                                   //revisa una sessió feta per un substitut
                                    echo $dadesSessio['nomprofsubs'];
                                }
                            } else {
-                               echo '';
+                               //profe no titular  perquè és una guàrdia
+                               echo $profeNom;
                            }
+
+
+
+
+
+                           /* if ($esguardia == '1' && $sessioNova == true) {
+                             echo $profeNom;
+                             } elseif ($esguardia != '1' && $sessioNova == true) {
+                             echo '';
+                             } elseif ($sessioNova == false && ($dadesSessio['esguardia'] == '1') || ($sessioNova == false && ($dadesSessio['esguardia'] == '1') || ($dadesSessio['esguardia'] == '0' && $esguardia == '1' && $estat = '1'))) {
+                             if ($profeCodi != $_SESSION['prof_actual']) {
+                             echo $profeNom;
+                             } else {
+                             echo $dadesSessio['nomprofsubs'];
+                             }
+                             } else {
+                             echo '';
+                             } */
 
                            /* if ($esguardia == '1') {
                              echo $profeNom;
@@ -583,7 +684,7 @@
                             echo '</thead>';
 
                             $query = "select ga15_alumne as codi, ga07_descripcio_grup as descrgrup, ga06_descripcio_nivell as descrnivell, concat(ga11_cognom1, ' ', ga11_cognom2, ', ', ga11_nom) as alumne,"
-                                    . "ga15_check_comunica as checkcomunica,ga15_check_present, ga15_check_absent, ga15_check_retard, ga15_data_hora_darrera_mod,"
+                                    . "ga15_check_comunica as checkcomunica,ga15_check_present, ga15_check_absent, ga15_check_retard, ga15_data_hora_darrera_mod,ga15_comentari as comentari,"
                                     . "(select ga31_tipus_falta from ga31_faltes_ordre where ga15_codi_curs = " . $_SESSION['curs_actual'] . " and ga31_alumne=codi and ga31_codi_professor=" . $profeCodi . " and ga31_dia='" . $dia . "' and ga31_hora_inici='" . $hora . "' and ga31_es_sessio=1) as tipusfalta,"
                                     . "(select ga31_estat from ga31_faltes_ordre where ga15_codi_curs = " . $_SESSION['curs_actual'] . " and ga31_alumne=codi and ga31_codi_professor=" . $profeCodi . " and ga31_dia='" . $dia . "' and ga31_hora_inici='" . $hora . "' and ga31_es_sessio=1) as estatfalta,"
                                     . "(select ga31_motiu from ga31_faltes_ordre where ga15_codi_curs = " . $_SESSION['curs_actual'] . " and ga31_alumne=codi and ga31_codi_professor=" . $profeCodi . " and ga31_dia='" . $dia . "' and ga31_hora_inici='" . $hora . "' and ga31_es_sessio=1) as motiufalta,"
@@ -697,9 +798,13 @@
                                     echo '<td><input type="checkbox" value="" class="checkEsborrar"></td>';
                                     echo '<td>' . $row['descrnivell'] . '</td>';
                                     echo '<td>' . $row['descrgrup'] . '</td>';
-
+                                    if ($row['comentari'] != '') {
+                                        $colorComent = 'style="color:orange"';
+                                    } else {
+                                        $colorComent = '';
+                                    }
                                     //en aquesta cella posarem el codi de l'alumne i les dades de la possible falta d'ordre
-                                    echo '<td id="al' . $row['codi'] . '" data-tipus="' . $row['tipusfalta'] . '" data-estat="' . $row['estatfalta'] . '" data-motiu="' . $row['motiufalta'] . '" data-num="' . $row['numfalta'] . '" data-textfalta="' . $row['textfalta'] . '" data-avisresponsables="' . $row['justresp'] . '" data-avistutor="' . $row['justtutor'] . '" data-comentarialumne="' . $row['comentalumne'] . '" data-comentariavis="' . $switchEnviar . '"><a onclick="mostraFitxaAlumne(this)">' . $conta . '-' . $row['alumne'] . '</a>' . $assistAnterior . '</td>';
+                                    echo '<td id="al' . $row['codi'] . '" data-tipus="' . $row['tipusfalta'] . '" data-estat="' . $row['estatfalta'] . '" data-motiu="' . $row['motiufalta'] . '" data-num="' . $row['numfalta'] . '" data-textfalta="' . $row['textfalta'] . '" data-avisresponsables="' . $row['justresp'] . '" data-avistutor="' . $row['justtutor'] . '" data-comentarialumne="' . $row['comentalumne'] . '" data-comentariavis="' . $switchEnviar . '"><a onclick="mostraFitxaAlumne(this)">' . $conta . '-' . $row['alumne'] . ' </a><a href="#" data-toggle="tooltip" data-titol="' . str_replace('"', '&quot;', $row['comentari']) . '" title="' . str_replace('"', '&quot;', $row['comentari']) . '"><span class="glyphicon glyphicon-pencil" ' . $colorComent . '></span></a>' . $assistAnterior . '</td>';
 
 
 
@@ -889,7 +994,11 @@
 
             </div>
         </div>
-
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
     </body>
 </html>
 

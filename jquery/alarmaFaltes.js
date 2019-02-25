@@ -5,28 +5,28 @@
  */
 
 
-function carregaAlarma(){
+function carregaAlarma() {
     var url = "php/carregaAlarma.php";
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: {},
-            //data: ("#form2").serialize,
-            success: function (data) {
-                $("#alarmesFaltesDiv").html(data);
-               
-            }
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {},
+        //data: ("#form2").serialize,
+        success: function (data) {
+            $("#alarmesFaltesDiv").html(data);
 
-        });
-        return false;
-    
-    
+        }
+
+    });
+    return false;
+
+
 }
 
-function carregaDadesInicialsAlarmes(){
-    
+function carregaDadesInicialsAlarmes() {
+
     carregaDropGeneric('tipusFaltaAlarma', 'SELECT ga22_codi_falta as codi, ga22_nom_falta as descripcio FROM ga22_tipus_falta', 'Tipus Falta');
-  
+
 }
 
 function mostratipusFaltaAlarma(element) {
@@ -35,24 +35,24 @@ function mostratipusFaltaAlarma(element) {
 
 }
 
-function cercaAlarmesTipus(){
-    var tipusFalta=$("#butDroptipusFaltaAlarma").val();
-    
-    debugger;
-    
-    var url = "php/carregaAlarma.php";
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: {"tipusFalta":tipusFalta},
-            //data: ("#form2").serialize,
-            success: function (data) {
-                $("#alarmesFaltesDiv").html(data);
-               
-            }
+function cercaAlarmesTipus() {
+    var tipusFalta = $("#butDroptipusFaltaAlarma").val();
 
-        });
-        return false;
-    
-    
+    debugger;
+
+    var url = "php/carregaAlarma.php";
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {"tipusFalta": tipusFalta},
+        //data: ("#form2").serialize,
+        success: function (data) {
+            $("#alarmesFaltesDiv").html(data);
+
+        }
+
+    });
+    return false;
+
+
 }

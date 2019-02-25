@@ -117,9 +117,10 @@ if (isset($_POST['dadesGeneralsSessio'])) {
             . "ga28_grup,"
             . "ga28_tipus_grup,"
             . "ga28_assignatura,"
-            . "ga28_coment_general)"
+            . "ga28_coment_general,"
+            . "ga28_estat)"
             . "VALUES"
-            . "(" . $_SESSION['curs_actual'] . "," . $codiprof . ",'" . $dia . "','" . $hora . "','" . $esguardia . "'," . $profSubs . "," . $aula . "," . $nivell . "," . $grup . "," . $tipusGrup . "," . $assignatura . ",'" . $comentari . "')";
+            . "(" . $_SESSION['curs_actual'] . "," . $codiprof . ",'" . $dia . "','" . $hora . "','" . $esguardia . "'," . $profSubs . "," . $aula . "," . $nivell . "," . $grup . "," . $tipusGrup . "," . $assignatura . ",'" . $comentari . "','0')";
 
 
     //executem la query
@@ -138,12 +139,19 @@ if (isset($_POST['dadesGeneralsSessio'])) {
         // echo $dadesGeneralsSessio[$x];
         $fileraAlumne = explode('<#>', $dadesGeneralsSessio[$x]);
 
+        if($fileraAlumne[11]==''){
+            //no hi ha comentari a l'assistència
+            $comentAssist="null";
+        }else{
+            $comentAssist="'".str_replace("'", "''", $fileraAlumne[11])."'";
+        }
+        
         if ($fileraAlumne[1] !== "") {
             //l'alumne té faltes d'ordre
             //substituiem els apostrofs
             $fileraAlumne[2] = str_replace("'", "''", $fileraAlumne[2]);
             $query = "insert into ga15_cont_presencia values(" . $_SESSION['curs_actual'] . "," . substr($fileraAlumne[0], 2) . "," . $codiprof . ",'" . $dia . "','" . $hora . "','" . $fileraAlumne[5] . "','" . $fileraAlumne[6] . "','" . $fileraAlumne[7] . "','0','',now(),"
-                    . "" . $fileraAlumne[1] . ",1,'" . $fileraAlumne[2] . "',null,'" . $fileraAlumne[4] . "','" . $fileraAlumne[3] . "','" . $fileraAlumne[8] . "')";
+                    . "" . $fileraAlumne[1] . ",1,'" . $fileraAlumne[2] . "',null,'" . $fileraAlumne[4] . "','" . $fileraAlumne[3] . "','" . $fileraAlumne[8] . "',".$comentAssist.")";
 
             //inserim la falta d'ordre a la taula cooresponent
             $query2 = "INSERT INTO ga31_faltes_ordre (ga31_codi_curs,ga31_alumne,ga31_codi_professor,ga31_dia,ga31_hora_inici,ga31_tipus_falta,ga31_estat,ga31_motiu,ga31_es_sessio,ga31_just_tutor,ga31_just_resp,ga31_assignatura)"
@@ -152,7 +160,7 @@ if (isset($_POST['dadesGeneralsSessio'])) {
             $conn->query($query2);
         } else {
             //l'alumne no té faltes d'ordre
-            $query = "insert into ga15_cont_presencia values(" . $_SESSION['curs_actual'] . "," . substr($fileraAlumne[0], 2) . "," . $codiprof . ",'" . $dia . "','" . $hora . "','" . $fileraAlumne[5] . "','" . $fileraAlumne[6] . "','" . $fileraAlumne[7] . "','0','',now(),null,null,null,null,'0','0','" . $fileraAlumne[8] . "')";
+            $query = "insert into ga15_cont_presencia values(" . $_SESSION['curs_actual'] . "," . substr($fileraAlumne[0], 2) . "," . $codiprof . ",'" . $dia . "','" . $hora . "','" . $fileraAlumne[5] . "','" . $fileraAlumne[6] . "','" . $fileraAlumne[7] . "','0','',now(),null,null,null,null,'0','0','" . $fileraAlumne[8] . "',".$comentAssist.")";
 
             $conn->query($query);
         }
