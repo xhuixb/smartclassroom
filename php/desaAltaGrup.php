@@ -13,9 +13,8 @@ session_start();
 //$_SESSION['curs_actual'] = 3;
 //$_SESSION['prof_actual'] = 0;
 $nivell=$_POST['nivell'];
-$nomGrup=$_POST['nomGrup'];
-
-
+$nomGrup=str_replace("'", "''",$_POST['nomGrup']);
+$profe=$_POST['profe'];
 
 //establim la connexió
 $conn = new mysqli(Databases2::$host, Databases2::$user, Databases2::$password, Databases2::$dbase);
@@ -26,7 +25,7 @@ if ($conn->connect_error)
 mysqli_set_charset($conn,"utf8");
 
 $query = "insert into ga23_grups_profes_cap (ga23_curs,ga23_codi_professor,ga23_codi_nivell,ga23_nom_grup) "
-        . "values (".$_SESSION['curs_actual'].",".$_SESSION['prof_actual'].",".$nivell.",'".$nomGrup."')";
+        . "values (".$_SESSION['curs_actual'].",".$profe.",".$nivell.",'".$nomGrup."')";
 
 
 $result = $conn->query($query);

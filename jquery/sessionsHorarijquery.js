@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 
+$(document).ready(function () {
+  
+    $('[data-tooltip="tooltip"]').tooltip();
+});
 
 function carregaDadesSessio() {
     debugger;

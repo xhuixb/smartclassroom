@@ -87,16 +87,26 @@ echo '</thead>';
 if ($result->num_rows > 0) {
     echo '<tbody id="cosTaulaDetallAbsencies">';
     $cont = 1;
+    $contaDies = 0;
+    $contaAbsTotals = 0;
+    $contaJustificades = 0;
+    $contaNoJustificades = 0;
+    $contaRetards = 0;
     while ($row = $result->fetch_assoc()) {
 
-
+        //calculem totals
+        $contaDies++;
+        $contaAbsTotals += $row['abstotal'];
+        $contaJustificades += $row['absjusti'];
+        $contaNoJustificades += $row['absnojusti'];
+        $contaRetards += $row['retards'];
         //obtenim el detall
         $query1 = "select ga15_hora_inici as hora,concat(ga04_cognom1,' ',ga04_cognom2,', ',ga04_nom) as professor, ga15_check_absent,ga15_check_retard,ga15_check_justificat,ga18_desc_assignatura as nomassig"
                 . " from ga15_cont_presencia,ga04_professors,ga17_professors_curs,ga28_cont_presencia_cap,ga18_assignatures"
-                . " where ga28_codi_curs=ga15_codi_curs and ga28_professor=ga15_codi_professor and ga28_dia=ga15_dia and ga28_hora=ga15_hora_inici and ga15_codi_curs=" . $_SESSION['curs_actual'] . " and ga15_alumne=" . $alumne . " and ga15_dia='" . $row['dia'] . "'" . $whereProfessor .$whereAssignatura. " and (ga15_check_absent=1 or ga15_check_retard=1)"
+                . " where ga28_codi_curs=ga15_codi_curs and ga28_professor=ga15_codi_professor and ga28_dia=ga15_dia and ga28_hora=ga15_hora_inici and ga15_codi_curs=" . $_SESSION['curs_actual'] . " and ga15_alumne=" . $alumne . " and ga15_dia='" . $row['dia'] . "'" . $whereProfessor . $whereAssignatura . " and (ga15_check_absent=1 or ga15_check_retard=1)"
                 . " and ga15_codi_professor=ga17_codi_professor and ga15_codi_curs=ga17_codi_curs and ga17_codi_professor=ga04_codi_prof and ga28_assignatura=ga18_codi_assignatura order by hora";
-      
-        
+
+
         $result1 = $conn->query($query1);
 
         $detall = "";
@@ -134,6 +144,16 @@ if ($result->num_rows > 0) {
 
         $cont++;
     }
+
+    //resum
+
+    echo '<tr>';
+    echo '<td>Dies: ' .$contaDies . '</td>';   
+    echo '<td class="col-sm-2"><center>' . $contaAbsTotals . '</center></td>';
+    echo '<td class="col-sm-2"><center>' . $contaJustificades . '</center></td>';
+    echo '<td class="col-sm-2"><center>' . $contaNoJustificades . '</center></td>';
+    echo '<td class="col-sm-2"><center>' . $contaRetards . '</center></td>';
+    echo '</tr>';
 }
 
 //tanquem cos i taula

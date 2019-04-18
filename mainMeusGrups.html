@@ -24,8 +24,8 @@ and open the template in the editor.
         <script src="https://cdn.rawgit.com/atatanasov/gijgo/master/dist/combined/js/gijgo.min.js" type="text/javascript"></script>
         <link href="https://cdn.rawgit.com/atatanasov/gijgo/master/dist/combined/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
     </head>
     <body onload="controlaCredencials('dadesProfCursMeusGrups');carregaDadesInicialsGrups();">
         <div class="container-fluid">
@@ -39,15 +39,21 @@ and open the template in the editor.
             <div class="col-sm-6" >
 
                 <div class="row">
+                    <div class="col-sm-3">
+                        <div class="dropdown" id="professorDropdownGrups">
+                            <!-- posarem el dropdown de grup -->
+                        </div>
+                    </div>
+
                     <div class="col-sm-3" >
 
-                        <button type="button" class="btn btn-success form-control" id="nouGrupProfe" data-toggle="collapse" data-target="#altaGrupProfe">
+                        <button type="button" class="btn btn-success form-control" id="nouGrupProfe" data-tooltip="tooltip" title="Crea grup personal" data-toggle="collapse" data-target="#altaGrupProfe">
                             <span class="glyphicon glyphicon-plus"> Nou</span>
                         </button>
                     </div>
 
                     <div class="col-sm-3" >
-                        <button type="button" class="btn btn-danger form-control" id="esborraGrupProfe">
+                        <button type="button" class="btn btn-danger form-control" id="esborraGrupProfe" data-tooltip="tooltip" title="Esborra grup personal">
                             <span class="glyphicon glyphicon-trash"> Esborra</span>
                         </button>
                     </div>
@@ -107,7 +113,7 @@ and open the template in the editor.
                 <br>
                 <div class="row">
                     <div class="col-sm-3" >
-                        <button type="button" class="btn btn-success form-control" id="desaAlumnesGrupProfe" style="visibility: hidden;" onclick="desaAlumnesGrupProfe();">
+                        <button type="button" class="btn btn-success form-control" id="desaAlumnesGrupProfe" style="visibility: hidden;" onclick="desaAlumnesGrupProfe();" data-tooltip="tooltip" title="Desa membres grup">
                             <span class="glyphicon glyphicon-ok">Desa</span>
                         </button>
                     </div>
@@ -125,6 +131,10 @@ and open the template in the editor.
 
 
         </div>
-
+        <script>
+            $(document).ready(function () {
+                $('[data-tooltip="tooltip"]').tooltip();
+            });
+        </script>
     </body>
 </html>

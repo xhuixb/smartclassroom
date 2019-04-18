@@ -59,37 +59,33 @@ and open the template in the editor.
                             <div class="row">
 
 
-                                <div class="dropdown col-sm-4" id="nivellDropdownMailing">
+                                <div class="dropdown col-sm-4" id="nivellDropdownMailing" data-tooltip="tooltip" title="Tria nivell">
                                     <!-- aquí posarem el dropdown de nivell -->
                                 </div>
 
-                                <div class="dropdown col-sm-4" id="grupDropdownMailing">
+                                <div class="dropdown col-sm-4" id="grupDropdownMailing" data-tooltip="tooltip" title="Tria grup">
                                     <!-- aquí posarem el dropdown de grup -->
-                                     <button data-val="" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="butDropgrupDropdownMailing" disabled>Tria Grup<span class="caret"></span></button>
+                                    <button data-val="" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="butDropgrupDropdownMailing" disabled>Tria Grup<span class="caret"></span></button>
                                 </div>
-                                <div class="col-sm-2">
-                                    <button type="button" class="btn btn-info form-control" id="afegeixAlumnesId" onclick="afegeixAlumnes();">
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-info form-control" id="afegeixAlumnesId" onclick="afegeixAlumnes();" data-tooltip="tooltip" title="Cerca alumnes">
                                         <span class="glyphicon glyphicon-search"></span>
                                     </button> 
 
                                 </div>
-                                <div class="col-sm-2">
-                                    <button type="button" class="btn btn-info form-control" data-toggle="modal" data-target="#attachFilesModal" id="afegeixAlumnesId" onclick="adjuntaFitxers();">
-                                        <span class="glyphicon glyphicon-paperclip"></span>
-                                    </button> 
+
+                            </div>
+                            <div class="row">
+                                <div id="divTaulaAlumnesMailing" class="container-fluid">
 
                                 </div>
-                            </div>
-
-                            <div id="divTaulaAlumnesMailing" class="container-fluid">
-
                             </div>
                         </div>
                         <div class="col-sm-1">
                             <br>
                             <br>
                             <br>
-                            <button type="button" class="btn btn-success form-control" id="passaAlumnes" onclick="passaAlumnesMail()">
+                            <button type="button" class="btn btn-success form-control" id="passaAlumnes" onclick="passaAlumnesMail()" data-tooltip="tooltip" title="Selecciona alumnes">
                                 <span class="glyphicon glyphicon-arrow-right"></span>
                             </button>
 
@@ -97,8 +93,15 @@ and open the template in the editor.
                         <div class="col-sm-6">
 
                             <div class="row">
-                                <div class="col-sm-2">
-                                    <button type="button" class="btn btn-success form-control" id="enviaAlumnesId" onclick="enviaMail();">
+
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-info form-control" data-toggle="modal" data-target="#attachFilesModal" id="afegeixAlumnesId" onclick="adjuntaFitxers();" data-tooltip="tooltip" title="Adjunta fitxers">
+                                        <span class="glyphicon glyphicon-paperclip"></span>
+                                    </button> 
+
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-success form-control" id="enviaAlumnesId" onclick="enviaMail();" data-tooltip="tooltip" title="Prepara l'enviament">
                                         <span class="glyphicon glyphicon-send"></span>
                                     </button> 
                                 </div>
@@ -113,7 +116,7 @@ and open the template in the editor.
                                             <th class="col-sm-3">Alumne</th>
                                             <th class="col-sm-1">Nivell</th>
                                             <th class="col-sm-1">Grup</th>
-                                            <th class="col-sm-1"><form class="form-inline"><input type="checkbox" value="" id="checkMarcaDesmarca" onclick="seleccionaTotsAlumnes();"><button type="button" class="btn btn-danger form-control" onclick="treuAlumnes()"><span class="glyphicon glyphicon-trash"></span></button></form></th>
+                                            <th class="col-sm-1"><form class="form-inline"><input type="checkbox" value="" id="checkMarcaDesmarca" onclick="seleccionaTotsAlumnes();"> <button type="button" class="btn btn-danger form-control" onclick="treuAlumnes()" data-tooltip="tooltip" title="Treu alumnes"><span class="glyphicon glyphicon-trash"></span></button></form></th>
                                         </tr>
                                     </thead>
                                     <tbody id="taulaAlumnesMailingBody">
@@ -151,7 +154,7 @@ and open the template in the editor.
                                         <thead>
                                             <tr>
                                                 <th class="col-sm-8">Fitxer</th>
-                                                <th class="col-sm-4"><button type="button" class="btn btn-danger form-control" id="esborraAdjunt" onclick="esborraAdjunt()">
+                                                <th class="col-sm-4"><button type="button" class="btn btn-danger form-control" id="esborraAdjunt" onclick="esborraAdjunt()" data-tooltip="tooltip" title="Elimina adjunts">
                                                         <span class="glyphicon glyphicon-trash"></span>
                                                     </button></th>
                                             </tr>
@@ -190,7 +193,7 @@ and open the template in the editor.
                                     <div id="summernote1"></div>
                                     <div id="fitxersAdjunts"></div>
                                 </div>
-                                
+
                                 <div class="col-sm-6">
 
                                     <div id="alumnesMailingDetallDiv" class="container-fluid">

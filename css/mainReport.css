@@ -45,3 +45,18 @@ td[data-esdescans="1"]{
     color:black;
     transform: rotate(30deg);
 }
+
+#loadingDiv{
+    position:absolute;
+    top:0px;
+    right:0px;
+    width:100%;
+    height:100%;
+    /*background-color:#666;*/
+    background-image:url('../gif/Spin-1s-200px.gif');
+    background-repeat:no-repeat;
+    background-position:center;
+    z-index:1;
+    opacity: 0.8;
+
+}

@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 
+function iniTooltip() {
 
+    $('[data-tooltip="tooltip"]').tooltip();
+
+}
 
 
 $(document).ready(function () {
@@ -37,7 +41,7 @@ function carregaEquipament(mode, filtre) {
         //data: ("#form2").serialize,
         success: function (data) {
             $("#divTaulaEquipament").html(data);
-            toolTipFormat();
+            iniTooltip();
 
         }
 
@@ -56,19 +60,19 @@ function canviaEstatPrestec(element) {
 
     if ($("#radioTotal").prop('checked') === true) {
         //tots
-        var filtre='1';
+        var filtre = '1';
     } else if ($("#radioDispo").prop('checked') === true) {
         //només disponibles
-        var filtre='2';
+        var filtre = '2';
 
     } else {
         //nomes prestats
-        var filtre='3';
+        var filtre = '3';
     }
 
     if (estat === '0') {
         //obrim el modal
-        jQuery.noConflict();
+        //jQuery.noConflict();
         $('#prestaEquipament').modal('show');
         var equipament = $($($(element).parent()).siblings()[0]).text();
         var codiEquipament = $($($(element).parent()).siblings()[0]).attr('data-codi');
@@ -76,7 +80,7 @@ function canviaEstatPrestec(element) {
         $("#nomEquipament").attr('data-codi', codiEquipament);
 
     } else {
-        var confirmacio = confirm('Vols fer efectuva la devolució');
+        var confirmacio = confirm('Vols fer efectiva la devolució');
         if (confirmacio === true) {
             //fem efectiva la devolució
             debugger;
@@ -154,18 +158,18 @@ function mostradivAlumnePrestec(element) {
 }
 
 function desaPrestec() {
-  
+
 
     if ($("#radioTotal").prop('checked') === true) {
         //tots
-        var filtre='1';
+        var filtre = '1';
     } else if ($("#radioDispo").prop('checked') === true) {
         //només disponibles
-        var filtre='2';
+        var filtre = '2';
 
     } else {
         //nomes prestats
-        var filtre='3';
+        var filtre = '3';
     }
 
 
@@ -270,17 +274,17 @@ function comprovaEsborra() {
 
 function esborraPrestec() {
     var totalCheck = $(".checkEsborrar");
-    
+
     if ($("#radioTotal").prop('checked') === true) {
         //tots
-        var filtre='1';
+        var filtre = '1';
     } else if ($("#radioDispo").prop('checked') === true) {
         //només disponibles
-        var filtre='2';
+        var filtre = '2';
 
     } else {
         //nomes prestats
-        var filtre='3';
+        var filtre = '3';
     }
 
 
@@ -338,8 +342,10 @@ function cercaResumPrestecs() {
     if ($("#checkEquip").prop('checked') === true) {
         var codiAgrupacio = '0';
 
-    } else {
+    } else if ($("#checkAlumne").prop('checked') === true) {
         var codiAgrupacio = '1';
+    } else {
+        var codiAgrupacio = '2';
     }
     var url = "php/cercaResumPrestecs.php";
     debugger;
@@ -361,12 +367,7 @@ function cercaResumPrestecs() {
 
 }
 
-function toolTipFormat() {
 
-    $('[data-toggle="tooltip"]').tooltip();
-
-
-}
 
 function filtraPerDispo() {
     //mirem l'opció triada

@@ -8,7 +8,7 @@
 
 require '../classes/Databases.php';
 
-//sleep(1);
+sleep(1);
 
 session_start();
 
@@ -417,8 +417,9 @@ if ($result->num_rows > 0) {
 
                         if ($row2['estat'] == '0') {
                             $button2[$i] = '<div class="col-sm-6">'
-                                    . '<label data-toggle="tooltip" title="Sessió passada" class="form-control btn-success">Passada</label>'
+                                    . '<label data-tooltip="tooltip" title="Sessió passada" class="form-control btn-success"><a href="#" data-toggle="modal" data-tooltip="tooltip" title="Replica sessions" data-target="#replicadorSessions" onclick="carregaSesReplicables(this)"><span class="glyphicon glyphicon-repeat"></span></a>  <span class="glyphicon glyphicon-ok"></span></label>'
                                     . '</div>';
+                            
                         } else {
                             $button2[$i] = '<div class="col-sm-6">'
                                     . '<label data-toggle="tooltip" title="Sessió provisional" class="form-control btn-warning">Provi</label>'

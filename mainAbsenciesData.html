@@ -26,10 +26,12 @@ and open the template in the editor.
         <!-- pluguin per a congelar la capçalera de le taules-->
 
         <script src="TableHeadFixer/tableHeadFixer.js"></script>
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
     </head>
     <body onload="controlaCredencials('dadesProfCursAbsData');carregaDadesAbsData();">
+        <div id="prova">
+        </div>
         <div class="container-fluid">
             <div class="page-header" id="dadesProfCursAbsData">
 
@@ -37,7 +39,7 @@ and open the template in the editor.
         </div>
 
         <br>
-        <div class="container-fluid">
+        <div class="container-fluid" id="areaTreball">
             <div class="row">
                 <div class="col-sm-1">
                     <button type="button" class="btn btn-info form-control" id="cercaFaltes" onclick="cercaAbsRet();">

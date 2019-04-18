@@ -489,15 +489,16 @@ function exportToExcel() {
 function carregaNotificacions(element) {
     if ($(element).hasClass('btn-info')) {
         //no hi ha notificacions
-        alert("No hi ha notificacions");
-        jQuery.noConflict();
+      
+        $("#summernoteNotifi").summernote("code", '<h1>No hi ha notificacions</h1>');
 
+        $('#summernoteNotifi').summernote('disable');
 
     } else {
         //hi ha notificacions
         //les mostrem
         debugger;
-        $('#notificacionsModal').modal('show');
+       
 
         //anem a bucarles
         var url = "php/carregaNotificacions.php";

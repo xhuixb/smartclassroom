@@ -182,7 +182,7 @@ if (isset($horarisArray)) {
                         } else {
                             //aquest alumne NO és l'alumne de la selecció he de posar que està present
                             $alumneDetall = "(" . $_SESSION['curs_actual'] . "," . $alumne15 . "," . $professor . ",'" . $dataSessio . "','" . $hora . "','1','0','0','0','',now(),null,null,null,null,'0','0',"
-                                    . "(select ga11_check_comunica from ga11_alumnes where ga11_id_alumne=" . $alumne . "),'')";
+                                    . "(select ga11_check_comunica from ga11_alumnes where ga11_id_alumne=" . $alumne15 . "),'')";
                         }
                         $query15 .= $alumneDetall;
                         if ($conta != $resultAlumnes->num_rows - 1) {

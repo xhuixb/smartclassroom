@@ -20,7 +20,7 @@ $conn = new mysqli(Databases2::$host, Databases2::$user, Databases2::$password, 
 mysqli_set_charset($conn, "utf8");
 
 
-$query = "select ga41_id as id,ga41_data_clau as dataclau,ga41_data_inici_publi as datainici,ga41_data_fi_publi as datafi,ga41_descripcio as descripcio from ga41_dates_clau where ga41_curs=" . $_SESSION['curs_actual'];
+$query = "select ga41_id as id,ga41_data_clau as dataclau,ga41_data_inici_publi as datainici,ga41_data_fi_publi as datafi,ga41_descripcio as descripcio from ga41_dates_clau where ga41_curs=" . $_SESSION['curs_actual']." order by dataclau desc";
 
 $result = $conn->query($query);
 

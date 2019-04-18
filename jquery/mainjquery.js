@@ -5,8 +5,9 @@
  */
 
 $(document).ready(function () {
- $('[data-toggle="tooltip"]').tooltip();
- });
+    $('[data-tooltip="tooltip"]').tooltip();
+
+});
 
 
 function desaCanviPassword() {
@@ -81,7 +82,7 @@ function carregaSessions() {
 
     //posem la setmana actual
     //inicialitzem la data amb el primer i el darrer dia de la setmana
-   
+
     var dilluns = trobaDilluns();
 
     dilluns = moment(dilluns, "YYYY-MM-DD");
@@ -104,7 +105,7 @@ function carregaSessions() {
 }
 
 function recuperaSessions(dilluns, diumenge) {
-
+    debugger;
     var url = "php/carregaSessionsSetmana.php";
 
     if ($("#esGuardia").prop('checked') == true) {
@@ -119,7 +120,9 @@ function recuperaSessions(dilluns, diumenge) {
 
     $("body").css('cursor', 'progress');
     debugger;
-    $("#divSessionsSetmana").html('<h1 class="btn-info form-ontrol">Carregant sessions</h1><h2 class="btn-info form-ontrol">Tingues paciència!</h2>');
+    $("#prova").attr('id', 'loadingDiv');
+
+    //$("#divSessionsSetmana").html('<h1 class="btn-info form-ontrol">Carregant sessions</h1><h2 class="btn-info form-ontrol">Tingues paciència!</h2>');
     $.ajax({
         type: "POST",
         url: url,
@@ -128,6 +131,7 @@ function recuperaSessions(dilluns, diumenge) {
         success: function (data) {
             $("#divSessionsSetmana").html(data);
             $("body").css('cursor', 'default');
+            $("#loadingDiv").attr('id', 'prova');
         }
 
     });
@@ -281,7 +285,13 @@ function comprovaComunicacions() {
 function editaProgramacio(element) {
     //recullim les dades de la capçalera
 
-
+    if ($("#esGuardia").prop('checked') === true) {
+        //és una guàrdia
+        //no es poden esborrar els fitxers pujats ni pujar-ne més
+        var canUpload = "disabled";
+    } else {
+        var canUpload = "";
+    }
     var tram = $($(element).parent()).html();
 
     var tramArray = tram.split("<br>");
@@ -309,37 +319,55 @@ function editaProgramacio(element) {
 
     var taulaCapcalera = "";
 
-    taulaCapcalera += '<div class="col-sm-8">';
+    taulaCapcalera += '<div class="row">';
+    taulaCapcalera += '<div class="col-sm-6">';
     taulaCapcalera += '<table class="table table-fixed">';
     taulaCapcalera += '<tr>';
-    taulaCapcalera += '<td class="col-sm-4">'
+    taulaCapcalera += '<td class="col-sm-3">'
     taulaCapcalera += 'Data: ' + dia.substring(8) + '/' + dia.substring(5, 7) + '/' + dia.substring(0, 4);
-    taulaCapcalera += '</td>'
-    taulaCapcalera += '<td class="col-sm-4">'
+    taulaCapcalera += '</td>';
+    taulaCapcalera += '<td class="col-sm-3">';
     taulaCapcalera += nivell;
-    taulaCapcalera += '</td>'
+    taulaCapcalera += '</td>';
     taulaCapcalera += '</tr>';
 
     taulaCapcalera += '<tr>';
-    taulaCapcalera += '<td class="col-sm-4">'
+    taulaCapcalera += '<td class="col-sm-3">';
     taulaCapcalera += horaInici;
-    taulaCapcalera += '</td>'
-    taulaCapcalera += '<td class="col-sm-4">'
+    taulaCapcalera += '</td>';
+    taulaCapcalera += '<td class="col-sm-3">';
     taulaCapcalera += grup;
-    taulaCapcalera += '</td>'
+    taulaCapcalera += '</td>';
     taulaCapcalera += '</tr>';
 
     taulaCapcalera += '<tr>';
-    taulaCapcalera += '<td class="col-sm-4">'
+    taulaCapcalera += '<td class="col-sm-3">';
     taulaCapcalera += aula;
-    taulaCapcalera += '</td>'
-    taulaCapcalera += '<td class="col-sm-4">'
+    taulaCapcalera += '</td>';
+    taulaCapcalera += '<td class="col-sm-3">';
     taulaCapcalera += assignatura;
-    taulaCapcalera += '</td>'
+    taulaCapcalera += '</td>';
     taulaCapcalera += '</tr>';
 
     taulaCapcalera += '</table>';
     taulaCapcalera += '</div>';
+    taulaCapcalera += '<div class="col-sm-6">';
+    taulaCapcalera += '<div>'
+    taulaCapcalera += '<strong>adjunts</strong>';
+    taulaCapcalera += '</div>';
+    taulaCapcalera += '<div id="cosTaulaAdjunts">';
+
+
+    taulaCapcalera += '</div>';
+    taulaCapcalera += '<div>';
+    taulaCapcalera += '<input type="file" id="file" ' + canUpload + ' onchange="triaFitxerClick()">';
+    taulaCapcalera += '</div>';
+    taulaCapcalera += '<div id="ressultUpload">';
+    taulaCapcalera += '</div>';
+    taulaCapcalera += '</div>';
+    taulaCapcalera += '</div>';
+
+
 
     $("#capcaleraPrograma").html(taulaCapcalera);
 
@@ -383,6 +411,10 @@ function editaProgramacio(element) {
 
         });
 
+        //anem a veure si hi ha adjunts
+
+        cercaAdjunts(dia, horaIniciAtribut, profe);
+
         return false;
     } else {
         //no n'hi ha
@@ -403,6 +435,25 @@ function editaProgramacio(element) {
 
 
 
+}
+
+function cercaAdjunts(dia, horaIniciAtribut, profe) {
+
+    var url = "php/cercaAdjuntsProgra.php";
+
+    debugger;
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {"dia": dia, "hora": horaIniciAtribut, "profe": profe},
+
+        success: function (data) {
+            $("#cosTaulaAdjunts").html(data);
+
+        }
+
+    });
 }
 
 function desaProgramadorSessions() {
@@ -477,3 +528,223 @@ $(document).ready(function () {
 
 });
 
+
+function triaFitxerClick() {
+
+    var codiProf = $("#dadesCredencials").attr('data-codi-prof');
+    var name = document.getElementById("file").files[0].name;
+    var form_data = new FormData();
+
+    var f = document.getElementById("file").files[0];
+    var fsize = f.size || f.fileSize;
+
+    //comprovem la mida
+    var uploadFile = $("#dadesCredencials").attr('data-uploadsize').toString();
+    var postSize = $("#dadesCredencials").attr('data-postsize').toString();
+
+    uploadFile = uploadFile.substr(0, uploadFile.length - 1);
+    postSize = postSize.substr(0, postSize.length - 1);
+    var midaMin = Math.min(uploadFile, postSize);
+
+    var midaMinBytes = midaMin * 1024 * 1024;
+
+    if (fsize < midaMinBytes) {
+        //procedim a pujar el fitxer
+        if ($("#esGuardia").prop('checked') === true) {
+            //és una guàrdia
+            var profe = $("#butDropdivProfessorSessio").val();
+        } else {
+            var profe = "";
+        }
+
+        var dia = $("#capcaleraPrograma").attr('data-dia');
+        var horaIniciAtribut = $("#capcaleraPrograma").attr('data-hora');
+
+
+        //podem pujar el fitxer
+        $('#ressultUpload').html('<p class="btn-info">El fitxer està pujant: tingues paciència</p>');
+
+        form_data.append("file", document.getElementById('file').files[0]);
+        form_data.append("nomFitxer", name);
+        form_data.append("dia", dia);
+        form_data.append("hora", horaIniciAtribut);
+
+
+        $("body").css("cursor", "progress");
+
+        $.ajax({
+            url: "php/uploadScripts/pujaAdjuntProgramacio.php",
+            method: "POST",
+            data: form_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            beforeSend: function () {
+
+            },
+
+            success: function (data)
+            {
+
+                $("#ressultUpload").html(data);
+                //esborrem el fitxer que s'ha pujat
+                $("#file").val('');
+
+                //refresquem les dades
+                cercaAdjunts(dia, horaIniciAtribut, profe);
+                $("body").css("cursor", "default");
+
+
+            }
+        });
+
+        return false;
+
+    } else {
+        $('#ressultUpload').html('<p class="btn-danger">El fitxer és massa gran. La mida màxima és de: ' + midaMin + 'MB</p>');
+    }
+}
+
+function downloadAdjunt(element) {
+
+
+}
+
+function esborraAdjunt(element) {
+
+    var confirmacio = confirm('Segur que vols esborrar el fitxer adjunt?');
+
+    if (confirmacio === true) {
+
+        //el codi del registre a esborrar
+        var codi = $(element).attr('data-codi');
+        var form_data = new FormData();
+        form_data.append("codi", codi);
+
+        var dia = $("#capcaleraPrograma").attr('data-dia');
+        var horaIniciAtribut = $("#capcaleraPrograma").attr('data-hora');
+
+        if ($("#esGuardia").prop('checked') === true) {
+            //és una guàrdia
+            var profe = $("#butDropdivProfessorSessio").val();
+        } else {
+            var profe = "";
+        }
+
+
+        $("body").css("cursor", "progress");
+
+        $.ajax({
+            url: "php/uploadScripts/esborraAdjuntProgramacio.php",
+            method: "POST",
+            data: form_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            beforeSend: function () {
+
+            },
+
+            success: function (data)
+            {
+
+                $("#ressultUpload").html(data);
+                //esborrem el fitxer que s'ha pujat
+                $("#file").val('');
+
+                //refresquem les dades
+                cercaAdjunts(dia, horaIniciAtribut, profe);
+                $("body").css("cursor", "default");
+
+
+            }
+        });
+
+    }
+}
+
+
+function carregaSesReplicables(element) {
+    //obtenim les sessions replicable
+    //ens cal dia i hora
+
+    var hora = $($($($($(element).parent()).parent()).parent()).siblings()[0]).attr('data-horainici');
+    var index = $($($($(element).parent()).parent()).parent()).index();
+
+    var dia = $($($($("#captaulaHorarisProfessor").children()[0]).children()[index]).children()[0]).text();
+    //mirem si és una guàrdia
+    if ($("#esGuardia").prop('checked') === true) {
+        //és una guàrdia
+        var profe = $("#butDropdivProfessorSessio").val();
+    } else {
+        var profe = "";
+    }
+
+    var url = "php/carregaSesReplicables.php";
+
+    debugger;
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {"dia": dia, "hora": hora, "profe": profe},
+
+        success: function (data) {
+            $("#divSessionsRepli").html(data);
+
+
+        }
+
+    });
+
+    return false;
+
+
+}
+
+function desaReplicaSessions() {
+    //anem a buscar les hores de les sessions a replicar
+    var sessionsAReplicar = $(".sesAReplicar");
+    var horesReplicar = [];
+    var conta = 0;
+    for (var i = 0; i < sessionsAReplicar.length; i++) {
+        if ($(sessionsAReplicar).prop('checked') === true) {
+            horesReplicar[conta] = $($($(sessionsAReplicar[i]).parent()).siblings()[0]).text();
+            conta++;
+        }
+
+    }
+
+    //anem a buscar les dades de la sessió original
+    var dia = $("#cosTaulaSessionsReplicables").attr('data-dia');
+    var hora = $("#cosTaulaSessionsReplicables").attr('data-hora');
+    var profe = $("#cosTaulaSessionsReplicables").attr('data-profe');
+
+    if (horesReplicar.length > 0) {
+        //hi ha sessions per a replicar
+        //enviem les dades al servidor
+        var url = "php/desaReplicaSessions.php";
+
+        debugger;
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {"dia": dia, "hora": hora, "profe": profe, "horesReplicar": horesReplicar},
+
+            success: function (data) {
+                //tornem a carregar les sessions
+
+                alert('Replicades :' + data + ' sessions');
+                carregaSessions();
+
+            }
+        });
+
+        return false;
+
+    } else {
+        alert("No has marcat cap sessió per a replicar");
+    }
+
+}

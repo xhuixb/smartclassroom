@@ -93,7 +93,8 @@ if (isset($_SESSION['prof_actual'])) {
     //anem a buscar les notificacions
     //primer els aniversaris
     $query = "select count(*) as conta from ga04_professors,ga17_professors_curs"
-            . " where ga17_codi_curs=" . $_SESSION['curs_actual'] . " and ga04_suspes='0' and month(ga04_data_naixement)=month(now()) and day(ga04_data_naixement)=day(now()) and ga04_codi_prof=ga17_codi_professor";
+            . " where ga17_codi_curs=" . $_SESSION['curs_actual'] . " and ga04_suspes='0' and ( (month(ga04_data_naixement)=month(now()) and day(ga04_data_naixement)=day(now())) or (month(ga04_data_naixement)=month(now()- INTERVAL 1 DAY) and day(ga04_data_naixement)=day(now()- INTERVAL 1 DAY)) or (month(ga04_data_naixement)=month(now()+ INTERVAL 1 DAY) and day(ga04_data_naixement)=day(now()+ INTERVAL 1 DAY))  )"
+            . " and ga04_codi_prof=ga17_codi_professor";
 
 
     $result = $conn->query($query);
@@ -122,22 +123,22 @@ if (isset($_SESSION['prof_actual'])) {
 
     if ($conta === 0) {
         $colorButton = "btn-info";
-        $textButton = "Notificacions(0)";
+        $textButton = "Informacions(0)";
     } else {
         $colorButton = "btn-success";
-        $textButton = "Notificacions(" . $conta . ")";
+        $textButton = "Informacions(" . $conta . ")";
     }
 
 
     echo '<div class="container-fluid">';
     echo '<div class="row">';
     echo '<div class="col-sm-5" >';
-    echo '<h4 id="dadesCredencials" data-codi-prof="' . $_SESSION['prof_actual'] . '" data-admin="' . $_SESSION['admin'] . '"><strong>Curs: </strong>' . $_SESSION['nom_curs_actual'] . '<strong>&emsp;Docent: </strong>' . $_SESSION['nom_prof_actual'] . '</h4>';
+    echo '<h4 id="dadesCredencials" data-uploadsize="'.ini_get('upload_max_filesize').'" data-postsize="'.ini_get('post_max_size').'" data-codi-prof="' . $_SESSION['prof_actual'] . '" data-admin="' . $_SESSION['admin'] . '"><strong>Curs: </strong>' . $_SESSION['nom_curs_actual'] . '<strong>&emsp;Docent: </strong>' . $_SESSION['nom_prof_actual'] . '</h4>';
     echo '<h4>' . '<strong>Perfil: </strong>' . join('-', $perfil) . '</h4>';
     echo '<h4><strong>Menu: </strong>' . $caption . ' <a href="main.html"><span class="glyphicon glyphicon-log-out"></span></a></h4>';
     echo '</div>';
     echo '<div class="col-sm-2">';
-    echo '<button type="button" class="btn ' . $colorButton . ' form-control" data-toggle="modal" onclick="carregaNotificacions(this);">';
+    echo '<button type="button" class="btn ' . $colorButton . ' form-control" data-toggle="modal" data-target="#notificacionsModal" onclick="carregaNotificacions(this);">';
     echo '<span class="glyphicon glyphicon-info-sign">' . $textButton . '</span>';
     echo '</button>';
     echo '</div>';
@@ -175,9 +176,10 @@ if (isset($_SESSION['prof_actual'])) {
     echo '</div>';
 
     //
+    $conn->close();
 } else {
     echo 'forbidden';
     //echo $_SESSION['prof_actual'];
 }
 
-$conn->close();
+

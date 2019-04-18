@@ -45,6 +45,10 @@ if ($codiAgrupacio == '1') {
 } elseif ($codiAgrupacio == '0') {
     $query = "select count(*) as conta,ga45_descripcio as equip from ga46_prestecs,ga45_inventari"
             . " where ga46_curs=" . $_SESSION['curs_actual'] . " and ga46_equip=ga45_codi " . $whereDataIniciResum . $whereDataFiResum . " group by ga46_equip order by conta desc";
+} else {
+    //codi agrupació =2
+    $query = "select count(*) as conta,concat(ga04_cognom1,' ',ga04_cognom2,', ',ga04_nom) as professor from ga04_professors,ga46_prestecs"
+            . " where ga46_curs=" . $_SESSION['curs_actual'] . " and ga46_prof_prestec=ga04_codi_prof " . $whereDataIniciResum . $whereDataFiResum . " group by ga46_prof_prestec order by conta desc,professor";
 }
 
 $result = $conn->query($query);
@@ -95,11 +99,44 @@ if ($codiAgrupacio == '1') {
     echo '</thead>';
 
     if ($result->num_rows > 0) {
-        $contador=0;
+        $contador = 0;
         echo '<tbody id="cosTaulaDetallPrestecs">';
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             echo '<td class="col-sm-4">' . $row['equip'] . '</td>';
+            echo '<td class="col-sm-2" style="text-align: right;">' . $row['conta'] . '</td>';
+            echo '</tr>';
+            $contador += $row['conta'];
+        }
+        echo '<tr>';
+        echo '<th class="col-sm-1">Total</th>';
+        echo '<th class="col-sm-3" style="text-align: right;">' . $contador . '</th>';
+        echo '</tr>';
+        echo '</tbody>';
+
+        echo '</tbody>';
+    }
+
+//tanquem cos i taula
+
+    echo '</table>';
+} else {
+
+    echo '<table id="taulaResumPrestecs" class="table">';
+
+    echo '<thead>';
+    echo '<tr>';
+    echo '<th class="col-sm-1">Prestador</th>';
+    echo '<th class="col-sm-3" style="text-align: right;">Quantitat</th>';
+    echo '</tr>';
+    echo '</thead>';
+
+    if ($result->num_rows > 0) {
+        $contador = 0;
+        echo '<tbody id="cosTaulaDetallPrestecs">';
+        while ($row = $result->fetch_assoc()) {
+            echo '<tr>';
+            echo '<td class="col-sm-4">' . $row['professor'] . '</td>';
             echo '<td class="col-sm-2" style="text-align: right;">' . $row['conta'] . '</td>';
             echo '</tr>';
             $contador += $row['conta'];

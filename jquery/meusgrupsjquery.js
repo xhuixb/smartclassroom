@@ -5,9 +5,33 @@
  */
 
 
+
+
+$(document).ready(function () {
+    $('[data-tooltip="tooltip"]').tooltip();
+});
+
 function carregaDadesInicialsGrups() {
 
-    carregaGrupsProfes();
+    carregaGrupsProfes('0');
+    carregaDropGenericAdmin("professorDropdownGrups", "select ga17_codi_professor as codi,concat(ga04_cognom1,' ',ga04_cognom2,', ',ga04_nom) as descripcio from ga04_professors,ga17_professors_curs where ga04_codi_prof=ga17_codi_professor and ga17_codi_curs=(select ga03_codi_curs from ga03_curs where ga03_actual=1) order by descripcio", "Tria Professor");
+
+
+
+}
+
+
+
+function mostraprofessorDropdownGrups(element) {
+    $("#butDropprofessorDropdownGrups").html($(element).text() + ' ' + '<span class="caret">');
+    $("#butDropprofessorDropdownGrups").val($(element).attr('data-val'));
+
+    //esborrem els grups del professor i els memebres i mostrem el nous grups
+    $("#divAlumnesMeuGrup").html('');
+    $("tr.btn-info").removeClass('btn-info');
+    //amaga desa
+    $("#desaAlumnesGrupProfe").css('visibility', 'hidden');
+    carregaGrupsProfes($(element).attr('data-val'));
 
 
 }
@@ -83,15 +107,19 @@ function filtraMembres() {
 
 }
 
-function carregaGrupsProfes() {
+
+
+function carregaGrupsProfes(profe) {
     var url = "php/carregaGrupsProfes.php";
     $.ajax({
         type: "POST",
         url: url,
-        data: {},
+        data: {"profe": profe},
         //data: ("#form2").serialize,
         success: function (data) {
             $("#divTaulaMeusGrups").html(data);
+            $('[data-tooltip="tooltip"]').tooltip();
+
         }
 
     });
@@ -123,41 +151,48 @@ function tancaCollapseAltaGrup() {
 function desaAltaGrup() {
     //agafem el nivell
 
-
+    var nivell = $("#butDropnivellGrupProfe").val();
 
     debugger;
-    if (nivell == "") {
+    if (nivell === "") {
 
         alert("has d'intruduir el nivell");
     } else {
         //enviem dades dades al servidor
         var nivell = $("#butDropnivellGrupProfe").val();
-        var nomGrup = $("#nomGrupProfe").val();
-        var url = "php/desaAltaGrup.php";
+        var nomGrup = $("#nomGrupProfe").val().replace(/"/g, "&quot;");
 
-        debugger;
+        if (nomGrup !== '') {
+            var url = "php/desaAltaGrup.php";
+            var profe=$("#butDropprofessorDropdownGrups").val();
+            debugger;
 
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: {"nivell": nivell, "nomGrup": nomGrup},
-            //data: ("#form2").serialize,
-            success: function (data) {
-                //refresquem els grups
-                //$("#altaGrupProfe").html(data);
-                carregaGrupsProfes();
-                //avis d'alta
-                alert("Alta feta amb èxit");
-                $("#butDropnivellGrupProfe").html("Tria Nivell" + ' ' + '<span class="caret">');
-                $("#butDropnivellGrupProfe").val("");
-                $("#nomGrupProfe").val("");
-                $("#altaGrupProfe").collapse("hide");
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: {"nivell": nivell, "nomGrup": nomGrup,"profe":profe},
+                //data: ("#form2").serialize,
+                success: function (data) {
+                    //refresquem els grups
+                    //$("#altaGrupProfe").html(data);
+                    debugger;
+                    var xx=$("#butDropprofessorDropdownGrups").val();
+                    carregaGrupsProfes($("#butDropprofessorDropdownGrups").val());
+                    //avis d'alta
+                    alert("Alta feta amb èxit");
+                    $("#butDropnivellGrupProfe").html("Tria Nivell" + ' ' + '<span class="caret">');
+                    $("#butDropnivellGrupProfe").val("");
+                    $("#nomGrupProfe").val("");
+                    $("#altaGrupProfe").collapse("hide");
+                    $("#divAlumnesMeuGrup").html('');
 
-            }
+                }
 
-        });
-        return false;
-
+            });
+            return false;
+        } else {
+            alert("El nom del grup no pot ser buit");
+        }
     }
 
 }
@@ -199,12 +234,12 @@ $(document).ready(function () {
                         var resposta = data;
                         if (resposta == 0) {
                             alert("<h1>No hi havia grups per esborrar</h1>");
-                        } else if(resposta==1) {
+                        } else if (resposta == 1) {
                             alert("S'han esborrat tots els grups");
-                        }else{
+                        } else {
                             alert("Alguns grups no s'han esborrat perquè tenien horaris associats");
                         }
-                        carregaGrupsProfes();
+                        carregaGrupsProfes($("#butDropprofessorDropdownGrups").val());
                         $("#divAlumnesMeuGrup").html("");
                     }
 
@@ -220,7 +255,17 @@ $(document).ready(function () {
 //mostrem els alumnes d'un grup concret
 function cercaAlumnesGrupProfe(element) {
     //farà falta el nivell i el codi del grup
+
+    //desactivem la filera activa
+    $("tr.btn-info").removeClass('btn-info');
+
+    //activem la filera
     var filera = $($(element).parent()).parent();
+
+    $(filera).addClass('btn-info');
+
+
+
     debugger;
     //el grup és el primer element de la filera
     var grup = $(filera.children()[1]).text();
@@ -265,7 +310,7 @@ function desaAlumnesGrupProfe() {
 
         var isselected = $($($($(fileres[i]).children()[0])).children()[0]).prop('checked');
 
-        if (isselected == true) {
+        if (isselected === true) {
             alumnes[j] = codialumne;
             j++;
         }
@@ -289,6 +334,11 @@ function desaAlumnesGrupProfe() {
         success: function (data) {
             alert("Grup modificat correctament");
             $("#divAlumnesMeuGrup").html(data);
+            $("tr.btn-info").removeClass('btn-info');
+            //amaga desa
+            $("#desaAlumnesGrupProfe").css('visibility', 'hidden');
+            //style="visibility: hidden;"
+
         }
 
     });
@@ -298,5 +348,96 @@ function desaAlumnesGrupProfe() {
     return false;
 
 
+
+}
+
+function editaNomGrup(element) {
+    //tregguem read only
+
+    if ($($(element).siblings()[0]).prop('readonly') === true) {
+
+        $($(element).siblings()[0]).prop('readonly', false);
+        $($(element).siblings()[0]).focus();
+    } else {
+        debugger;
+        $($(element).siblings()[0]).prop('readonly', true);
+        var nouNom = $($(element).siblings()[0]).val().replace(/"/g, "&quot;");
+        ;
+        var codiGrup = $($($($(element).parent()).parent()).siblings()[1]).text();
+
+        $(element).prop('readonly', true);
+
+        //fem la comunicació amb el servidor
+        var url = "php/modiNomGrup.php";
+
+        //ara ja podem enviar les dades al servidor per a fer la consulta
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {"nouNom": nouNom, "codiGrup": codiGrup},
+            //data: ("#form2").serialize,
+            success: function (data) {
+                alert("S'ha modificat el nom del grup");
+            }
+
+        });
+
+
+
+        return false;
+
+    }
+
+
+}
+
+function modiNomGrup(element) {
+    debugger;
+    var nouNom = $(element).val().replace(/"/g, "&quot;");
+    var codiGrup = $($($($(element).parent()).parent()).siblings()[1]).text();
+
+    $(element).prop('readonly', true);
+
+    //fem la comunicació amb el servidor
+    var url = "php/modiNomGrup.php";
+
+    //ara ja podem enviar les dades al servidor per a fer la consulta
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {"nouNom": nouNom, "codiGrup": codiGrup},
+        //data: ("#form2").serialize,
+        success: function (data) {
+            alert("S'ha modificat el nom del grup");
+        }
+
+    });
+
+    debugger;
+
+    return false;
+
+
+}
+
+function carregaDropGenericAdmin(div, query, caption) {
+    var url = "php/carregaDropGenericAdmin.php";
+    debugger;
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {"div": div, "query": query, "caption": caption},
+        //data: ("#form2").serialize,
+        success: function (data) {
+            $("#" + div).html(data);
+
+        }
+
+    });
+
+
+    return false;
 
 }

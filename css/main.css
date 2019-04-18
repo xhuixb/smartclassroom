@@ -40,11 +40,18 @@ and open the template in the editor.
 
 
 
-table {
+#table1 {
     display: block;
     overflow: auto;
     height: 500px;
 }
+
+#taulaAdjunts {
+    display: block;
+    overflow: auto;
+    height: 100px;
+}
+
 
 a { cursor: pointer;}
 

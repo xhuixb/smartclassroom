@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 
+$(document).ready(function () {
+    $('[data-tooltip="tooltip"]').tooltip();
+});
 
 $(document).ready(function () {
     $('#summernote').summernote({
@@ -36,7 +39,7 @@ $(document).ready(function () {
 function carregaDadesMailing() {
 
     carregaDropGeneric('nivellDropdownMailing', 'SELECT distinct(ga35_nivell) as codi, ga06_descripcio_nivell as descripcio FROM ga06_nivell,ga35_curs_nivell_grup where ga35_codi_curs=(select ga03_codi_curs from ga03_curs where ga03_actual=1) and ga35_nivell=ga06_codi_nivell', 'Tots Niv');
-   // carregaDropGeneric('grupDropdownMailing', 'SELECT ga07_codi_grup as codi, ga07_descripcio_grup as descripcio FROM ga07_grup', 'Tots Gr');
+    // carregaDropGeneric('grupDropdownMailing', 'SELECT ga07_codi_grup as codi, ga07_descripcio_grup as descripcio FROM ga07_grup', 'Tots Gr');
 
 
     //carreguem els mails del professor
@@ -76,11 +79,11 @@ function mostranivellDropdownMailing(element) {
     $("#butDropnivellDropdownMailing").html($(element).text() + ' ' + '<span class="caret">');
     $("#butDropnivellDropdownMailing").val($(element).attr('data-val'));
 
-    var nivell=$(element).attr('data-val');
-    
-    if(nivell!=''){
-        cercaGrupsNivell('grupDropdownMailing',nivell);
-        
+    var nivell = $(element).attr('data-val');
+
+    if (nivell != '') {
+        cercaGrupsNivell('grupDropdownMailing', nivell);
+
     }
 
 }
@@ -298,16 +301,16 @@ function enviaMail() {
 
 
         //busquem els noms dels adjunts
-        
-        var nomsFitxers=[];
-        var fileres=$(".fileraFitxer");
-        
-        for(var i=0;i<fileres.length;i++){
-            nomsFitxers[i]=$(fileres[i]).text();
+
+        var nomsFitxers = [];
+        var fileres = $(".fileraFitxer");
+
+        for (var i = 0; i < fileres.length; i++) {
+            nomsFitxers[i] = $(fileres[i]).text();
         }
-        
-        var nomsFitxerString=nomsFitxers.join('<#>');
-        
+
+        var nomsFitxerString = nomsFitxers.join('<#>');
+
 
         var cosMissatge = $('#summernote').summernote('code');
 
@@ -318,17 +321,17 @@ function enviaMail() {
         $.ajax({
             type: "POST",
             url: url,
-            data: {"alumnesString": alumnesString, "cosMissatge": cosMissatge,"nomsFitxerString":nomsFitxerString},
+            data: {"alumnesString": alumnesString, "cosMissatge": cosMissatge, "nomsFitxerString": nomsFitxerString},
             //data: ("#form2").serialize,
             success: function (data) {
-              //  $("#mailingsProfeDiv").html(data);
+                //  $("#mailingsProfeDiv").html(data);
                 //esborrem el contingut de les taules
                 alert('Mailing creat!!');
                 $("#taulaAlumnesMailingBody").html('');
                 $("#costaulaAlumnesMailing").html('');
                 //esborrem els fitxers adjunts
                 $("#taulaAttachedBody").html('');
-                $("#taulaAttachedBody").attr('data-contador','1');
+                $("#taulaAttachedBody").attr('data-contador', '1');
                 $("#ressultUpload").text('');
                 $("#file").val('');
                 cercaMailingsProfe();
@@ -353,15 +356,15 @@ function mostraDadesMailing(element) {
     var missatge = $(element).attr('data-cos-mailing');
 
     var alumnes = $(element).attr('data-alumnes');
-    
-    var adjunts=$(element).attr('data-adjunts');
 
-    adjunts=adjunts.replace(/<#>/g,'\n');
+    var adjunts = $(element).attr('data-adjunts');
+
+    adjunts = adjunts.replace(/<#>/g, '\n');
 
     var alumnesArray = alumnes.split("-");
     debugger;
 
-    $("#fitxersAdjunts").html('Fitxers Adjunts<textarea class="form-control">'+adjunts+'</textarea>');
+    $("#fitxersAdjunts").html('Fitxers Adjunts<textarea class="form-control">' + adjunts + '</textarea>');
     $("#summernote1").summernote("code", missatge);
 
     //anem a buscar els noms dels alumnes
@@ -530,8 +533,8 @@ function esborraAttachFiles() {
     //sleep(2000);
     //$.get("php/uploadScripts/esborraAttachFiles.php");
     //var finestra=window.open("php/uploadScripts/esborraAttachFiles.php");
-   
-    
+
+
 
 }
 

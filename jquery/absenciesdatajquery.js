@@ -127,6 +127,8 @@ function cercaAbsRet() {
         alert('Dates incorrectes');
 
     } else {
+        $("#prova").attr('id', 'loadingDiv');
+        $("#areaTreball").css("opacity", "0.4");
         $("body").css("cursor", "progress");
         var url = "php/cercaAbsRet_1.php";
         $.ajax({
@@ -139,6 +141,8 @@ function cercaAbsRet() {
                 //rebem les dades
                 $("#divTaulaAbsenciesData").html(data);
                 $("#taulaAbsenciesRetards").tableHeadFixer();
+                $("#loadingDiv").attr('id', 'prova');
+                $("#areaTreball").css("opacity", "1");
                 $("body").css("cursor", "default");
 
             }

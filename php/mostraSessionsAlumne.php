@@ -101,42 +101,46 @@ $difDies = $diff->format("%R%a");
 
 //mirem les sessions per el primer dia que sempre hi serà
 $diaSetmanaInici = $dataI->format("w");
+$diaSetmanaString = $dataI->format("Y-m-d");
+
+$esFestiu = comprovaDiaFestiu($diaSetmanaString, $conn);
+
 $sessionsTractar = [];
 
-//no dissabtes ni diumenges
-if ($diaSetmanaInici != '0' && $diaSetmanaInici != '6') {
+//no dissabtes ni diumenges ni festius
+if ($diaSetmanaInici != '0' && $diaSetmanaInici != '6' && $esFestiu === false) {
     $contaSessions = 0;
 
 //pels grups personals
-    for ($i = 0; $i < count($sessionsArrayGrupsPersonals); $i++) {
+    if (isset($sessionsArrayGrupsPersonals)) {
+        for ($i = 0; $i < count($sessionsArrayGrupsPersonals); $i++) {
 
-        $sessionsStringGrupsPersonals = explode('<#>', $sessionsArrayGrupsPersonals[$i]);
-        if ($diaSetmanaInici === $sessionsStringGrupsPersonals[1]) {
-            //anem a comprovar si el profe és actiu en aquesta data
-            $actiu = comprovaProfeActiu($dataI->format('Y-m-d'), $sessionsStringGrupsPersonals[0], $conn);
+            $sessionsStringGrupsPersonals = explode('<#>', $sessionsArrayGrupsPersonals[$i]);
+            if ($diaSetmanaInici === $sessionsStringGrupsPersonals[1]) {
+                //anem a comprovar si el profe és actiu en aquesta data
+                $actiu = comprovaProfeActiu($dataI->format('Y-m-d'), $sessionsStringGrupsPersonals[0], $conn);
 
-            if ($actiu === true) {
-                $contaSessions++;
-            
+                if ($actiu === true) {
+                    $contaSessions++;
+                }
             }
         }
     }
-
 //pels grups generals
-    for ($i = 0; $i < count($sessionsArrayGrupsGenerals); $i++) {
+    if (isset($sessionsArrayGrupsGenerals)) {
+        for ($i = 0; $i < count($sessionsArrayGrupsGenerals); $i++) {
 
-        $sessionsStringGrupsGenerals = explode('<#>', $sessionsArrayGrupsGenerals[$i]);
-        if ($diaSetmanaInici === $sessionsStringGrupsGenerals[1]) {
+            $sessionsStringGrupsGenerals = explode('<#>', $sessionsArrayGrupsGenerals[$i]);
+            if ($diaSetmanaInici === $sessionsStringGrupsGenerals[1]) {
 
-            $actiu = comprovaProfeActiu($dataI->format('Y-m-d'), $sessionsStringGrupsGenerals[0], $conn);
+                $actiu = comprovaProfeActiu($dataI->format('Y-m-d'), $sessionsStringGrupsGenerals[0], $conn);
 
-            if ($actiu === true) {
-                $contaSessions++;
-               
+                if ($actiu === true) {
+                    $contaSessions++;
+                }
             }
         }
     }
-
 
     $sessionsTractar[$dataInici] = $contaSessions;
 }
@@ -148,35 +152,40 @@ for ($i = 0; $i < $difDies; $i++) {
     date_add($dataI, date_interval_create_from_date_string("1 days"));
     //mirem el dia de la setmana que és
     $diaSetmana = $dataI->format("w");
+    $diaSetmanaString = $dataI->format("Y-m-d");
+    $esFestiu = comprovaDiaFestiu($diaSetmanaString, $conn);
+
     //fem el mateix que a la data inicial
-    if ($diaSetmana != '0' && $diaSetmana != '6') {
+    if ($diaSetmana != '0' && $diaSetmana != '6' && $esFestiu===false) {
         $contaSessions = 0;
-        for ($j = 0; $j < count($sessionsArrayGrupsPersonals); $j++) {
+        if (isset($sessionsArrayGrupsPersonals)) {
+            for ($j = 0; $j < count($sessionsArrayGrupsPersonals); $j++) {
 
-            $sessionsStringGrupsPersonals = explode('<#>', $sessionsArrayGrupsPersonals[$j]);
-            if ($diaSetmana === $sessionsStringGrupsPersonals[1]) {
-                //anem a comprovar si el profe és actiu en aquesta data
-                $actiu = comprovaProfeActiu($dataI->format('Y-m-d'), $sessionsStringGrupsPersonals[0], $conn);
+                $sessionsStringGrupsPersonals = explode('<#>', $sessionsArrayGrupsPersonals[$j]);
+                if ($diaSetmana === $sessionsStringGrupsPersonals[1]) {
+                    //anem a comprovar si el profe és actiu en aquesta data
+                    $actiu = comprovaProfeActiu($dataI->format('Y-m-d'), $sessionsStringGrupsPersonals[0], $conn);
 
-                if ($actiu === true) {
-                    $contaSessions++;
-                
+                    if ($actiu === true) {
+                        $contaSessions++;
+                    }
                 }
             }
         }
-        for ($j = 0; $j < count($sessionsArrayGrupsGenerals); $j++) {
+        if (isset($sessionsArrayGrupsGenerals)) {
+            for ($j = 0; $j < count($sessionsArrayGrupsGenerals); $j++) {
 
-            $sessionsStringGrupsGenerals = explode('<#>', $sessionsArrayGrupsGenerals[$j]);
-            if ($diaSetmana === $sessionsStringGrupsGenerals[1]) {
-                //anem a comprovar si el profe és actiu en aquesta data
-                $actiu = comprovaProfeActiu($dataI->format('Y-m-d'), $sessionsStringGrupsGenerals[0], $conn);
+                $sessionsStringGrupsGenerals = explode('<#>', $sessionsArrayGrupsGenerals[$j]);
+                if ($diaSetmana === $sessionsStringGrupsGenerals[1]) {
+                    //anem a comprovar si el profe és actiu en aquesta data
+                    $actiu = comprovaProfeActiu($dataI->format('Y-m-d'), $sessionsStringGrupsGenerals[0], $conn);
 
-                if ($actiu === true) {
-                    $contaSessions++;
+                    if ($actiu === true) {
+                        $contaSessions++;
+                    }
                 }
             }
         }
-
         $sessionsTractar[date_format($dataI, "d/m/Y")] = $contaSessions;
     }
 }
@@ -206,8 +215,15 @@ echo '</thead>';
 echo '<tbody id="cosTaulaSessionsAlumne">';
 $conta = 0;
 foreach ($sessionsTractar as $x => $x_value) {
+    if ($conta === 0) {
+        $dataActual = 'data-actual="1"';
+        $ordreActual = 'data-ordre="0"';
+    } else {
+        $dataActual = 'data-actual="0"';
+        $ordreActual = 'data-ordre=""';
+    }
     if ($x_value != 0) {
-        echo '<tr>';
+        echo '<tr ' . $dataActual . ' ' . $ordreActual . '>';
         echo '<td class="col-sm-1">' . $x . '</td>';
         echo '<td class="col-sm-1">' . $x_value . '</td>';
         echo '<td class="col-sm-2"><div id="ses' . $conta . '" class="sessionsAlumne">' . $progressBar . '</div></td>';

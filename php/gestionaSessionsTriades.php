@@ -17,13 +17,9 @@ $mode = $_POST['mode'];
 if ($mode == "1") {
     $dataSessio = $_POST['dataSessio'];
     $horaProfe = $_POST['horaProfe'];
-    $item = $_POST['conta'];
-    $max = $_POST['max'];
 } else {
     $dadesSessio = [];
     $dadesSessio = $_POST['dadesSessio'];
-    $item = $_POST['conta'];
-    $max = $_POST['max'];
     $alumnesSessioMassiva = [];
     $alumnesSessioMassiva = $_POST['alumnesSessioMassiva'];
     $alumnesSessioIndex = [];
@@ -304,15 +300,6 @@ if ($mode == '1') {
             $result->close();
         }
 
-
-
-        $percent = round((($item + 1) / $max) * 100, 2);
-
-        echo '<div class="progress">';
-        echo '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="' . $percent . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $percent . '%">';
-        echo $percent . '% processat';
-        echo '</div>';
-        echo '</div >';
 
         sleep(1);
     }

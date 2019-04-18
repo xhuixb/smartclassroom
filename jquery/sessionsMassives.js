@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+var myVar;
 
 $(document).ready(function () {
     $('#dataSessionsMassives').datepicker({
@@ -153,7 +153,7 @@ function creaSessionsMassives() {
     var from = $("#dataSessionsMassives").val().split("/");
     var f = from[2].toString() + '-' + from[1].toString() + '-' + from[0].toString();
     var avui = new Date();
-    var avuiString = avui.getFullYear().toString() + '-' + ("0" + (avui.getMonth() + 1)).slice(-2) + '-' + ("0" + avui.getDate()).slice(-2);
+    var avuiString = avui.toISOString().substr(0, 10);
 
     debugger;
 
@@ -232,7 +232,7 @@ function esborraSessionsMassives() {
     var from = $("#dataSessionsMassives").val().split("/");
     var f = from[2].toString() + '-' + from[1].toString() + '-' + from[0].toString();
     var avui = new Date();
-    var avuiString = avui.getFullYear().toString() + '-' + ("0" + (avui.getMonth() + 1)).slice(-2) + '-' + ("0" + avui.getDate()).slice(-2);
+    var avuiString = avui.toISOString().substr(0, 10);
 
     debugger;
 
@@ -344,135 +344,290 @@ function gestionaSessionsTriades() {
         if (mode == '1') {
             var confirmacio = confirm("Estàs a punt d'esborar " + max + " sessions. Vols continuar?");
             if (confirmacio === true) {
-                //agafem les dades necessàries per esborra la sessió
-                //faltam la data les hores i els profes
-                var dataSessio = $("#dataSessions").attr('data-sessio');
-                var horaProfe = [];
+                //posem en format loading
+                $("#prova").attr('id', 'loadingDiv');
+                $("#areaTreball").css("opacity", "0.4");
+                //posem el check actual a la primera sessió marcada
                 var checksSessions = $('.sessionsSeleccionades');
-                var conta = 0;
+
                 for (var i = 0; i < checksSessions.length; i++) {
                     if ($(checksSessions[i]).prop('checked') === true) {
-                        var hora = $($($(checksSessions[i]).parent()).siblings()[0]).text();
-                        var profe = $($($(checksSessions[i]).parent()).siblings()[4]).attr('data-codiprof');
-
-                        horaProfe[conta] = hora + '<#>' + profe;
-                        conta++;
+                        $(checksSessions[i]).attr('data-actual', '1');
+                        $("#taulaSessionsMassives").attr('data-ordre', '1');
+                        //només ens interessa el primer
+                        break;
                     }
                 }
 
+                myVar = setInterval(esborraSessio, 2000);
+
             }
-            debugger;
+          
 
-            for (var i = 0; i < horaProfe.length; i++) {
-
-                var url = "php/gestionaSessionsTriades.php";
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data: {"dataSessio": dataSessio, "horaProfe": horaProfe[i], "conta": i, "max": horaProfe.length, "mode": mode},
-                    //data: ("#form2").serialize,
-
-                    success: function (data) {
-                        $("#divProgressSessions").html(data);
-                        //mostrarem les sessions en el modal form
-
-                    }, async: false
-
-                });
-                if (i == horaProfe.length - 1) {
-                    alert('procés acabat');
-                    return false;
-                }
-            }
+            
         } else {
             if ($("#comentSessio").val() !== '') {
                 //anem a crear les sessions
+
                 var confirmacio = confirm("Estàs a punt de crear " + max + " sessions. Vols continuar?");
                 if (confirmacio === true) {
-                    //anem a buscar els alumnes
-                    var fileresAlumnes = $("#cosTaulaAlumnesGrup").children();
-                    var alumnesSessioMassiva = [];
-
-
-                    for (var i = 0; i < fileresAlumnes.length; i++) {
-                        var alumne = $($(fileresAlumnes[i]).children()[1]).attr('data-codi-alumne');
-
-                        if ($($($(fileresAlumnes[i]).children()[2]).children()[0]).prop('checked') === true) {
-                            var presencia = 1;
-
-                        } else if ($($($(fileresAlumnes[i]).children()[3]).children()[0]).prop('checked') === true) {
-                            var presencia = 2;
-
-                        } else {
-                            var presencia = 3;
-                        }
-
-                        alumnesSessioMassiva[i] = alumne + '<#>' + presencia;
-                    }
-
-
-                    //agafem les dades necessàries per esborra la sessió
-                    //faltam la data les hores i els profes
-                    var dataSessio = $("#dataSessions").attr('data-sessio');
-                    var dadesSessio = [];
+                    //posem en format loading
+                    $("#prova").attr('id', 'loadingDiv');
+                    $("#areaTreball").css("opacity", "0.4");
+                    //posem el check actual a la primera sessió marcada
                     var checksSessions = $('.sessionsSeleccionades');
-                    var conta = 0;
+
                     for (var i = 0; i < checksSessions.length; i++) {
                         if ($(checksSessions[i]).prop('checked') === true) {
-                            var hora = $($($(checksSessions[i]).parent()).siblings()[0]).text();
-                            var profe = $($($(checksSessions[i]).parent()).siblings()[4]).attr('data-codiprof');
-                            var aula = $($(checksSessions[i]).parent()).attr('data-aula');
-                            var nivell = $($($(checksSessions[i]).parent()).siblings()[2]).attr('data-nivell');
-                            var grup = $($($(checksSessions[i]).parent()).siblings()[3]).attr('data-grup');
-                            var tipusGrup = $($($(checksSessions[i]).parent()).siblings()[3]).attr('data-tipusgrup');
-                            var assignatura = $($(checksSessions[i]).parent()).attr('data-assignatura');
-                            var comentari = $("#comentSessio").val();
-                            var estatSessio = $($($(checksSessions[i]).parent()).siblings()[5]).attr('data-estat');
-
-                            dadesSessio[conta] = profe + '<#>' + dataSessio + '<#>' + hora + '<#>' + aula + '<#>' + nivell + '<#>' + grup + '<#>' + tipusGrup + '<#>' + assignatura + '<#>' + comentari + '<#>' + estatSessio;
-
-
-                            conta++;
-
-
-
-
+                            $(checksSessions[i]).attr('data-actual', '1');
+                            $("#taulaSessionsMassives").attr('data-ordre', '1');
+                            //només ens interessa el primer
+                            break;
                         }
                     }
 
+                    myVar = setInterval(creaSessio, 2000);
+
                 }
 
-                debugger;
-
-                for (var i = 0; i < dadesSessio.length; i++) {
-
-                    var url = "php/gestionaSessionsTriades.php";
-                    $.ajax({
-                        type: "POST",
-                        url: url,
-                        data: {"dadesSessio": dadesSessio[i], "conta": i, "max": dadesSessio.length, "mode": mode, "alumnesSessioMassiva": alumnesSessioMassiva},
-                        //data: ("#form2").serialize,
-
-                        success: function (data) {
-                            $("#divProgressSessions").html(data);
-                            //mostrarem les sessions en el modal form
-
-                        }, async: false
-
-                    });
-                    if (i == dadesSessio.length - 1) {
-
-                        alert('procés acabat');
-                        return false;
-                    }
-                }
 
             } else {
                 alert("Cal posar algun comentari per dur a terme l'acció")
             }
         }
+    } else {
+        alert("No s'ha triat cap sessió");
     }
 }
+
+function esborraSessio() {
+    //anem a buscar els alumnes
+ 
+    var checksSessions = $('.sessionsSeleccionades');
+    var max = 0;
+    for (var i = 0; i < checksSessions.length; i++) {
+        if ($(checksSessions[i]).prop('checked') === true) {
+            max++;
+        }
+    }
+
+    var fileresAlumnes = $("#cosTaulaAlumnesGrup").children();
+    var alumnesSessioMassiva = [];
+    var mode = 1;
+
+    //faltam la data les hores i els profes
+    var dataSessio = $("#dataSessions").attr('data-sessio');
+
+    var horaProfe;
+
+    //anem a buscar la sessió que toca tractar
+    var fileraActual = $("[data-actual=1]");
+
+    //és la filera a tractar
+    //l'atribut data actual està al check
+    //només n'hi pot haver un
+    var hora = $($($(fileraActual[0]).parent()).siblings()[0]).text();
+    var profe = $($($(fileraActual[0]).parent()).siblings()[4]).attr('data-codiprof');
+
+    horaProfe = hora + '<#>' + profe;
+
+
+    var url = "php/gestionaSessionsTriades.php";
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {"dataSessio": dataSessio, "horaProfe": horaProfe, "mode": mode},
+        //data: ("#form2").serialize,
+
+        success: function (data) {
+
+
+            var numSessioActual = parseInt($("#taulaSessionsMassives").attr('data-ordre'));
+
+            var percent = (numSessioActual * 100 / max).toFixed(2);
+
+            var nouEstat = "";
+
+            nouEstat += '<div class="progress">';
+            nouEstat += '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="' + percent + '" aria-valuemin="0" aria-valuemax="100" style="width:' + percent + '%">';
+            nouEstat += percent + '% processat';
+            nouEstat += '</div>';
+            nouEstat += '</div >';
+
+
+            $("#divProgressSessions").html(nouEstat);
+            if (parseInt($("#taulaSessionsMassives").attr('data-ordre')) < max) {
+                //encara queden més sessions per a tractar
+                //cal canviar la filera a tractar
+                var numFilera = $($($(fileraActual[0]).parent()).parent()).index();
+                var totesFileres = $($($(fileraActual[0]).parent()).parent()).siblings();
+                //traguem l'anterior
+
+                $(fileraActual[0]).removeAttr('data-actual');
+
+                for (var i = 0; i < totesFileres.length; i++) {
+                    var estatCheck = $($($(totesFileres[i]).children()[0]).children()[0]).prop('checked');
+                    var indexActual = $(totesFileres[i]).index();
+
+                    if (estatCheck === true && indexActual > numFilera) {
+                        //és la següent filera a marcar
+                        $($($(totesFileres[i]).children()[0]).children()[0]).attr('data-actual', '1');
+
+
+
+                        var ordre = parseInt($("#taulaSessionsMassives").attr('data-ordre')) + 1;
+                        $("#taulaSessionsMassives").attr('data-ordre', ordre.toString());
+
+                        break;
+                    }
+
+                }
+
+
+            } else {
+                //ja s'han tractat totes
+                clearInterval(myVar);
+                $("#loadingDiv").attr('id', 'prova');
+                $("#areaTreball").css("opacity", "1");
+                alert('Procés acabat');
+
+            }
+
+
+        }, async: true
+
+    });
+
+    return false;
+
+}
+
+
+function creaSessio() {
+    //anem a buscar els alumnes
+   
+    var checksSessions = $('.sessionsSeleccionades');
+    var max = 0;
+    for (var i = 0; i < checksSessions.length; i++) {
+        if ($(checksSessions[i]).prop('checked') === true) {
+            max++;
+        }
+    }
+    var fileresAlumnes = $("#cosTaulaAlumnesGrup").children();
+    var alumnesSessioMassiva = [];
+    var mode = 0;
+
+    for (var i = 0; i < fileresAlumnes.length; i++) {
+        var alumne = $($(fileresAlumnes[i]).children()[1]).attr('data-codi-alumne');
+
+        if ($($($(fileresAlumnes[i]).children()[2]).children()[0]).prop('checked') === true) {
+            var presencia = 1;
+
+        } else if ($($($(fileresAlumnes[i]).children()[3]).children()[0]).prop('checked') === true) {
+            var presencia = 2;
+
+        } else {
+            var presencia = 3;
+        }
+
+        alumnesSessioMassiva[i] = alumne + '<#>' + presencia;
+    }
+
+    //agafem les dades necessàries per crear la sessió
+    //faltam la data les hores i els profes
+    var dataSessio = $("#dataSessions").attr('data-sessio');
+    var dadesSessio;
+    //anem a buscar la sessió que toca tractar
+    var fileraActual = $("[data-actual=1]");
+
+    //és la filera a tractar
+    //l'atribut data actual està al check
+    //només n'hi pot haver un
+    var hora = $($($(fileraActual[0]).parent()).siblings()[0]).text();
+    var profe = $($($(fileraActual[0]).parent()).siblings()[4]).attr('data-codiprof');
+    var aula = $($(fileraActual[0]).parent()).attr('data-aula');
+    var nivell = $($($(fileraActual[0]).parent()).siblings()[2]).attr('data-nivell');
+    var grup = $($($(fileraActual[0]).parent()).siblings()[3]).attr('data-grup');
+    var tipusGrup = $($($(fileraActual[0]).parent()).siblings()[3]).attr('data-tipusgrup');
+    var assignatura = $($(fileraActual[0]).parent()).attr('data-assignatura');
+    var comentari = $("#comentSessio").val();
+    var estatSessio = $($($(fileraActual[0]).parent()).siblings()[5]).attr('data-estat');
+
+    dadesSessio = profe + '<#>' + dataSessio + '<#>' + hora + '<#>' + aula + '<#>' + nivell + '<#>' + grup + '<#>' + tipusGrup + '<#>' + assignatura + '<#>' + comentari + '<#>' + estatSessio;
+
+    debugger;
+
+    //enviem les dades al servidor
+    var url = "php/gestionaSessionsTriades.php";
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {"dadesSessio": dadesSessio, "mode": mode, "alumnesSessioMassiva": alumnesSessioMassiva},
+        //data: ("#form2").serialize,
+
+        success: function (data) {
+
+
+            var numSessioActual = parseInt($("#taulaSessionsMassives").attr('data-ordre'));
+
+            var percent = (numSessioActual * 100 / max).toFixed(2);
+
+            var nouEstat = "";
+
+            nouEstat += '<div class="progress">';
+            nouEstat += '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="' + percent + '" aria-valuemin="0" aria-valuemax="100" style="width:' + percent + '%">';
+            nouEstat += percent + '% processat';
+            nouEstat += '</div>';
+            nouEstat += '</div >';
+
+
+            $("#divProgressSessions").html(nouEstat);
+            if (parseInt($("#taulaSessionsMassives").attr('data-ordre')) < max) {
+                //encara queden més sessions per a tractar
+                //cal canviar la filera a tractar
+                var numFilera = $($($(fileraActual[0]).parent()).parent()).index();
+                var totesFileres = $($($(fileraActual[0]).parent()).parent()).siblings();
+                //traguem l'anterior
+
+                $(fileraActual[0]).removeAttr('data-actual');
+
+                for (var i = 0; i < totesFileres.length; i++) {
+                    var estatCheck = $($($(totesFileres[i]).children()[0]).children()[0]).prop('checked');
+                    var indexActual = $(totesFileres[i]).index();
+
+                    if (estatCheck === true && indexActual > numFilera) {
+                        //és la següent filera a marcar
+                        $($($(totesFileres[i]).children()[0]).children()[0]).attr('data-actual', '1');
+
+
+
+                        var ordre = parseInt($("#taulaSessionsMassives").attr('data-ordre')) + 1;
+                        $("#taulaSessionsMassives").attr('data-ordre', ordre.toString());
+
+                        break;
+                    }
+
+                }
+
+
+            } else {
+                //ja s'han tractat totes
+                clearInterval(myVar);
+                $("#loadingDiv").attr('id', 'prova');
+                $("#areaTreball").css("opacity", "1");
+                alert('Procés acabat');
+
+            }
+
+
+        }, async: true
+
+    });
+
+    return false;
+
+}
+
 
 function esborraAlumnesTaula() {
     var fileres = $(".checkEsborrar");

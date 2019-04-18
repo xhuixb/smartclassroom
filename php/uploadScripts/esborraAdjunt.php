@@ -16,6 +16,7 @@ for ($i = 0; $i < count($nomsFitxers); $i++) {
     
     $fitxer = $directori . 'p' . $codiProf .'_'. $nomsFitxers[$i].'.pdf';
     unlink($fitxer);
+     echo '<p class="btn-success">El fitxer ha estat esborrat amb èxit</p>';
 }
 
 echo '<p class="btn-success">El fitxers han estat esborrats amb èxit</p>';

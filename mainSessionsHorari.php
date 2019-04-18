@@ -13,8 +13,8 @@
       <!--  <script src="jquery/sessionsjquery.js"></script>-->
         <script src="jquery/sessionsHorarijquery.js"></script>
 
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
     </head>
     <?php
     require 'classes/Databases.php';
@@ -223,12 +223,12 @@
 
             <div class="row" >
                 <div class="col-sm-1">
-                    <button type="button" class="btn btn-success form-control" id="desaSessioHorari" onclick="desaSessioHorari();">
+                    <button type="button" class="btn btn-success form-control" id="desaSessioHorari" onclick="desaSessioHorari();" data-tooltip="tooltip" title="Desa sessió">
                         <span class="glyphicon glyphicon-floppy-disk"></span>Desa
                     </button>
                 </div>
                 <div class="col-sm-1">
-                    <button type="button" class="btn btn-info form-control" id="surtSessioHorari" onclick="surtSessioHorari();">
+                    <button type="button" class="btn btn-info form-control" id="surtSessioHorari" onclick="surtSessioHorari();"data-tooltip="tooltip" title="Surt de la sessió">
                         <span class="glyphicon glyphicon-log-out"></span>Surt
                     </button>
                 </div>
@@ -237,7 +237,7 @@
                     if ($sessioNova == true) {
                         echo 'disabled';
                     }
-                    ?>>
+                    ?> data-tooltip="tooltip" title="Esborra la sessió">
                         <span class="glyphicon glyphicon-trash"></span>Esborra
                     </button>
                 </div>
@@ -289,7 +289,7 @@
                 </div>
                 <div class="col-sm-1">
                     <label>Comentari</label>
-                    <button data-comentari="<?php echo $dadesSessio['comentari']; ?>" type="button" class="btn btn-info form-control" data-toggle="modal" data-target="#comentariModalForm" id="editaComentari" onclick="editaComentari();">
+                    <button data-comentari="<?php echo $dadesSessio['comentari']; ?>" type="button" class="btn btn-info form-control" data-toggle="modal" data-target="#comentariModalForm" id="editaComentari" onclick="editaComentari();" data-tooltip="tooltip" title="Agegeix un comentari a la sessió">
                         <span class="glyphicon glyphicon-pencil"></span>
                     </button>
                 </div>
@@ -307,7 +307,7 @@
                     <label>Aula</label>
                     <div id="divaulaSessio">
                         <button value="<?php echo $dadesSessio['aula'] ?>" class="btn btn-primary dropdown-toggle" 
-                                type="button" data-toggle="dropdown" id="butDropaulaSessio"><?php
+                                type="button" data-toggle="dropdown" id="butDropaulaSessio" data-tooltip="tooltip" title="Tria aula"><?php
                                     if ($dadesSessio['aula'] == '') {
                                         echo 'Tria Aula';
                                     } else {
@@ -531,7 +531,7 @@
                             echo '<table id="taulaSessio" class="table">';
                             echo '<thead>';
                             echo '<tr>';
-                            echo '<th><form class="form-inline"><input type="checkbox" value="" id="checkMarcaDesmarca" onclick="seleccionaTot();"><button type="button" class="btn btn-warning form-control" onclick="esborraAlumnes()"><span class="glyphicon glyphicon-trash"></span></button></form></th>';
+                            echo '<th><form class="form-inline"><input type="checkbox" value="" id="checkMarcaDesmarca" onclick="seleccionaTot();"><button type="button" class="btn btn-warning form-control" onclick="esborraAlumnes()" data-tooltip="tooltip" title="Treu alumnes de la sessió"><span class="glyphicon glyphicon-trash"></span></button></form></th>';
                             echo '<th>Nivell</th>';
                             echo '<th>Grup</th>';
                             echo '<th>Alumne</th>';
@@ -638,18 +638,18 @@
                                     echo '<td><input type="checkbox" value="" class="checkEsborrar"></td>';
                                     echo '<td>' . $row['descrnivell'] . '</td>';
                                     echo '<td>' . $row['descrgrup'] . '</td>';
-                                    echo '<td id="al' . $row['codi'] . '" data-tipus="" data-estat="" data-motiu="" data-num="" data-textfalta="" data-avisresponsables="0" data-avistutor="0" data-comentarialumne="" data-comentariavis="1"><a onclick="mostraFitxaAlumne(this)">' . $conta . '-' . $row['alumne'] . '</a>' . $assistAnterior . '</td>';
+                                    echo '<td id="al' . $row['codi'] . '" data-tipus="" data-estat="" data-motiu="" data-num="" data-textfalta="" data-avisresponsables="0" data-avistutor="0" data-comentarialumne="" data-comentariavis="1"><a onclick="mostraFitxaAlumne(this)" data-tooltip="tooltip" title="Ves a la fitxa de l\'alumne">' . $conta . '-' . $row['alumne'] . '</a>' . $assistAnterior . '</td>';
                                     echo '<td><input type="checkbox" value="" checked class="checkAssist" onchange="comprovaCheck(this)"></td>';
                                     echo '<td><input type="checkbox" value="" class="checkAssist" onchange="comprovaCheck(this)"></td>';
                                     echo '<td><input type="checkbox" value="" class="checkAssist" onchange="comprovaCheck(this)"></td>';
-                                    echo '<td><button type="button" class="btn form-control" data-toggle="modal" data-target="#faltesModalForm" onclick="carregaFaltesSessio(this)">';
+                                    echo '<td><button type="button" class="btn form-control" data-toggle="modal" data-target="#faltesModalForm" onclick="carregaFaltesSessio(this)" data-tooltip="tooltip" title="Conductes contràries a la convivència">';
                                     echo '<span class="glyphicon glyphicon-pencil"></span>CCC</button></td>';
-                                    echo '<td><button type="button" class="btn form-control" data-toggle="modal" data-target="#comentAlumneForm" onclick="carregaComentAlumne(this)">';
+                                    echo '<td><button type="button" class="btn form-control" data-toggle="modal" data-target="#comentAlumneForm" onclick="carregaComentAlumne(this)" data-tooltip="tooltip" title="Comentaris de l\'alumne">';
                                     echo '<span class="glyphicon glyphicon-edit"></span></button></td>';
                                     if ($row['checkcomunica'] == '1') {
-                                        echo '<td><center><input type="checkbox" value="" checked disabled></center></td>';
+                                        echo '<td data-tooltip="tooltip" title="Comunicacions activades"><center><input type="checkbox" value="" checked disabled></center></td>';
                                     } else {
-                                        echo '<td><center><input type="checkbox" value="" disabled></center></td>';
+                                        echo '<td data-tooltip="tooltip" title="Comunicacions desactivades"><center><input type="checkbox" value="" disabled></center></td>';
                                     }
                                     echo '</tr>';
                                     $conta++;
@@ -670,7 +670,7 @@
                             echo '<table id="taulaSessio" class="table">';
                             echo '<thead>';
                             echo '<tr>';
-                            echo '<th><form class="form-inline"><input type="checkbox" value="" id="checkMarcaDesmarca" onclick="seleccionaTot();"><button type="button" class="btn btn-warning form-control" onclick="esborraAlumnes()"><span class="glyphicon glyphicon-trash"></span></button></form></th>';
+                            echo '<th><form class="form-inline"><input type="checkbox" value="" id="checkMarcaDesmarca" onclick="seleccionaTot();"><button type="button" class="btn btn-warning form-control" onclick="esborraAlumnes()" data-tooltip="tooltip" title="Treu alumnes de la sessió"><span class="glyphicon glyphicon-trash"></span></button></form></th>';
                             echo '<th>Nivell</th>';
                             echo '<th>Grup</th>';
                             echo '<th>Alumne</th>';
@@ -804,7 +804,7 @@
                                         $colorComent = '';
                                     }
                                     //en aquesta cella posarem el codi de l'alumne i les dades de la possible falta d'ordre
-                                    echo '<td id="al' . $row['codi'] . '" data-tipus="' . $row['tipusfalta'] . '" data-estat="' . $row['estatfalta'] . '" data-motiu="' . $row['motiufalta'] . '" data-num="' . $row['numfalta'] . '" data-textfalta="' . $row['textfalta'] . '" data-avisresponsables="' . $row['justresp'] . '" data-avistutor="' . $row['justtutor'] . '" data-comentarialumne="' . $row['comentalumne'] . '" data-comentariavis="' . $switchEnviar . '"><a onclick="mostraFitxaAlumne(this)">' . $conta . '-' . $row['alumne'] . ' </a><a href="#" data-toggle="tooltip" data-titol="' . str_replace('"', '&quot;', $row['comentari']) . '" title="' . str_replace('"', '&quot;', $row['comentari']) . '"><span class="glyphicon glyphicon-pencil" ' . $colorComent . '></span></a>' . $assistAnterior . '</td>';
+                                    echo '<td id="al' . $row['codi'] . '" data-tipus="' . $row['tipusfalta'] . '" data-estat="' . $row['estatfalta'] . '" data-motiu="' . $row['motiufalta'] . '" data-num="' . $row['numfalta'] . '" data-textfalta="' . $row['textfalta'] . '" data-avisresponsables="' . $row['justresp'] . '" data-avistutor="' . $row['justtutor'] . '" data-comentarialumne="' . $row['comentalumne'] . '" data-comentariavis="' . $switchEnviar . '"><a onclick="mostraFitxaAlumne(this)" data-tooltip="tooltip" title="Ves a la fitxa de l\'alumne">' . $conta . '-' . $row['alumne'] . ' </a><a href="#" data-toggle="tooltip" data-titol="' . str_replace('"', '&quot;', $row['comentari']) . '" title="' . str_replace('"', '&quot;', $row['comentari']) . '"><span class="glyphicon glyphicon-pencil" ' . $colorComent . '></span></a>' . $assistAnterior . '</td>';
 
 
 
@@ -822,15 +822,15 @@
                                         echo '<td><input type="checkbox" value="" checked class="checkAssist" onchange="comprovaCheck(this)"></td>';
                                     }
 
-                                    echo '<td><button type="button" class="btn form-control ' . $colorbuto . '" data-toggle="modal" data-target="#faltesModalForm" onclick="carregaFaltesSessio(this)">';
+                                    echo '<td><button type="button" class="btn form-control ' . $colorbuto . '" data-toggle="modal" data-target="#faltesModalForm" onclick="carregaFaltesSessio(this)" data-tooltip="tooltip" title="Conductes contràries a la convivència">';
                                     echo '<span class="glyphicon glyphicon-pencil"></span>CCC</button></td>';
-                                    echo '<td><button type="button" class="btn form-control ' . $botoBlau . '" data-toggle="modal" data-target="#comentAlumneForm" onclick="carregaComentAlumne(this)">';
+                                    echo '<td><button type="button" class="btn form-control ' . $botoBlau . '" data-toggle="modal" data-target="#comentAlumneForm" onclick="carregaComentAlumne(this)" data-tooltip="tooltip" title="Comentaris de l\'alumne">';
                                     echo '<span class="glyphicon glyphicon-edit"></span></button></td>';
 
                                     if ($row['checkcomunica'] == '1') {
-                                        echo '<td><center><input type="checkbox" value="" checked disabled></center></td>';
+                                        echo '<td data-tooltip="tooltip" title="Comunicacions activades"><center><input type="checkbox" value="" checked disabled></center></td>';
                                     } else {
-                                        echo '<td><center><input type="checkbox" value="" disabled></center></td>';
+                                        echo '<td data-tooltip="tooltip" title="Comunicacions desactivades"><center><input type="checkbox" value="" disabled></center></td>';
                                     }
                                     echo '</tr>';
                                     $conta++;

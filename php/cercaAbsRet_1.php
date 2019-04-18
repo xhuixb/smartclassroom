@@ -117,6 +117,7 @@ $query = "select ga12_id_alumne as codialumne,concat(ga11_cognom1,' ',ga11_cogno
         . "(select count(*) from ga15_cont_presencia,ga28_cont_presencia_cap where ga28_codi_curs=ga15_codi_curs and ga28_professor=ga15_codi_professor and ga28_dia=ga15_dia and ga28_hora=ga15_hora_inici and ga15_codi_curs=" . $_SESSION['curs_actual'] . " and ga15_alumne=ga12_id_alumne and ga15_check_absent=1 and ga15_check_justificat=1 " . $whereDataInicial . $whereDataFinal . $whereProfessor . $whereAssignatura . " group by ga15_alumne) as abssijusti,"
         . "(select count(*) from ga15_cont_presencia,ga28_cont_presencia_cap where ga28_codi_curs=ga15_codi_curs and ga28_professor=ga15_codi_professor and ga28_dia=ga15_dia and ga28_hora=ga15_hora_inici and ga15_codi_curs=" . $_SESSION['curs_actual'] . " and ga15_alumne=ga12_id_alumne and ga15_check_absent=1 and ga15_check_justificat=0 " . $whereDataInicial . $whereDataFinal . $whereProfessor . $whereAssignatura . " group by ga15_alumne) as absnojusti,"
         . "(select count(*) from ga15_cont_presencia,ga28_cont_presencia_cap where ga28_codi_curs=ga15_codi_curs and ga28_professor=ga15_codi_professor and ga28_dia=ga15_dia and ga28_hora=ga15_hora_inici and ga15_codi_curs=" . $_SESSION['curs_actual'] . " and ga15_alumne=ga12_id_alumne and ga15_check_retard=1 " . $whereDataInicial . $whereDataFinal . $whereProfessor . $whereAssignatura . " group by ga15_alumne) as retards,"
+        . "(select count(distinct(ga15_dia)) from ga15_cont_presencia,ga28_cont_presencia_cap where ga28_codi_curs=ga15_codi_curs and ga28_professor=ga15_codi_professor and ga28_dia=ga15_dia and ga28_hora=ga15_hora_inici and ga15_codi_curs=" . $_SESSION['curs_actual'] . " and ga15_alumne=ga12_id_alumne and ga15_check_absent=1 " . $whereDataInicial . $whereDataFinal . $whereProfessor . $whereAssignatura . " group by ga15_alumne) as diesabsret,"
         . "(select count(*) from ga15_cont_presencia,ga28_cont_presencia_cap where ga28_codi_curs=ga15_codi_curs and ga28_professor=ga15_codi_professor and ga28_dia=ga15_dia and ga28_hora=ga15_hora_inici and ga15_codi_curs=" . $_SESSION['curs_actual'] . " and ga15_alumne=ga12_id_alumne and ga15_check_absent=1 and ga15_check_justificat=0 " . $whereDataInicial . $whereDataFinal . $whereProfessor . $whereAssignatura . " group by ga15_alumne)/(select count(*) from ga15_cont_presencia where ga15_codi_curs=" . $_SESSION['curs_actual'] . " and ga15_alumne=ga12_id_alumne " . $whereDataInicial . $whereDataFinal . " group by ga15_alumne)*100 as absentisme"
         . " from ga11_alumnes,ga12_alumnes_curs,ga06_nivell,ga07_grup,ga35_curs_nivell_grup"
         . " where ga12_codi_curs=" . $_SESSION['curs_actual'] . $whereNivell . $whereGrup
@@ -158,7 +159,7 @@ if ($result->num_rows > 0) {
     $absnojusti = 0;
     $retards = 0;
     $sessionsTeoriquesTotals = 0;
-    $contaAlumnes=0;
+    $contaAlumnes = 0;
 
     echo '<tbody id="costaulaAbsenciesRetards">';
     while ($row = $result->fetch_assoc()) {
@@ -175,7 +176,7 @@ if ($result->num_rows > 0) {
             $absnojusti += $row['absnojusti'];
             $retards += $row['retards'];
             $contaAlumnes++;
-            
+
             if ((int) $row['sessionstotal'] > 0) {
                 if ((int) $row['absnojusti'] > 0) {
                     $absentisme = ($row['absnojusti'] / $row['sessionstotal']) * 100;
@@ -297,9 +298,14 @@ if ($result->num_rows > 0) {
                 $absTeoricTassa = 0;
             }
 
-
+            if ($row['diesabsret'] == '') {
+                $diesabsret=0;
+            }else{
+                $diesabsret=$row['diesabsret'];
+            }
+            
             echo '<tr>';
-            echo '<td class="col-sm-2" data-codi-alumne="' . $row['codialumne'] . '">' . $row['alumne'] . ' <a href="#" data-toggle="modal" data-target="#detallAbsencies" onclick="mostraDetall(this)"><span class="glyphicon glyphicon-search"></span></a></td>';
+            echo '<td class="col-sm-2" data-codi-alumne="' . $row['codialumne'] . '">' . $row['alumne'] . '(' . $diesabsret . ')' . '<a href="#" data-toggle="modal" data-target="#detallAbsencies" onclick="mostraDetall(this)"><span class="glyphicon glyphicon-search"></span></a></td>';
             echo '<td class="col-sm-1">' . $row['nivell'] . '</td>';
             echo '<td class="col-sm-1">' . $row['grup'] . '</td>';
             echo '<td class="col-sm-1"><center>' . $sessionsTeoriques . '</center></td>';
@@ -316,7 +322,7 @@ if ($result->num_rows > 0) {
     }
     //posem la filera dels totals
     echo '<tr style="font-weight:bold">';
-    echo '<td class="col-sm-2">TOTALS('.$contaAlumnes.')</td>';
+    echo '<td class="col-sm-2">TOTALS(' . $contaAlumnes . ')</td>';
     echo '<td class="col-sm-1"></td>';
     echo '<td class="col-sm-1"></td>';
     echo '<td class="col-sm-1"><center>' . $sessionsTeoriquesTotals . '</center></td>';
