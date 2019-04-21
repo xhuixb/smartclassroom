@@ -12,15 +12,52 @@ $(document).ready(function () {
 });
 
 function carregaDadesInicialsGrups() {
-
+    carregaDropGeneric('nivellGrupGralDropdown', 'SELECT distinct(ga35_nivell) as codi, ga06_descripcio_nivell as descripcio FROM ga06_nivell,ga35_curs_nivell_grup where ga35_codi_curs=(select ga03_codi_curs from ga03_curs where ga03_actual=1) and ga35_nivell=ga06_codi_nivell', 'Tria Nivell');
     carregaGrupsProfes('0');
     carregaDropGenericAdmin("professorDropdownGrups", "select ga17_codi_professor as codi,concat(ga04_cognom1,' ',ga04_cognom2,', ',ga04_nom) as descripcio from ga04_professors,ga17_professors_curs where ga04_codi_prof=ga17_codi_professor and ga17_codi_curs=(select ga03_codi_curs from ga03_curs where ga03_actual=1) order by descripcio", "Tria Professor");
 
+}
+
+function mostranivellGrupGralDropdown(element) {
+    debugger;
+    $("#butDropnivellGrupGralDropdown").html($(element).text() + ' ' + '<span class="caret">');
+    $("#butDropnivellGrupGralDropdown").val($(element).attr('data-val'));
+
+    var nivell = $(element).attr('data-val');
+
+    if (nivell != '') {
+        cercaGrupsNivell('grupGralDropdown', nivell)
+
+    }
+
+    habilitaDesaGrupGral();
 
 
 }
 
 
+function mostragrupGralDropdown(element) {
+
+    $("#butDropgrupGralDropdown").html($(element).text() + ' ' + '<span class="caret">');
+    $("#butDropgrupGralDropdown").val($(element).attr('data-val'));
+
+    habilitaDesaGrupGral();
+
+}
+
+function habilitaDesaGrupGral() {
+    debugger;
+    var nivell = $("#butDropnivellGrupGralDropdown").val();
+    var grup = $("#butDropgrupGralDropdown").val();
+    var nomGrup = $("#nomGrupGral").val();
+
+    if (nivell !== '' && grup !== '' && nomGrup !== '') {
+        $("#creaGrupGral").prop('disabled', false);
+    } else {
+        $("#creaGrupGral").prop('disabled', true);
+    }
+
+}
 
 function mostraprofessorDropdownGrups(element) {
     $("#butDropprofessorDropdownGrups").html($(element).text() + ' ' + '<span class="caret">');
@@ -164,19 +201,19 @@ function desaAltaGrup() {
 
         if (nomGrup !== '') {
             var url = "php/desaAltaGrup.php";
-            var profe=$("#butDropprofessorDropdownGrups").val();
+            var profe = $("#butDropprofessorDropdownGrups").val();
             debugger;
 
             $.ajax({
                 type: "POST",
                 url: url,
-                data: {"nivell": nivell, "nomGrup": nomGrup,"profe":profe},
+                data: {"nivell": nivell, "nomGrup": nomGrup, "profe": profe},
                 //data: ("#form2").serialize,
                 success: function (data) {
                     //refresquem els grups
                     //$("#altaGrupProfe").html(data);
                     debugger;
-                    var xx=$("#butDropprofessorDropdownGrups").val();
+
                     carregaGrupsProfes($("#butDropprofessorDropdownGrups").val());
                     //avis d'alta
                     alert("Alta feta amb èxit");
@@ -185,7 +222,7 @@ function desaAltaGrup() {
                     $("#nomGrupProfe").val("");
                     $("#altaGrupProfe").collapse("hide");
                     $("#divAlumnesMeuGrup").html('');
-
+                    $("#desaAlumnesGrupProfe").css('visibility', 'hidden');
                 }
 
             });
@@ -440,4 +477,121 @@ function carregaDropGenericAdmin(div, query, caption) {
 
     return false;
 
+}
+
+function obreModalCopiaGrupGral() {
+
+    //posem el codi del profe i el profe a la capçalera del modal
+    $("#profeNouGrupGral").text('Professor destí: ' + $("#butDropprofessorDropdownGrups").text());
+    $("#profeNouGrupGral").attr('data-profe', $("#butDropprofessorDropdownGrups").val());
+
+    //netegem les dades que hi poguessin haver
+    $("#butDropnivellGrupGralDropdown").html('Tria nivell' + ' ' + '<span class="caret">');
+    $("#butDropnivellGrupGralDropdown").val('');
+
+    $("#butDropgrupGralDropdown").prop('disabled', true);
+    $("#butDropgrupGralDropdown").html('Tria grup' + ' ' + '<span class="caret">');
+    $("#butDropgrupGralDropdown").val('');
+
+    $("#nomGrupGral").val('');
+    $("#creaGrupGral").prop('disabled', true);
+
+}
+
+
+
+function creaGrupGral() {
+
+
+    var confirmacio = confirm("Estàs a punt de crear un grup personal a partir d'un grup classe");
+
+    if (confirmacio === true) {
+        //agafem la informació que els caldra per crear el grup personal a partir del general
+        var nivell = $("#butDropnivellGrupGralDropdown").val();
+        var grup = $("#butDropgrupGralDropdown").val();
+        var profe = $("#profeNouGrupGral").attr('data-profe');
+        var nomGrup = $("#nomGrupGral").val().replace(/"/g, "&quot;");
+
+        var url = "php/creaGrupGral.php";
+        debugger;
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {"nivell": nivell, "grup": grup, "profe": profe, "nomGrup": nomGrup},
+            //data: ("#form2").serialize,
+            success: function (data) {
+                //alert(data);
+                alert("S'ha creat un nou grup personal");
+                carregaGrupsProfes($("#butDropprofessorDropdownGrups").val());
+                $("#divAlumnesMeuGrup").html('');
+                $("#desaAlumnesGrupProfe").css('visibility', 'hidden');
+            }
+
+        });
+
+
+        return false;
+
+
+    }
+
+}
+
+function duplicaGrupProfe(element) {
+    //s'obre el moddal del grup personal duplicat
+    //posem el professor del grup que es vol duplicar
+    $("#profeDupGrupPer").text('Professor destí: ' + $("#butDropprofessorDropdownGrups").text());
+    $("#profeDupGrupPer").attr('data-profe', $("#butDropprofessorDropdownGrups").val());
+    //posem el grup que es vol duplicar
+    $("#origenDupGrupPer").text('Grup Origen: ' + $($($(element).parent()).siblings()[1]).text() + '-' + $($($($($(element).parent()).siblings()[3]).children()[0]).children()[0]).val());
+    $("#origenDupGrupPer").attr('data-codi-grup', $($($(element).parent()).siblings()[1]).text());
+    //netegem el grup que hi pogués haver
+    $("#nomGrupPersonal").val('');
+    $("#creaGrupPer").prop('disabled', true);
+
+
+}
+
+function creaGrupPer() {
+    //es crea el grup personal duplicat
+    var confirmacio = confirm("Estàs a punt de duplicar un grup personal");
+
+    if (confirmacio === true) {
+        //agafem la informació que els caldra per crear el grup personal a partir del general     
+        var profe = $("#profeDupGrupPer").attr('data-profe');
+        var nomGrup = $("#nomGrupPersonal").val().replace(/"/g, "&quot;");
+        var grupOrigen = $("#origenDupGrupPer").attr('data-codi-grup');
+
+        var url = "php/creaGrupPer.php";
+        debugger;
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {"profe": profe, "nomGrup": nomGrup, "grupOrigen": grupOrigen},
+            //data: ("#form2").serialize,
+            success: function (data) {
+                //alert(data);
+                alert("S'ha creat un nou grup personal");
+                carregaGrupsProfes($("#butDropprofessorDropdownGrups").val());
+                $("#divAlumnesMeuGrup").html('');
+                $("#desaAlumnesGrupProfe").css('visibility', 'hidden');
+            }
+
+        });
+
+
+        return false;
+
+
+    }
+
+
+}
+
+function habilitaDesaGrupPer() {
+    if ($("#nomGrupPersonal").val() !== '') {
+        $("#creaGrupPer").prop('disabled', false);
+    } else {
+        $("#creaGrupPer").prop('disabled', true);
+    }
 }

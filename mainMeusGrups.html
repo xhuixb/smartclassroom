@@ -45,16 +45,21 @@ and open the template in the editor.
                         </div>
                     </div>
 
-                    <div class="col-sm-3" >
+                    <div class="col-sm-2" >
 
                         <button type="button" class="btn btn-success form-control" id="nouGrupProfe" data-tooltip="tooltip" title="Crea grup personal" data-toggle="collapse" data-target="#altaGrupProfe">
-                            <span class="glyphicon glyphicon-plus"> Nou</span>
+                            <span class="glyphicon glyphicon-plus"></span>
                         </button>
                     </div>
+                    <div class="col-sm-2" >
 
-                    <div class="col-sm-3" >
+                        <button type="button" class="btn btn-success form-control" id="nouGrupProfe" data-tooltip="tooltip" title="Crea grup a partir d'un grup general" data-toggle="modal" data-target="#copiaGrupGralModal" onclick="obreModalCopiaGrupGral();">
+                            <span class="glyphicon glyphicon-plus"></span> <span class="glyphicon glyphicon-copy"></span>
+                        </button>
+                    </div>
+                    <div class="col-sm-2" >
                         <button type="button" class="btn btn-danger form-control" id="esborraGrupProfe" data-tooltip="tooltip" title="Esborra grup personal">
-                            <span class="glyphicon glyphicon-trash"> Esborra</span>
+                            <span class="glyphicon glyphicon-trash"></span>
                         </button>
                     </div>
                 </div>
@@ -131,6 +136,88 @@ and open the template in the editor.
 
 
         </div>
+
+        <div id="copiaGrupGralModal" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Crea grup a partir d'un grup general</h3>
+                        <h4 id="profeNouGrupGral"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-3" >
+                                    <label>Nivell</label>
+                                    <div class="dropdown" id="nivellGrupGralDropdown">
+                                        <!-- aquí posarem el dropdown de nivel -->
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Grup</label>
+                                    <div class="dropdown" id="grupGralDropdown">
+                                        <button data-val="" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="butDropgrupGralDropdown" disabled>Tria Grup<span class="caret"></span></button>
+                                        <!-- aquí posarem el dropdown dels trams horaris -->
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Nom grup</label>
+                                    <input class="form-control" type="text" id="nomGrupGral" placeholder="introdueix el nom" onkeyup="habilitaDesaGrupGral();">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">                               
+                        <button id="creaGrupGral" type="button" class="btn btn-success" data-dismiss="modal" onclick="creaGrupGral();" disabled>Desa</button>                        
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="duplicaGrupGralModal" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Duplica grup personal</h3>
+                        <h4 id="profeDupGrupPer"></h4>
+                        <h4 id="origenDupGrupPer"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+
+                                <div class="col-sm-8">
+                                    <label>Nom grup</label>
+                                    <input class="form-control" type="text" id="nomGrupPersonal" placeholder="introdueix el nom" onkeyup="habilitaDesaGrupPer();">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">                               
+                        <button id="creaGrupPer" type="button" class="btn btn-success" data-dismiss="modal" onclick="creaGrupPer();" disabled>Desa</button>                        
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
         <script>
             $(document).ready(function () {
                 $('[data-tooltip="tooltip"]').tooltip();

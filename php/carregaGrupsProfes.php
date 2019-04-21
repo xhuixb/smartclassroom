@@ -68,7 +68,7 @@ if ($result->num_rows > 0) {
         echo '</td>';
         echo '<td class="col-sm-1"><button type="button" class="btn form-control" onclick="cercaAlumnesGrupProfe(this);" data-tooltip="tooltip" title="Membres grup personal">';
         echo '<span class="glyphicon glyphicon-user"></span></button></td>';
-         echo '<td class="col-sm-1"><button type="button" class="btn form-control" onclick="copiaGrupProfe(this);" data-tooltip="tooltip" title="Duplica grup personal">';
+         echo '<td class="col-sm-1"><button type="button" class="btn form-control" data-toggle="modal" data-target="#duplicaGrupGralModal" onclick="duplicaGrupProfe(this);" data-tooltip="tooltip" title="Duplica grup personal">';
         echo '<span class="glyphicon glyphicon-copy"></span></button></td>';
         echo '</tr>';
         
